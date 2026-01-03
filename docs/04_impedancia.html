@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; 4. Impedancia. Ley de Ohm generalizada. – Unidad 6: Circuitos de Corriente Alterna</title>
+<title>4&nbsp; Impedancia – Unidad 6: Circuitos de Corriente Alterna</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -116,7 +145,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_impedancia.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">4. Impedancia. Ley de Ohm generalizada.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_impedancia.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -129,7 +158,7 @@ window.MathJax = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-right">
-      <h1 class="title"><span id="nodeTitle" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">4. Impedancia. Ley de Ohm generalizada.</span></span></h1>
+      <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></h1>
                       </div>
   </div>
     
@@ -182,25 +211,25 @@ window.MathJax = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_respuesta_comp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">3. Respuesta de los componentes básicos a la CA.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Respuesta de los componentes básicos a la Corriente Alterna</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_impedancia.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">4. Impedancia. Ley de Ohm generalizada.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_circuitos_rlc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">5. Circuitos RLC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">05_circuitos_rlc.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_potencia_ca.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">6. Potencia en Corriente Alterna</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">06_potencia_ca.html</span></span></a>
   </div>
 </li>
     </ul>
@@ -216,41 +245,127 @@ window.MathJax = {
 
 
 
-<div id="content">
-<p><a href="#main" class="sr-av">Saltar la navegación</a></p>
-<div id="header">
-<div id="headerContent">
-<p>Estructuras</p>
+<p>El concepto de impedancia es una <strong>generalización del concepto de resistencia.</strong> Hemos visto que en CA los elementos conectados en el circuito, en general, introducen un desfase entre la intensidad y la tensión. Este desfase hace que no haya una proporcionalidad entre los valores instantáneos de intensidad y tensión, como ocurría en corriente continua. No se cumple la ley de Ohm, tal y como la conocíamos, con los valores instantáneos <span class="math inline">\(i(t)\)</span> y <span class="math inline">\(v(t)\)</span>. Sin embargo, <strong>esta proporcionalidad sí existe entre los fasores</strong>, y también entre los valores máximos <span class="math inline">\(U_0\)</span> e <span class="math inline">\(I_0\)</span>, o los valores eficaces <span class="math inline">\(U\)</span>, <span class="math inline">\(I\)</span>. Esto hace que podamos expresar la ley de Ohm con estos valores.</p>
+<p>La magnitud que relaciona los valores máximos (y los eficaces) de tensión e intensidad en un circuito, se denomina impedancia (Z), y se mide en ohmios.</p>
+<p>La resistencia eléctrica de un conductor se define como la oposición que ofrece al paso de una corriente eléctrica. Cuando la corriente que atraviesa a un conductor es una corriente sinusoidal, el concepto de resistencia se generaliza a impedancia.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="width:75%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Definición
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>La <strong>impedancia</strong> de un conductor se define como la <strong>oposición</strong> que ofrece al paso de una corriente eléctrica <strong>sinusoidal</strong>.</p>
+</div>
+</div>
+<p>La impedancia se representa con la letra <strong>Z</strong>. Consideremos una impedancia Z alimentada por una señal sinusoidal de valor eficaz <span class="math inline">\(U\)</span>, fase inicial <span class="math inline">\(\varphi_U\)</span> y pulsación <span class="math inline">\(\omega\)</span>, tal como se muestra en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="drawio/circuito_1.drawio.svg" class="img-fluid figure-img" width="400"></p>
+<figcaption>E</figcaption>
+</figure>
+</div>
+<p>La tensión en la impedancia, que es la de la fuente, representada en forma de fasor es: <span class="math display">\[\boldsymbol{U} = \sqrt{2}U \phase \varphi_U\]</span></p>
+<p>La intensidad que circula por la impedancia tiene un valor eficaz <span class="math inline">\(I\)</span> y un desfase <span class="math inline">\(\varphi_I\)</span>. Representada en forma de fasor la intensidad es: <span class="math display">\[\boldsymbol{I} = \sqrt{2}I \phase \varphi_I\]</span></p>
+<p>El cociente entre el fasor tensión y el fasor intensidad representa la impedancia. Expresado matemáticamente es:</p>
+<p><span class="math display">\[
+\boldsymbol{Z}=\frac{\boldsymbol{U}}{\boldsymbol{I}}=\frac{\sqrt{2}U \phase \varphi_U}{\sqrt{2}I \phase \varphi_I}=\frac{U}{I}\phase {\varphi_U-\varphi_I}
+\]</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Observación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una impedancia <strong>no es un fasor</strong>. Una impedancia se puede representar por un <strong>vector</strong>, en este caso expresado en forma polar, que contiene dos términos:</p>
 <ul>
-<li><a href="index.html" class="daddy main-node">Circuitos de Corriente Alterna</a></li>
-<li><a href="1_corriente_alterna.html" class="no-ch">1. Corriente alterna.</a></li>
-<li><a href="2_representacin_de_seales_sinusoidales.html" class="no-ch">2. Representación de señales sinusoidales.</a></li>
-<li><a href="3_respuesta_de_los_componentes_bsicos_a_la_ca.html" class="no-ch">3. Respuesta de los componentes básicos a la CA.</a></li>
-<li><span id="active"><a href="4_impedancia_ley_de_ohm_generalizada.html" class="active no-ch">4. Impedancia. Ley de Ohm generalizada.</a></span></li>
-<li><a href="5_circuitos_rlc.html" class="no-ch">5. Circuitos RLC</a></li>
-<li><a href="6_potencia_en_corriente_alterna.html" class="no-ch">6. Potencia en Corriente Alterna</a></li>
+<li>El <strong>módulo (</strong><span class="math inline">\(Z\)</span>), que representa el cociente entre la tensión y la intensidad que soporta la impedancia. Las tensiones o intensidades pueden darse en valores eficaces o en valores de pico.</li>
+<li>El <strong>argumento (</strong><span class="math inline">\(\varphi\)</span>), que representa el <strong>desfase entre el fasor tensión y el fasor intensidad</strong>.</li>
 </ul>
-<div id="topPagination">
-<p><a href="3_respuesta_de_los_componentes_bsicos_a_la_ca.html" class="prev">« Anterior</a> <span class="sep">|</span><a href="5_circuitos_rlc.html" class="next">Siguiente »</a></p>
 </div>
-<div id="main-wrapper">
-<section id="main">
-<div id="nodeDecoration">
+</div>
+<p>Si dibujamos ese vector, podremos ver gráficamente que la componente horizontal correspondería con la <strong>resistencia</strong> y la vertical con la <strong>reactancia</strong> (si es positiva sería inductiva y si es negativa sería capacitiva) del circuito. Esta representación se denomina “triángulo de impedancias” y tiene este aspecto:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_impedancias.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Triángulo de impedancias</figcaption>
+</figure>
+</div>
+<p>Viendo esta imagen podemos concluir que:</p>
+<ul>
+<li><p>A partir de la impedancia, podemos calcular la resistencia y la reactancia: <span class="math display">\[
+R=Z \cdot \cos \varphi
+\]</span> <span class="math display">\[
+X=Z \cdot \sen \varphi
+\]</span></p></li>
+<li><p>A partir de la resistencia y la reactancia, podemos calcular la impedancia: <span class="math display">\[
+|\boldsymbol{Z}|=Z=\sqrt{R^2+X^2}
+\]</span> <span class="math display">\[
+\varphi = \arctan \frac{X}{R}
+\]</span></p></li>
+</ul>
+<section id="representación-compleja-de-la-impedancia" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="representación-compleja-de-la-impedancia"><span class="header-section-number">4.1</span> Representación compleja de la impedancia</h2>
+<p>Teniendo en cuenta que el eje horizontal es el eje real y el eje vertical es el eje imaginario, podemos representar el vector impedancia como un número complejo de la forma: <span class="math display">\[
+\boldsymbol{Z} = R + \mathrm{j} \cdot X
+\]</span></p>
+<p>Recordemos que:</p>
+<ul>
+<li><span class="math inline">\(R\)</span> <strong>es la resistencia:</strong> se mide en ohmios (<span class="math inline">\(\mathrm{\omega}\)</span>) y se puede calcular como <span class="math inline">\(R=Z \cdot \cos \varphi\)</span>.</li>
+<li><span class="math inline">\(X\)</span> <strong>es la reactancia:</strong> se mide también en ohmios (<span class="math inline">\(\mathrm{\omega}\)</span>) y se puede calcular como <span class="math inline">\(R=Z \cdot \sen \varphi\)</span>. Según el valor que tome la reactancia, la impedancia puede ser:
+<ul>
+<li><strong>Impedancia inductiva:</strong> cuando <span class="math inline">\(X&gt;0\)</span> y, por lo tanto <span class="math inline">\(\varphi &gt;0\)</span>, <strong>la tensión está en avance con respecto a la intensidad.</strong></li>
+<li><strong>Impedancia capacitiva:</strong> cuando <span class="math inline">\(X&lt;0\)</span> y, por lo tanto, <span class="math inline">\(\varphi &lt;0\)</span>, <strong>la tensión está en retraso con respecto a la intensidad</strong> o, lo que lo mismo, la intensidad va por delante de la tensión.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Ejemplo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Determina el valor de la resistencia y reactancia de una impedancia que está sometida a una tensión de 220 V y por la que circula una intensidad de 10 A. Se sabe que la tensión está adelantada 30º con respecto a la intensidad.</strong>**</p>
+<p><em>Solución:</em></p>
+<p>Aplicando la definición de impedancia, tenemos: <span class="math display">\[Z = \frac{U}{I} = \frac{220}{10} = 22 \ \Omega\]</span></p>
+<p>Tenemos una parte de la impedancia, pero falta saber qué desfase existe. Este dato nos lo dan con el desfase entre la tensión e intensidad, <span class="math inline">\(\varphi = \varphi_U - \varphi_I\)</span>, así <span class="math inline">\(\varphi = 30^\circ\)</span>. La impedancia expresada en forma polar es: <span class="math display">\[\boldsymbol{Z} = 22 \phase 30^\circ \ \Omega\]</span></p>
+<p>Para obtener <span class="math inline">\(R\)</span> y <span class="math inline">\(X\)</span> hacemos: <span class="math display">\[
+\begin{aligned}
+R &amp;= Z \cdot \cos \varphi = 22 \cdot \cos(30^\circ) = 11\sqrt{3} \ \Omega \\
+X &amp;= Z \cdot \sen \varphi = 22 \cdot \sen(30^\circ) = 11 \ \Omega
+\end{aligned}
+\quad \Rightarrow \quad
+\boxed{
+\begin{aligned}
+R &amp;= 11 \cdot \sqrt{3} \ \Omega \\
+X &amp;= 11 \ \Omega
+\end{aligned}
+}
+\]</span></p>
+<p>Se trata de una reactancia <strong>inductiva</strong>.</p>
+</div>
+</div>
+<p><br> ::: {.callout-warning style=“width:400px;margin:auto” icon=“false”} ## Importante La <strong>representación compleja</strong> de las impedancias resistiva, inductiva y capacitiva es la siguiente:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{Z}_R &amp;= R \\[1ex]
+\boldsymbol{Z}_L &amp;= \mathrm{j} \cdot X_L = \mathrm{j} \cdot \omega \cdot L \\[1ex]
+\boldsymbol{Z}_C &amp;= -\mathrm{j} \cdot X_C = \frac{-\mathrm{j}}{\omega \cdot C}
+\end{aligned}
+\]</span> :::</p>
 
-</div>
-<div id="packageLicense" class="cc cc-by-nc-sa">
-<p>Obra publicada con <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
-</div>
+
 </section>
-</div>
-<div id="bottomPagination">
-<p><a href="3_respuesta_de_los_componentes_bsicos_a_la_ca.html" class="prev">« Anterior</a> <span class="sep">|</span><a href="5_circuitos_rlc.html" class="next">Siguiente »</a></p>
-</div>
-</div>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -655,13 +770,13 @@ window.MathJax = {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./03_respuesta_comp.html" class="pagination-link" aria-label="3. Respuesta de los componentes básicos a la CA.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">3. Respuesta de los componentes básicos a la CA.</span></span>
+      <a href="./03_respuesta_comp.html" class="pagination-link" aria-label="Respuesta de los componentes básicos a la Corriente Alterna">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Respuesta de los componentes básicos a la Corriente Alterna</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05_circuitos_rlc.html" class="pagination-link" aria-label="5. Circuitos RLC">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">5. Circuitos RLC</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_circuitos_rlc.html" class="pagination-link" aria-label="05_circuitos_rlc.html">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">05_circuitos_rlc.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,6 +7,7 @@ book:
   subtitle: "Tecnología e Ingeniería II - 2º Bachillerato"
   author: "José Luis García Jiménez"
   language: es
+  output-file: "Unidad_6_Circuitos_CA"
   
   sidebar:
     logo: logoMajuelo.jpeg
@@ -70,6 +71,7 @@ format:
         \usepackage{amsmath}
         \usepackage{amssymb}
         \usepackage{steinmetz}
+        \usepackage{circuitikz}
         \newcommand{\sen}{\operatorname{sen}}
         \newcommand{\dotZ}{\dot{Z}}
         \newcommand{\dotI}{\dot{I}}

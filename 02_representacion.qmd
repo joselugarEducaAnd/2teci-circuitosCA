@@ -1,5 +1,5 @@
 ---
-page-layout: full  # <--- ESTA LÍNEA ES VITAL
+page-layout: full  
 ---
 
 
@@ -124,7 +124,7 @@ Una magnitud sinusoidal se puede representar como la proyección vertical de un 
 ![Animación del concepto de fasor](media/FresnelGenerico.gif){fig-align="center" width="80%"}
 :::
 
-::: {.content-visible when-format="html"}
+::: {.content-visible when-format="pdf"}
 ![Imagen del concepto de fasor](media/FresnelGenerico.png){fig-align="center" width="80%"}
 :::
 

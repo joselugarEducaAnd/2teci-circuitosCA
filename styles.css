@@ -320,3 +320,58 @@ figure.quarto-float-img,
     flex-direction: column !important;
     align-items: center !important;
 }
+
+/*TABLA ESTILO LIBRO */
+
+/* Contenedor de la tabla */
+.tabla-estilo-libro {
+    width: 80%;           /* CAMBIO: Ahora ocupa solo el 80% */
+    margin: 2rem auto;    /* CAMBIO: 'auto' a los lados lo CENTRA automáticamente */
+    overflow-x: auto;     /* Mantiene el scroll en móviles si hace falta */
+}
+
+/* Estructura base */
+.tabla-estilo-libro table {
+    width: 100%;          /* La tabla llena el 100% de su contenedor (que es el 80% de la pág) */
+    border-collapse: collapse;
+    font-family: system-ui, -apple-system, sans-serif;
+    border: 2px solid #005f73;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Encabezado */
+.tabla-estilo-libro thead tr {
+    background-color: #0077b6;
+    color: white;
+    text-align: center;
+}
+
+.tabla-estilo-libro th {
+    padding: 12px;
+    font-weight: 600;
+    border-bottom: 2px solid #005f73;
+}
+
+/* Celdas */
+.tabla-estilo-libro td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+    color: #333;
+    text-align: center; /* Opcional: Centrar también el texto de las celdas */
+}
+
+/* Filas alternas */
+.tabla-estilo-libro tbody tr:nth-child(even) {
+    background-color: #eef7fb;
+}
+
+.tabla-estilo-libro tbody tr:hover {
+    background-color: #dbebf3;
+    transition: background-color 0.2s;
+}
+
+/* Ajuste Fórmulas */
+.tabla-estilo-libro td .MathJax {
+    font-size: 1.1em !important;
+}

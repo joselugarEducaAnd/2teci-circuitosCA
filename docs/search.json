@@ -1,5 +1,45 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Unidad 6: Circuitos de Corriente Alterna",
+    "section": "",
+    "text": "Introducción\nEn esta unidad de Tecnología e Ingeniería II, estudiaremos el comportamiento de los circuitos eléctricos cuando la tensión y la corriente varían de forma sinusoidal en el tiempo.",
+    "crumbs": [
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "index.html#contenidos-de-la-unidad",
+    "href": "index.html#contenidos-de-la-unidad",
+    "title": "Unidad 6: Circuitos de Corriente Alterna",
+    "section": "Contenidos de la unidad",
+    "text": "Contenidos de la unidad\nA continuación se detallan las secciones que componen esta unidad:\n\nCorriente alterna: Conceptos básicos y generación.\nRepresentación de señales sinusoidales: Análisis trigonométrico y fasorial.\nRespuesta de los componentes básicos: Comportamiento de R, L y C.\nImpedancia: La ley de Ohm en el dominio complejo.\nCircuitos RLC: Análisis de asociaciones serie y paralelo.\nPotencia en CA: Estudio del factor de potencia y eficiencia energética.\n\n\n\n\n\n\n\nNota📚 Material de estudio\n\n\n\nPuedes descargar esta unidad completa en formato PDF para estudiar sin conexión o imprimirla:\nDescargar PDF\n\n\nÚltima actualización: 03/01/2026",
+    "crumbs": [
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "01_corriente_alterna.html",
+    "href": "01_corriente_alterna.html",
+    "title": "1  Corriente alterna",
+    "section": "",
+    "text": "1.1 Conceptos fundamentales\nLa corriente alterna (CA) es el flujo eléctrico periódico, alterno y cuya ley de variación en el tiempo es senoidal. Es la que generan los alternadores en las centrales eléctricas y la que se transporta a los lugares de consumo, donde la transformamos en otros tipos de energía.\nPor tanto, la CA es una corriente con las siguientes características:\nLa corriente alterna es producida por inducción en una espira o solenoide de \\(N\\) espiras que gira en el interior de un campo magnético con velocidad angular \\(\\omega\\). La máquina que genera esta corriente se denomina alternador. Los símbolos que se suelen utilizar para representar un alternador en un circuito son los siguientes:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Corriente alterna</span>"
+    ]
+  },
+  {
+    "objectID": "01_corriente_alterna.html#conceptos-fundamentales",
+    "href": "01_corriente_alterna.html#conceptos-fundamentales",
+    "title": "1  Corriente alterna",
+    "section": "",
+    "text": "Frecuencia: Es el número de veces que cambia de dirección la corriente en un segundo y se mide en hercios (Hz).\nFrecuencia en España: En nuestro sistema eléctrico se utilizan los 50 Hz, aunque existen aplicaciones especiales (electrónica, radiocomunicaciones) donde se usan frecuencias de kHz o MHz.\nTransmisión de energía: Aunque los electrones apenas se desplazan unas centésimas de milímetro antes de cambiar de sentido (debido a su baja velocidad de deriva), la energía se transmite como una onda electromagnética a velocidades cercanas a la de la luz, de forma similar a como se propagan las ondas sonoras en el aire.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Corriente alterna</span>"
+    ]
+  },
+  {
     "objectID": "02_representacion.html",
     "href": "02_representacion.html",
     "title": "2  Representación de señales sinusoidales.",
@@ -34,89 +74,89 @@
     "href": "02_representacion.html#representación-fasorial-y-compleja",
     "title": "2  Representación de señales sinusoidales.",
     "section": "2.3 Representación fasorial y compleja",
-    "text": "2.3 Representación fasorial y compleja\nUna magnitud sinusoidal se puede representar como la proyección vertical de un vector rotativo (fasor) que gira a una velocidad angular \\(\\omega\\) en sentido contrario al de las agujas del reloj. Su módulo es igual al valor de cresta (\\(U_p\\)) y su posición inicial es la fase inicial (\\(\\varphi\\)).\n\n\n\nAnimación del concepto de fasor\n\n\n\n\n\nImagen del concepto de fasor\n\n\n\n2.3.1 Formas de expresar un fasor\n\nForma polar: \\(U = U_{p} \\angle \\varphi\\).\nForma compleja: \\(U = U_{p} \\cos \\varphi + j \\cdot \\sin \\varphi\\). En Electrotecnia se utiliza \\(j\\) para no confundirla con la intensidad. Representa un giro de +90°.\n\n\n\n\n\n\n\n\nImportanteEjemplo: Representación de una corriente\n\n\n\nRepresenta gráficamente la siguiente señal correspondiente a una corriente:\n\\[i(t)=3\\cdot \\sen(10\\pi t-\\frac{\\pi}{3})\\]\nSolución:\nDebemos representar un vector de módulo 3, con un desfase inicial \\(\\varphi=-\\frac{\\pi}{3} \\, \\text{rad}\\) o \\(\\varphi=-60º\\). Este vector giraría a una velocidad \\(\\omega=10\\pi \\, \\text{rad/s}\\).\nLa representación polar es la siguiente:\n\\[I=I_{p}\\angle \\varphi=3\\phase{-60º} \\, \\text{A}\\]\no, expresando el ángulo en radianes:\n\\[I=I_{p}\\angle \\varphi=3\\phase{-\\pi /3} \\, \\text{A}\\]\nLa representación en forma de número complejo es:\n\\[I=I_{p}\\cos \\varphi + j \\cdot I_{p} \\sen \\varphi=3·\\cos(-60º)+j·3·\\sen(-60º)=1,5-1,5\\sqrt{3}j\\, \\text{A}\\]\nY, por último, la representación gráfica sería:\n\n\n\n\n\n\nFigure 2.2",
+    "text": "2.3 Representación fasorial y compleja\nUna magnitud sinusoidal se puede representar como la proyección vertical de un vector rotativo (fasor) que gira a una velocidad angular \\(\\omega\\) en sentido contrario al de las agujas del reloj. Su módulo es igual al valor de cresta (\\(U_p\\)) y su posición inicial es la fase inicial (\\(\\varphi\\)).\n\n\n\nAnimación del concepto de fasor\n\n\n\n2.3.1 Formas de expresar un fasor\n\nForma polar: \\(U = U_{p} \\angle \\varphi\\).\nForma compleja: \\(U = U_{p} \\cos \\varphi + j \\cdot \\sin \\varphi\\). En Electrotecnia se utiliza \\(j\\) para no confundirla con la intensidad. Representa un giro de +90°.\n\n\n\n\n\n\n\n\nImportanteEjemplo: Representación de una corriente\n\n\n\nRepresenta gráficamente la siguiente señal correspondiente a una corriente:\n\\[i(t)=3\\cdot \\sen(10\\pi t-\\frac{\\pi}{3})\\]\nSolución:\nDebemos representar un vector de módulo 3, con un desfase inicial \\(\\varphi=-\\frac{\\pi}{3} \\, \\text{rad}\\) o \\(\\varphi=-60º\\). Este vector giraría a una velocidad \\(\\omega=10\\pi \\, \\text{rad/s}\\).\nLa representación polar es la siguiente:\n\\[I=I_{p}\\angle \\varphi=3\\phase{-60º} \\, \\text{A}\\]\no, expresando el ángulo en radianes:\n\\[I=I_{p}\\angle \\varphi=3\\phase{-\\pi /3} \\, \\text{A}\\]\nLa representación en forma de número complejo es:\n\\[I=I_{p}\\cos \\varphi + j \\cdot I_{p} \\sen \\varphi=3·\\cos(-60º)+j·3·\\sen(-60º)=1,5-1,5\\sqrt{3}j\\, \\text{A}\\]\nY, por último, la representación gráfica sería:\n\n\n\n\n\n\nFigure 2.2",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Representación de señales sinusoidales.</span>"
     ]
   },
   {
-    "objectID": "01_corriente_alterna.html",
-    "href": "01_corriente_alterna.html",
-    "title": "1  Corriente alterna",
-    "section": "",
-    "text": "1.1 Conceptos fundamentales\nLa corriente alterna (CA) es el flujo eléctrico periódico, alterno y cuya ley de variación en el tiempo es senoidal. Es la que generan los alternadores en las centrales eléctricas y la que se transporta a los lugares de consumo, donde la transformamos en otros tipos de energía.\nPor tanto, la CA es una corriente con las siguientes características:\nLa corriente alterna es producida por inducción en una espira o solenoide de \\(N\\) espiras que gira en el interior de un campo magnético con velocidad angular \\(\\omega\\). La máquina que genera esta corriente se denomina alternador. Los símbolos que se suelen utilizar para representar un alternador en un circuito son los siguientes:",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Corriente alterna</span>"
-    ]
-  },
-  {
-    "objectID": "01_corriente_alterna.html#conceptos-fundamentales",
-    "href": "01_corriente_alterna.html#conceptos-fundamentales",
-    "title": "1  Corriente alterna",
-    "section": "",
-    "text": "Frecuencia: Es el número de veces que cambia de dirección la corriente en un segundo y se mide en hercios (Hz).\nFrecuencia en España: En nuestro sistema eléctrico se utilizan los 50 Hz, aunque existen aplicaciones especiales (electrónica, radiocomunicaciones) donde se usan frecuencias de kHz o MHz.\nTransmisión de energía: Aunque los electrones apenas se desplazan unas centésimas de milímetro antes de cambiar de sentido (debido a su baja velocidad de deriva), la energía se transmite como una onda electromagnética a velocidades cercanas a la de la luz, de forma similar a como se propagan las ondas sonoras en el aire.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Corriente alterna</span>"
-    ]
-  },
-  {
     "objectID": "03_respuesta_comp.html",
     "href": "03_respuesta_comp.html",
-    "title": "3  3. Respuesta de los componentes básicos a la CA.",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
     "section": "",
-    "text": "Saltar la navegación\n\n\nEstructuras\n\n\n\nCircuitos de Corriente Alterna\n1. Corriente alterna.\n2. Representación de señales sinusoidales.\n3. Respuesta de los componentes básicos a la CA.\n4. Impedancia. Ley de Ohm generalizada.\n5. Circuitos RLC\n6. Potencia en Corriente Alterna\n\n\n« Anterior |Siguiente »\n\n\n\n\n\n\n\n\n4 Respuesta de una resistencia\n\n\n\n\n\n\n\n\nSi a una resistencia de valor R ohmios (Ω) se la somete a una tensión sinusoidal de valor eficaz U y pulsación\nω, la tensión instantánea aplicada a la resistencia es:\nи(t)= U.V2)-sen(c-t+q)\nSegún la ley de Ohm, tenemos que i(t) = u(t)/ R, y por tanto, la intensidad instantánea que circula por la\nresistencia es:\nU.V2\ni(t) =\n• sen(@•t +Ф)\nR\nAnalicemos este resultado; la intensidad obtenida tiene la misma pulsación que la tensión y además tiene:\nU.V2\nUn valor de picol, = -\n. La intensidad eficaz es 1 =.\n. La misma expresión que en corriente continua.\nR\n• El desfase entre la tensión e intensidad es nulo, es decir, están en fase. La fase inicial de la intensidad es\nФ,=Ф.\nSu representación gráfica es la mostrada en la siguiente figura:\n\n\n\n\n\n\n\n\n\n\n\n\n4.0.1 Simulador Interactivo: Fasor y Onda Senoidal\n\nFase inicial (φ): -60°\n\n\n\n\n\n\n\n\n\nObra publicada con Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0\n\n\n\n\n« Anterior |Siguiente »",
+    "text": "3.1 Respuesta de una resistencia\nSi a una resistencia de valor R ohmios (Ω) se la somete a una tensión sinusoidal de valor eficaz U y pulsación ω, la tensión instantánea aplicada a la resistencia es: \\[u(t) = (\\sqrt{2} U) \\cdot \\sen(\\omega t + \\varphi)\\]\nSegún la ley de Ohm, tenemos que \\(i(t) = u(t)/R\\), y por tanto, la intensidad instantánea que circula por la resistencia es: \\[i(t) = \\frac{\\sqrt{2}U}{R} \\cdot \\sen(\\omega  t + \\varphi)\\] Analizando las expresiones de la tensión y la intensidad, podemos concluir que:\nLa representación gráfica de la tensión y la intensidad en una resistencia eléctrica será, por tanto:",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>3. Respuesta de los componentes básicos a la CA.</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
+    ]
+  },
+  {
+    "objectID": "03_respuesta_comp.html#respuesta-de-una-resistencia",
+    "href": "03_respuesta_comp.html#respuesta-de-una-resistencia",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
+    "section": "",
+    "text": "La intensidad eficaz es \\(I=\\frac{U}{R}\\), igual que en corriente continua.\nEl desfase entre la tensión y la intensidad es nulo. Es decir, están en fase (\\(\\varphi_{I}=\\varphi\\))",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
+    ]
+  },
+  {
+    "objectID": "03_respuesta_comp.html#respuesta-de-una-bobina",
+    "href": "03_respuesta_comp.html#respuesta-de-una-bobina",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
+    "section": "3.2 Respuesta de una bobina",
+    "text": "3.2 Respuesta de una bobina\nSi a una bobina de valor L henrios (H) se la somete a una intensidad sinusoidal de valor eficaz U y pulsación ω, la intensidad instantánea que circula por la bobina es:\n\\[\ni(t) = (\\sqrt{2}I) \\cdot \\sen(\\omega t + \\varphi)\n\\]\nLa ley que rige para una bobina es la siguiente:\n\\[u(t) = L \\cdot \\frac{di(t)}{dt}\\]\nPor lo tanto, la tensión instantánea en la bobina la obtenemos derivando la intensidad y resulta ser:\n\\[u(t) = L \\frac{di(t)}{dt} = L \\cdot (\\sqrt{2}I) \\cdot \\omega \\cdot \\sen(\\omega  t + \\varphi + \\frac{\\pi}{2})\\]\n\n\n\n\n\n\nNotaImportante\n\n\n\nEn realidad, la derivada del seno es el coseno, pero el coseno de un ángulo es igual al seno de su complementario (\\(\\cos(\\alpha) = \\sen(\\alpha + \\frac{\\pi}{2})\\)). Por lo tanto, podemos poner la expresión en forma de seno, para poder comparar los fasores de la tensión y la intensidad.\n\n\nPor consiguiente, obtenemos una tensión con la misma pulsación que la intensidad y con las características siguientes:\n\nUn valor de pico \\(U_p=\\omega \\cdot L \\cdot \\sqrt{2} I\\). Por lo tanto, la tensión eficaz es \\(U=\\omega \\cdot L \\cdot I\\).\nLa tensión se encuentra adelantada 90° ($\\pi/2 $ ) con respecto a la intensidad; la fase inicial de la tensión es \\(\\varphi_U = \\varphi + \\frac{\\pi}{2}\\).\n\nAl producto \\(\\omega \\cdot L\\) se le llama reactancia inductiva y se representa por \\(X_L\\), es decir:\n\n\n\n\n\n\n\\[\nX_L=\\omega \\cdot L\n\\]\n\n\n\nLa unidad de la reactancia inductiva en el SI es el ohmio (\\(\\omega\\)).\nLa representación gráfica de los fasores y ondas de tensión e intensidad en una bobina es la mostrada en la figura:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
+    ]
+  },
+  {
+    "objectID": "03_respuesta_comp.html#respuesta-de-un-condensador",
+    "href": "03_respuesta_comp.html#respuesta-de-un-condensador",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
+    "section": "3.3 Respuesta de un condensador",
+    "text": "3.3 Respuesta de un condensador\nSi a un condensador de valor C faradios (F) se le somete a una tensión sinusoidal de valor eficaz U y pulsación co, la tensión instantánea aplicada al condensador es: \\[u(t) = (\\sqrt{2} U) \\cdot \\sen(\\omega t + \\varphi)\\]\nAplicando la ley que rige un condensador, \\(i(t) = C \\cdot du(t) / dt\\), la intensidad instantánea que circula por el condensador es: \\[\ni(t) = C \\cdot \\frac{du(t)}{dt} = C \\cdot \\omega \\cdot ( \\sqrt{2}U) \\cdot \\sen(\\omega  t + \\varphi + \\frac{\\pi}{2})\n\\]\nObtenemos una intensidad con la misma pulsación que la tensión aplicada y con las características siguientes: - Un valor de pico \\(I_p=\\omega \\cdot C \\cdot \\sqrt{2} U\\). Por lo tanto, la intensidad eficaz es \\(I=\\omega \\cdot C \\cdot U\\). - La intensidad se encuentra adelantada 90° ($\\pi/2 $ ) con respecto a la tensión; la fase inicial de la intensidad es \\(\\varphi_I = \\varphi + \\frac{\\pi}{2}\\).\nAl cociente \\(1/\\omega \\cdot C\\) se le llama reactancia capacitiva y se representa por \\(X_C\\), es decir:\n\n\n\n\n\n\n\\[\nX_C=\\frac{1}{\\omega \\cdot C}\n\\]\n\n\n\nLa unidad de la reactancia capacitiva en el SI es el ohmio (\\(\\omega\\)).\nLa representación gráfica de los fasores y ondas de tensión e intensidad en un condensador es la mostrada en la figura:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
+    ]
+  },
+  {
+    "objectID": "03_respuesta_comp.html#cuadro-resumen-con-las-respuestas-r-l-y-c",
+    "href": "03_respuesta_comp.html#cuadro-resumen-con-las-respuestas-r-l-y-c",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
+    "section": "3.4 Cuadro resumen con las respuestas R, L y C",
+    "text": "3.4 Cuadro resumen con las respuestas R, L y C\n\n\n\n\n\n\n\n\n\n\nElemento\nRepresentación gráfica\nRelación Tensión/Intensidad\nDesfase rad (º)\n\n\n\n\nResistencia (\\(R\\))\n\n\\(R\\)\n\\(0^\\circ\\)\n\n\nBobina (\\(L\\))\n\n\\(X_L = \\omega \\cdot L\\)\n\\(+\\pi/2 \\ (+90^\\circ)\\)\n\n\nCondensador (\\(C\\))\n\n\\(X_C = \\frac{1}{\\omega \\cdot C}\\)\n\\(-\\pi/2 \\ (-90^\\circ)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
+    ]
+  },
+  {
+    "objectID": "03_respuesta_comp.html#combinación-de-cargas-de-diferente-naturaleza",
+    "href": "03_respuesta_comp.html#combinación-de-cargas-de-diferente-naturaleza",
+    "title": "3  Respuesta de los componentes básicos a la Corriente Alterna",
+    "section": "3.5 Combinación de cargas de diferente naturaleza",
+    "text": "3.5 Combinación de cargas de diferente naturaleza\nPor lo general, en un circuito tendremos cargas que ofrecerán diferentes resistencias eléctricas. Además, algunas presentarán también carácter inductivo o capacitivo. Dependiendo de la combinación de elementos que tengamos en cada circuito, el desfase entre la intensidad y la tensión podrá tomar diferentes valores, no solo 0º, -90º o +90º. En este simulador puedes ver cómo cambiarían los fasores de la tensión y la intensidad dependiendo de cómo variemos las componentes R, L o C de un circuito:\n\nControla el desfase con el deslizador.\n\nviewof angulo_i_deg_anim_3 = Inputs.range([-90, 90], {\n  value: -45, \n  step: 1, \n  label: \"Desfase I (grados):\"\n})\n\n// --- 2. MOTOR DE TIEMPO (Continuo) ---\nnow_3 = {\n  while (true) {\n    yield Date.now();\n    await new Promise(resolve =&gt; requestAnimationFrame(resolve));\n  }\n}\n\n// Velocidad de la animación\nspeed_3 = 0.002 \nt_anim_3 = now_3 * speed_3\n\n// --- 3. LÓGICA DE TEXTO ---\nmd`**Estado:** ${\n  angulo_i_deg_anim_3 &lt; 0 ? \"&lt;span style='color:orange; font-weight:bold'&gt;⚡ INDUCTIVO (I retrasa)&lt;/span&gt;\" :\n  angulo_i_deg_anim_3 &gt; 0 ? \"&lt;span style='color:green; font-weight:bold'&gt;🔋 CAPACITIVO (I adelanta)&lt;/span&gt;\" :\n  \"&lt;span style='color:blue; font-weight:bold'&gt;💡 RESISTIVO (En fase)&lt;/span&gt;\"\n}`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nphi_rad_anim_3 = angulo_i_deg_anim_3 * Math.PI / 180\n\n// Ángulos actuales (Rotación continua de fasores)\nang_u_actual_3 = t_anim_3 \nang_i_actual_3 = t_anim_3 + phi_rad_anim_3\n\n// Coordenadas puntas fasores\nu_x_anim_3 = 1.2 * Math.cos(ang_u_actual_3)\nu_y_anim_3 = 1.2 * Math.sin(ang_u_actual_3)\ni_x_anim_3 = 0.8 * Math.cos(ang_i_actual_3)\ni_y_anim_3 = 0.8 * Math.sin(ang_i_actual_3)\n\n// Datos Ondas (Escala temporal real para 50Hz)\n// 50Hz = 0.02s periodo. Mostramos 2 periodos (0.04s)\nx_domain_3 = d3.range(0, 0.041, 0.0002) \n\ndata_ondas_anim_3 = [\n  ...x_domain_3.map(x =&gt; ({ \n      t: x, \n      // omega = 2*pi*50\n      y: 1.2 * Math.sin(2 * Math.PI * 50 * x + t_anim_3), \n      type: \"u(t)\", \n      color: \"#3daee9\" \n  })),\n  ...x_domain_3.map(x =&gt; ({ \n      t: x, \n      y: 0.8 * Math.sin(2 * Math.PI * 50 * x + t_anim_3 + phi_rad_anim_3), \n      type: \"i(t)\", \n      color: \"#d62728\" \n  }))\n]\n\n// Líneas de proyección\ndata_proyeccion_3 = [\n  {x1: u_x_anim_3, y1: u_y_anim_3, x2: 2.5, y2: u_y_anim_3, color: \"#3daee9\"},\n  {x1: i_x_anim_3, y1: i_y_anim_3, x2: 2.5, y2: i_y_anim_3, color: \"#d62728\"}\n]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// GRÁFICO 1: FASORES\nPlot.plot({\n  width: 300,\n  height: 300,\n  grid: true,\n  aspectRatio: 1,\n  x: {domain: [-1.5, 1.5], label: \"Real\"},\n  y: {domain: [-1.5, 1.5], label: \"Imaginario\"},\n  marks: [\n    Plot.ruleX([0]),\n    Plot.ruleY([0]),\n    Plot.link(d3.range(0, 2*Math.PI, 0.1).map(a =&gt; ({x: 1.2*Math.cos(a), y: 1.2*Math.sin(a)})), {x: \"x\", y: \"y\", stroke: \"gray\", strokeOpacity: 0.2}),\n    Plot.link(d3.range(0, 2*Math.PI, 0.1).map(a =&gt; ({x: 0.8*Math.cos(a), y: 0.8*Math.sin(a)})), {x: \"x\", y: \"y\", stroke: \"gray\", strokeOpacity: 0.2}),\n    \n    // Flechas\n    Plot.arrow([{x1:0, y1:0, x2:u_x_anim_3, y2:u_y_anim_3}], {x1:\"x1\", y1:\"y1\", x2:\"x2\", y2:\"y2\", stroke: \"#3daee9\", strokeWidth: 4}),\n    Plot.arrow([{x1:0, y1:0, x2:i_x_anim_3, y2:i_y_anim_3}], {x1:\"x1\", y1:\"y1\", x2:\"x2\", y2:\"y2\", stroke: \"#d62728\", strokeWidth: 4}),\n    \n    // Etiquetas\n    Plot.text([{x:u_x_anim_3, y:u_y_anim_3, label:\"U\"}], {x:\"x\", y:\"y\", text:\"label\", dx: 10, dy:10, fontWeight:\"bold\"}),\n    Plot.text([{x:i_x_anim_3, y:i_y_anim_3, label:\"I\"}], {x:\"x\", y:\"y\", text:\"label\", dx: 10, dy:10, fontWeight:\"bold\"}),\n    \n    // Proyección\n    Plot.line(data_proyeccion_3, {x1: \"x1\", y1: \"y1\", x2: 1.5, y2: \"y2\", stroke: \"color\", strokeDasharray: \"4,4\", strokeOpacity: 0.5})\n  ]\n})\n// GRÁFICO 2: ONDAS\nPlot.plot({\n  width: 400,\n  height: 300,\n  grid: true,\n  // Eje X configurado para mostrar 0.04s (2 ciclos a 50Hz)\n  x: {label: \"Tiempo (s)\", domain: [0, 0.04]},\n  y: {domain: [-1.5, 1.5], label: \"Amplitud\"},\n  marks: [\n    Plot.ruleY([0]),\n    Plot.ruleX([0], {strokeWidth: 2, strokeOpacity: 0.5}),\n    Plot.line(data_ondas_anim_3, {x: \"t\", y: \"y\", stroke: \"color\", strokeWidth: 3}),\n    \n    // Puntos instantáneos\n    Plot.dot([{x:0, y:u_y_anim_3}, {x:0, y:i_y_anim_3}], {x:\"x\", y:\"y\", fill: [\"#3daee9\", \"#d62728\"], r: 6}),\n    \n    // Etiquetas ajustadas a la nueva escala temporal\n    Plot.text([{x: 0.02, y: 1.3, label: \"u(t)\"}, {x: 0.02, y: 0.9, label: \"i(t)\"}], {\n      x: \"x\", y: \"y\", text: \"label\", fill: [\"#3daee9\", \"#d62728\"], fontSize: 12, fontWeight: \"bold\"\n    })\n  ]\n})",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Respuesta de los componentes básicos a la Corriente Alterna</span>"
     ]
   },
   {
     "objectID": "04_impedancia.html",
     "href": "04_impedancia.html",
-    "title": "4  4. Impedancia. Ley de Ohm generalizada.",
+    "title": "4  Impedancia",
     "section": "",
-    "text": "Saltar la navegación\n\n\nEstructuras\n\n\n\nCircuitos de Corriente Alterna\n1. Corriente alterna.\n2. Representación de señales sinusoidales.\n3. Respuesta de los componentes básicos a la CA.\n4. Impedancia. Ley de Ohm generalizada.\n5. Circuitos RLC\n6. Potencia en Corriente Alterna\n\n\n« Anterior |Siguiente »\n\n\n\n\n\n\n\nObra publicada con Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0\n\n\n\n\n« Anterior |Siguiente »",
+    "text": "4.1 Representación compleja de la impedancia\nEl concepto de impedancia es una generalización del concepto de resistencia. Hemos visto que en CA los elementos conectados en el circuito, en general, introducen un desfase entre la intensidad y la tensión. Este desfase hace que no haya una proporcionalidad entre los valores instantáneos de intensidad y tensión, como ocurría en corriente continua. No se cumple la ley de Ohm, tal y como la conocíamos, con los valores instantáneos \\(i(t)\\) y \\(v(t)\\). Sin embargo, esta proporcionalidad sí existe entre los fasores, y también entre los valores máximos \\(U_0\\) e \\(I_0\\), o los valores eficaces \\(U\\), \\(I\\). Esto hace que podamos expresar la ley de Ohm con estos valores.\nLa magnitud que relaciona los valores máximos (y los eficaces) de tensión e intensidad en un circuito, se denomina impedancia (Z), y se mide en ohmios.\nLa resistencia eléctrica de un conductor se define como la oposición que ofrece al paso de una corriente eléctrica. Cuando la corriente que atraviesa a un conductor es una corriente sinusoidal, el concepto de resistencia se generaliza a impedancia.\nLa impedancia se representa con la letra Z. Consideremos una impedancia Z alimentada por una señal sinusoidal de valor eficaz \\(U\\), fase inicial \\(\\varphi_U\\) y pulsación \\(\\omega\\), tal como se muestra en la figura:\nLa tensión en la impedancia, que es la de la fuente, representada en forma de fasor es: \\[\\boldsymbol{U} = \\sqrt{2}U \\phase \\varphi_U\\]\nLa intensidad que circula por la impedancia tiene un valor eficaz \\(I\\) y un desfase \\(\\varphi_I\\). Representada en forma de fasor la intensidad es: \\[\\boldsymbol{I} = \\sqrt{2}I \\phase \\varphi_I\\]\nEl cociente entre el fasor tensión y el fasor intensidad representa la impedancia. Expresado matemáticamente es:\n\\[\n\\boldsymbol{Z}=\\frac{\\boldsymbol{U}}{\\boldsymbol{I}}=\\frac{\\sqrt{2}U \\phase \\varphi_U}{\\sqrt{2}I \\phase \\varphi_I}=\\frac{U}{I}\\phase {\\varphi_U-\\varphi_I}\n\\]\nSi dibujamos ese vector, podremos ver gráficamente que la componente horizontal correspondería con la resistencia y la vertical con la reactancia (si es positiva sería inductiva y si es negativa sería capacitiva) del circuito. Esta representación se denomina “triángulo de impedancias” y tiene este aspecto:\nViendo esta imagen podemos concluir que:\nTeniendo en cuenta que el eje horizontal es el eje real y el eje vertical es el eje imaginario, podemos representar el vector impedancia como un número complejo de la forma: \\[\n\\boldsymbol{Z} = R + \\mathrm{j} \\cdot X\n\\]\nRecordemos que:\n::: {.callout-warning style=“width:400px;margin:auto” icon=“false”} ## Importante La representación compleja de las impedancias resistiva, inductiva y capacitiva es la siguiente:\n\\[\n\\begin{aligned}\n\\boldsymbol{Z}_R &= R \\\\[1ex]\n\\boldsymbol{Z}_L &= \\mathrm{j} \\cdot X_L = \\mathrm{j} \\cdot \\omega \\cdot L \\\\[1ex]\n\\boldsymbol{Z}_C &= -\\mathrm{j} \\cdot X_C = \\frac{-\\mathrm{j}}{\\omega \\cdot C}\n\\end{aligned}\n\\] :::",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. Impedancia. Ley de Ohm generalizada.</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Impedancia</span>"
     ]
   },
   {
-    "objectID": "05_circuitos_rlc.html",
-    "href": "05_circuitos_rlc.html",
-    "title": "5  5. Circuitos RLC",
+    "objectID": "04_impedancia.html#representación-compleja-de-la-impedancia",
+    "href": "04_impedancia.html#representación-compleja-de-la-impedancia",
+    "title": "4  Impedancia",
     "section": "",
-    "text": "Saltar la navegación\n\n\nEstructuras\n\n\n\nCircuitos de Corriente Alterna\n1. Corriente alterna.\n2. Representación de señales sinusoidales.\n3. Respuesta de los componentes básicos a la CA.\n4. Impedancia. Ley de Ohm generalizada.\n5. Circuitos RLC\n6. Potencia en Corriente Alterna\n\n\n« Anterior |Siguiente »\n\n\n\n\n\n\n\nObra publicada con Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0\n\n\n\n\n« Anterior |Siguiente »",
+    "text": "\\(R\\) es la resistencia: se mide en ohmios (\\(\\mathrm{\\omega}\\)) y se puede calcular como \\(R=Z \\cdot \\cos \\varphi\\).\n\\(X\\) es la reactancia: se mide también en ohmios (\\(\\mathrm{\\omega}\\)) y se puede calcular como \\(R=Z \\cdot \\sen \\varphi\\). Según el valor que tome la reactancia, la impedancia puede ser:\n\nImpedancia inductiva: cuando \\(X&gt;0\\) y, por lo tanto \\(\\varphi &gt;0\\), la tensión está en avance con respecto a la intensidad.\nImpedancia capacitiva: cuando \\(X&lt;0\\) y, por lo tanto, \\(\\varphi &lt;0\\), la tensión está en retraso con respecto a la intensidad o, lo que lo mismo, la intensidad va por delante de la tensión.\n\n\n\n\n\n\n\n\nImportanteEjemplo\n\n\n\nDetermina el valor de la resistencia y reactancia de una impedancia que está sometida a una tensión de 220 V y por la que circula una intensidad de 10 A. Se sabe que la tensión está adelantada 30º con respecto a la intensidad.**\nSolución:\nAplicando la definición de impedancia, tenemos: \\[Z = \\frac{U}{I} = \\frac{220}{10} = 22 \\ \\Omega\\]\nTenemos una parte de la impedancia, pero falta saber qué desfase existe. Este dato nos lo dan con el desfase entre la tensión e intensidad, \\(\\varphi = \\varphi_U - \\varphi_I\\), así \\(\\varphi = 30^\\circ\\). La impedancia expresada en forma polar es: \\[\\boldsymbol{Z} = 22 \\phase 30^\\circ \\ \\Omega\\]\nPara obtener \\(R\\) y \\(X\\) hacemos: \\[\n\\begin{aligned}\nR &= Z \\cdot \\cos \\varphi = 22 \\cdot \\cos(30^\\circ) = 11\\sqrt{3} \\ \\Omega \\\\\nX &= Z \\cdot \\sen \\varphi = 22 \\cdot \\sen(30^\\circ) = 11 \\ \\Omega\n\\end{aligned}\n\\quad \\Rightarrow \\quad\n\\boxed{\n\\begin{aligned}\nR &= 11 \\cdot \\sqrt{3} \\ \\Omega \\\\\nX &= 11 \\ \\Omega\n\\end{aligned}\n}\n\\]\nSe trata de una reactancia inductiva.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Circuitos RLC</span>"
-    ]
-  },
-  {
-    "objectID": "06_potencia_ca.html",
-    "href": "06_potencia_ca.html",
-    "title": "6  6. Potencia en Corriente Alterna",
-    "section": "",
-    "text": "Saltar la navegación\n\n\nEstructuras\n\n\n\nCircuitos de Corriente Alterna\n1. Corriente alterna.\n2. Representación de señales sinusoidales.\n3. Respuesta de los componentes básicos a la CA.\n4. Impedancia. Ley de Ohm generalizada.\n5. Circuitos RLC\n6. Potencia en Corriente Alterna\n\n\n« Anterior\n\n\n\n\n\n\n\nObra publicada con Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0\n\n\n\n\n« Anterior",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>6. Potencia en Corriente Alterna</span>"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Unidad 6: Circuitos de Corriente Alterna",
-    "section": "",
-    "text": "Introducción\nEn esta unidad de Tecnología e Ingeniería II, estudiaremos el comportamiento de los circuitos eléctricos cuando la tensión y la corriente varían de forma sinusoidal en el tiempo.",
-    "crumbs": [
-      "Introducción"
-    ]
-  },
-  {
-    "objectID": "index.html#contenidos-de-la-unidad",
-    "href": "index.html#contenidos-de-la-unidad",
-    "title": "Unidad 6: Circuitos de Corriente Alterna",
-    "section": "Contenidos de la unidad",
-    "text": "Contenidos de la unidad\nA continuación se detallan las secciones que componen esta unidad:\n\nCorriente alterna: Conceptos básicos y generación.\nRepresentación de señales sinusoidales: Análisis trigonométrico y fasorial.\nRespuesta de los componentes básicos: Comportamiento de R, L y C.\nImpedancia: La ley de Ohm en el dominio complejo.\nCircuitos RLC: Análisis de asociaciones serie y paralelo.\nPotencia en CA: Estudio del factor de potencia y eficiencia energética.\n\n\n\n\n\n\n\nNota📚 Material de estudio\n\n\n\nPuedes descargar esta unidad completa en formato PDF para estudiar sin conexión o imprimirla:\nDescargar PDF\n\n\nÚltima actualización: 03/01/2026",
-    "crumbs": [
-      "Introducción"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Impedancia</span>"
     ]
   }
 ]

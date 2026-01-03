@@ -19,11 +19,17 @@ A continuación se detallan las secciones que componen esta unidad:
 5. **Circuitos RLC**: Análisis de asociaciones serie y paralelo.
 6. **Potencia en CA**: Estudio del factor de potencia y eficiencia energética.
 
+::: {.content-visible when-format="html"}
+
 ::: {.callout-note appearance="simple"}
 ## 📚 Material de estudio
 Puedes descargar esta unidad completa en formato PDF para estudiar sin conexión o imprimirla:
 
+
+
 [Descargar PDF](Unidad_6_Circuitos_CA.pdf){.btn .btn-primary .btn-lg role="button"}
+:::
+
 :::
 
 
