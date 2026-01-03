@@ -18,7 +18,7 @@ La **impedancia** de un conductor se define como la **oposición** que ofrece al
 
 La impedancia se representa con la letra **Z**. Consideremos una impedancia Z alimentada por una señal sinusoidal de valor eficaz $U$, fase inicial $\varphi_U$ y pulsación $\omega$, tal como se muestra en la figura:
 
-![E](drawio/circuito_1.drawio.svg){width="400px"}
+![E](media/circuito1.png){width="400px"}
 
 La tensión en la impedancia, que es la de la fuente, representada en forma de fasor es: $$\boldsymbol{U} = \sqrt{2}U \phase \varphi_U$$
 

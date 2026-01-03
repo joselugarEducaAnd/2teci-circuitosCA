@@ -60,6 +60,8 @@ format:
     toc: true
     colorlinks: true
     fig-align: center
+    callout-appearance: simple
+    callout-icon: false
     fig-pos: 'H'
     geometry:
       - top=25mm
