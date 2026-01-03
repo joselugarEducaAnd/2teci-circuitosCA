@@ -10,7 +10,7 @@ La magnitud que relaciona los valores máximos (y los eficaces) de tensión e in
 
 La resistencia eléctrica de un conductor se define como la oposición que ofrece al paso de una corriente eléctrica. Cuando la corriente que atraviesa a un conductor es una corriente sinusoidal, el concepto de resistencia se generaliza a impedancia.
 
-::: {.callout-warning style="width:75%;margin:auto" icon="false"}
+::: {.callout-warning style="width:50%;margin:auto" icon="false"}
 ## Definición
 
 La **impedancia** de un conductor se define como la **oposición** que ofrece al paso de una corriente eléctrica **sinusoidal**.
@@ -18,7 +18,7 @@ La **impedancia** de un conductor se define como la **oposición** que ofrece al
 
 La impedancia se representa con la letra **Z**. Consideremos una impedancia Z alimentada por una señal sinusoidal de valor eficaz $U$, fase inicial $\varphi_U$ y pulsación $\omega$, tal como se muestra en la figura:
 
-![E](media/circuito1.png){width="400px"}
+![](media/circuito1.png){width="400px"}
 
 La tensión en la impedancia, que es la de la fuente, representada en forma de fasor es: $$\boldsymbol{U} = \sqrt{2}U \phase \varphi_U$$
 
