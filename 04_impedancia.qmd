@@ -104,7 +104,9 @@ $$
 
 Se trata de una reactancia **inductiva**.
 :::
+
 \vspace{1em}   <br>
+
 ::: {.callout-warning style="width:400px;margin:auto" icon="false"}
 ## Importante
 La **representación compleja** de las impedancias resistiva, inductiva y capacitiva es la siguiente:
