@@ -39,9 +39,8 @@ Se llama **ciclo** al conjunto de valores que toma la función en **un periodo**
 ::: {.callout-important icon="false"}
 ## Ejemplo de análisis de onda
 
-::: {#fig-circuito1 layout-align="center"}
-![](media/ejemploSinusoidal.png){width="50%"}
-:::
+
+![](media/ejemploSinusoidal.png){fig-align="center" width="50%"}
 
 * **Amplitud:** $A_p = 5$
 * **Periodo:** $T = 20 \text{ ms}$
@@ -158,9 +157,9 @@ $$I=I_{p}\cos \varphi + j \cdot I_{p} \sen \varphi=3·\cos(-60º)+j·3·\sen(-60
 
 Y, por último, la representación gráfica sería:
 
-::: {#fig-circuito1 layout-align="center"}
-![](media/fasor_final_blanco.png){width="70%"}
-:::
+
+![](media/fasor_final_blanco.png){fig-align="center" width="70%"}
+
 
 :::
 :::
