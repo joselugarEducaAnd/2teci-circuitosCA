@@ -1,0 +1,76 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Unidad 6: Circuitos de Corriente Alterna"
+  subtitle: "Tecnología e Ingeniería II - 2º Bachillerato"
+  author: "José Luis García Jiménez"
+  language: es
+  
+  sidebar:
+    logo: logoMajuelo.jpeg
+    search: true
+    collapse-level: 0
+    style: "docked"
+    
+  chapters:
+    - index.qmd
+    - 01_corriente_alterna.qmd
+    - 02_representacion.qmd
+    - 03_respuesta_comp.qmd
+    - 04_impedancia.qmd
+    - 05_circuitos_rlc.qmd
+    - 06_potencia_ca.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: false
+    number-sections: true
+    page-layout: full
+    title-block-banner: "#453f93"
+    title-block-banner-color: white
+    css: styles.css
+    html-math-method: mathjax
+    include-in-header:
+      text: |
+        <script>
+        window.MathJax = {
+          loader: {load: ['[tex]/enclose']},
+          tex: {
+            packages: {'[+]': ['enclose']},
+            macros: {
+              sen: '{\\operatorname{sen}}',
+              phase: ['{\\enclose{phasorangle}{#1}}', 1],
+              dotZ: '{\\dot{Z}}',
+              dotI: '{\\dot{I}}',
+              VA: '{\\text{ VA}}'
+            }
+          }
+        };
+        </script>
+
+  pdf:
+    output-file: "Unidad_6_Circuitos_CA.pdf"
+    documentclass: scrreprt
+    papersize: a4
+    number-sections: true
+    toc: true
+    colorlinks: true
+    fig-align: center
+    fig-pos: 'H'
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=25mm
+      - right=25mm
+    include-in-header:
+      text: |
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{steinmetz}
+        \newcommand{\sen}{\operatorname{sen}}
+        \newcommand{\dotZ}{\dot{Z}}
+        \newcommand{\dotI}{\dot{I}}
+        \newcommand{\VA}{\text{ VA}}

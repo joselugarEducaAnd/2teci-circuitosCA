@@ -1,0 +1,37 @@
+::::::::::: {#content}
+[Saltar la navegación](#main){.sr-av}
+
+:::: {#header}
+::: {#headerContent}
+Estructuras
+:::
+::::
+
+- [Circuitos de Corriente Alterna](index.html){.daddy .main-node}
+- [1. Corriente alterna.](1_corriente_alterna.html){.no-ch}
+- [2. Representación de señales sinusoidales.](2_representacin_de_seales_sinusoidales.html){.no-ch}
+- [3. Respuesta de los componentes básicos a la CA.](3_respuesta_de_los_componentes_bsicos_a_la_ca.html){.no-ch}
+- [[4. Impedancia. Ley de Ohm generalizada.](4_impedancia_ley_de_ohm_generalizada.html){.active .no-ch}]{#active}
+- [5. Circuitos RLC](5_circuitos_rlc.html){.no-ch}
+- [6. Potencia en Corriente Alterna](6_potencia_en_corriente_alterna.html){.no-ch}
+
+::: {#topPagination}
+[« Anterior](3_respuesta_de_los_componentes_bsicos_a_la_ca.html){.prev} [\| ]{.sep}[Siguiente »](5_circuitos_rlc.html){.next}
+:::
+
+:::::: {#main-wrapper}
+::::: {#main .section}
+::: {#nodeDecoration}
+# 4. Impedancia. Ley de Ohm generalizada. {#nodeTitle}
+:::
+
+::: {#packageLicense .cc .cc-by-nc-sa}
+Obra publicada con [Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/){rel="license"}
+:::
+:::::
+::::::
+
+::: {#bottomPagination}
+[« Anterior](3_respuesta_de_los_componentes_bsicos_a_la_ca.html){.prev} [\| ]{.sep}[Siguiente »](5_circuitos_rlc.html){.next}
+:::
+:::::::::::

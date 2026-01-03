@@ -1,0 +1,30 @@
+---
+date: last-modified        # Captura la fecha real de la última vez que guardaste el archivo
+date-format: "DD/MM/YYYY"  # Define el formato español
+page-layout: full
+---
+
+# Introducción {.unnumbered}
+
+En esta unidad de **Tecnología e Ingeniería II**, estudiaremos el comportamiento de los circuitos eléctricos cuando la tensión y la corriente varían de forma sinusoidal en el tiempo.
+
+## Contenidos de la unidad
+
+A continuación se detallan las secciones que componen esta unidad:
+
+1. **Corriente alterna**: Conceptos básicos y generación.
+2. **Representación de señales sinusoidales**: Análisis trigonométrico y fasorial.
+3. **Respuesta de los componentes básicos**: Comportamiento de R, L y C.
+4. **Impedancia**: La ley de Ohm en el dominio complejo.
+5. **Circuitos RLC**: Análisis de asociaciones serie y paralelo.
+6. **Potencia en CA**: Estudio del factor de potencia y eficiencia energética.
+
+::: {.callout-note appearance="simple"}
+## 📚 Material de estudio
+Puedes descargar esta unidad completa en formato PDF para estudiar sin conexión o imprimirla:
+
+[Descargar PDF](Unidad_6_Circuitos_CA.pdf){.btn .btn-primary .btn-lg role="button"}
+:::
+
+
+*Última actualización: {{< meta date >}}*
