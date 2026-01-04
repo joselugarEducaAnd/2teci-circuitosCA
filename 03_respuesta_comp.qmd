@@ -127,9 +127,9 @@ La representación gráfica de los fasores y ondas de tensión e intensidad en u
 Por lo general, en un circuito tendremos cargas que ofrecerán diferentes resistencias eléctricas. Además, algunas presentarán también carácter inductivo o capacitivo. Dependiendo de la combinación de elementos que tengamos en cada circuito, el desfase entre la intensidad y la tensión podrá tomar diferentes valores, no solo 0º, -90º o +90º. 
 En este simulador puedes ver cómo cambiarían los fasores de la tensión y la intensidad dependiendo de cómo variemos las componentes R, L o C de un circuito:
 
-::::: {.content-visible when-format="html"}
+::: {.content-visible when-format="html"}
 
-:::: card
+::: card
 Controla el desfase con el deslizador.
 
 ```{ojs}
@@ -262,8 +262,8 @@ Plot.plot({
 })
 ```
 :::
-::::
-:::::
+:::
+:::
 
 ::: {.content-visible when-format="pdf"}
 ## Simulación Interactiva
