@@ -375,3 +375,9 @@ figure.quarto-float-img,
 .tabla-estilo-libro td .MathJax {
     font-size: 1.1em !important;
 }
+
+
+/* OCULTAR POSIBLES ICONOS DE AVISO */
+.observablehq--inspect {
+    display: none !important;
+}
