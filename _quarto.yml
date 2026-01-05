@@ -61,7 +61,7 @@ format:
         </script>
 
   pdf:
-    output-file: "docs/Unidad_6_Circuitos_CA.pdf"
+    output-file: "Unidad_6_Circuitos_CA.pdf"
     documentclass: scrreprt
     papersize: a4
     number-sections: true
