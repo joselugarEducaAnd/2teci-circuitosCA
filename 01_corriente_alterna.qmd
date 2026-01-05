@@ -1,7 +1,3 @@
----
-page-layout: full  # <--- ESTA LÍNEA ES VITAL
----
-
 # Corriente alterna
 
 La corriente alterna (CA) es el flujo eléctrico **periódico**, **alterno** y cuya ley de variación en el tiempo es **senoidal**. Es la que generan los alternadores en las centrales eléctricas y la que se transporta a los lugares de consumo, donde la transformamos en otros tipos de energía.

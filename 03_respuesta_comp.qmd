@@ -1,7 +1,3 @@
----
-page-layout: full  
----
-
 # Respuesta de los componentes básicos a la Corriente Alterna
 
 ## Respuesta de una resistencia
@@ -24,6 +20,8 @@ La representación gráfica de la tensión y la intensidad en una resistencia el
 :::
 
 ## Respuesta de una bobina
+
+La característica básica de una bobina es su **inductancia**, que se denota mediante la letra **L** y se mide en **Henrios (H)**. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.
 
 Si a una bobina de valor **L henrios (H)** se la somete a una intensidad sinusoidal de **valor eficaz U** y **pulsación ω**, la intensidad instantánea que circula por la bobina es:
 
@@ -72,6 +70,8 @@ La representación gráfica de los fasores y ondas de tensión e intensidad en u
 
 
 ## Respuesta de un condensador
+
+La característica básica de un condensador es su **capacitancia** o capacidad, que se denota mediante la letra **C** y se mide en **Faradios (F)**. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.
 
 Si a un condensador de valor **C faradios (F)** se le somete a una tensión sinusoidal de valor eficaz U y pulsación
 co, la tensión instantánea aplicada al condensador es:

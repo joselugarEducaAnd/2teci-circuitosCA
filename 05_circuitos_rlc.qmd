@@ -1,0 +1,417 @@
+# Circuitos RLC
+
+## Circuito RLC serie
+
+Uno de los circuitos típicos en corriente alterna es el circuito RLC serie que se muestra en la siguiente figura:
+
+::: {layout="[70, 30]"}
+
+![Esquema RLC](media/esquema_rlc_serie.png){width=100%}
+
+![Diagrama Vectorial de Tensiones](media/tensiones_rlc_fiel.png){width=100%}
+
+:::
+
+Tomando como **referencia de ángulos la intensidad** $(\varphi_I=0^\circ, \vec{I}=I\angle 0^\circ)$ la tensión en cada elemento es:
+
+$$
+\begin{aligned}
+\vec{U}_R &= R \cdot \vec{I} \\
+\vec{U}_L &= \mathrm{j} \cdot X_L \cdot \vec{I} \\
+\vec{U}_C &= -\mathrm{j} \cdot X_C \cdot \vec{I}
+\end{aligned}
+$$
+
+La tensión total $\vec{U}$ es la suma vectorial de las tensiones parciales; así tenemos:
+
+$$
+\begin{aligned}
+\vec{U} &= \vec{U}_R + \vec{U}_L + \vec{U}_C = \\
+&= R \cdot \vec{I} + \mathrm{j} \cdot X_L \cdot \vec{I} - \mathrm{j} \cdot X_C \cdot \vec{I} = \\
+&= [R + \mathrm{j} \cdot (X_L - X_C)] \cdot \vec{I}
+\end{aligned}
+$$
+
+
+
+
+
+
+
+La expresión anterior se puede poner como:
+
+$$
+\vec{U} = (R + \mathrm{j} \cdot X) \cdot \vec{I} = \vec{Z} \cdot \vec{I}
+$$
+
+La impedancia del circuito es:
+
+$$
+\vec{Z} = R + \mathrm{j} \cdot (X_L - X_C) = R + \mathrm{j} \cdot \left( \omega \cdot L - \frac{1}{\omega \cdot C} \right)
+$$
+
+Expresado en coordenadas polares resulta:
+
+$$
+\vec{Z} = |\vec{Z}| \angle \varphi = 
+\left\{
+\begin{aligned}
+|\vec{Z}| &= \sqrt{R^2 + X^2} = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{R^2 + \left( \omega \cdot L - \frac{1}{\omega \cdot C} \right)^2} \\[2ex]
+\varphi &= \arctan\left( \frac{X}{R} \right) = \arctan\left( \frac{X_L - X_C}{R} \right) = \arctan\left( \frac{\omega \cdot L - \frac{1}{\omega \cdot C}}{R} \right)
+\end{aligned}
+\right.
+$$
+
+![Triángulo de Impedancias](media/impedancias_rlc_fiel.png){fig-align="center" width=50%}
+
+::: {.callout-important icon="false" style="width:90%;margin:auto"}
+## 💡 Ejercicio Resuelto: Análisis RLC Serie
+
+**Enunciado:**
+En un circuito RLC serie con $R=20\ \Omega$, $L=100/\pi\ \text{mH}$ y $C=1/2\pi\ \text{mF}$, funcionando a una frecuencia de $50\ \text{Hz}$, calcula:\
+&nbsp;&nbsp;&nbsp;**a)** La impedancia total (módulo y argumento).\
+&nbsp;&nbsp;&nbsp;**b)** La intensidad que circula si la tensión es de $230\ \text{V}$.\
+&nbsp;&nbsp;&nbsp;**c)** Diagrama fasorial.
+
+---
+
+**Solución:**
+
+**1. Cálculo de Reactancias:**
+Primero obtenemos los valores óhmicos de la bobina y el condensador a $f=50\text{Hz}$.
+
+$$
+\begin{aligned}
+X_L &= \omega \cdot L = 2\pi \cdot 50 \cdot \frac{100}{\pi} \cdot 10^{-3} = 10\ \Omega \\
+X_C &= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi} \cdot 10^{-3}} = \frac{1}{50 \cdot 10^{-3}} = 20\ \Omega
+\end{aligned}
+$$
+
+**2. Cálculo de la Impedancia ($\vec{Z}$):**
+Como $X_C > X_L$, el circuito será capacitivo. Restamos las reactancias ($X = X_L - X_C = 10 - 20 = -10\ \Omega$).
+
+* **Forma Binómica:**
+    $$\vec{Z} = R + \mathrm{j}(X_L - X_C) = 20 - \mathrm{j}10\ \Omega$$
+
+* **Forma Polar:**
+    Pasamos a polar calculando módulo y argumento:
+    $$|\vec{Z}| = \sqrt{20^2 + (-10)^2} = 22,36\ \Omega$$
+    $$\varphi = \arctan\left(\frac{-10}{20}\right) = -26,56^\circ$$
+
+::: {layout-ncol=2}
+:::{}
+**Resultado Impedancia:**
+$$\vec{Z} = 22,36 \phase{-26,56^\circ}\ \Omega$$
+
+Como $\varphi < 0$, confirmamos que la tensión está **retrasada** respecto a la intensidad (comportamiento capacitivo).
+:::
+![Triángulo de Impedancias](media/triangulo_ejemplo_serie.png){width=90%}
+:::
+
+**3. Cálculo de la Intensidad ($\vec{I}$):**
+Aplicamos la Ley de Ohm generalizada. Tomamos la tensión como referencia de fase ($0^\circ$):
+
+$$
+\vec{I} = \frac{\vec{U}}{\vec{Z}} = \frac{230 \phase{0^\circ}}{22,36 \phase{-26,56^\circ}} = 10,29 \phase{0^\circ - (-26,56^\circ)}\ \text{A}
+$$
+
+$$\boxed{\vec{I} = 10,29 \phase{26,56^\circ}\ \text{A}}$$
+
+---
+
+**4. Diagrama Fasorial U-I (Apartado c):**
+Representamos los fasores resultantes.
+
+::: {layout-ncol=2}
+
+:::{}
+* **Tensión ($\vec{U}$):** En el eje real ($0^\circ$).
+* **Intensidad ($\vec{I}$):** Girada $+26,56^\circ$.
+
+Como se observa en el diagrama, el fasor de intensidad $\vec{I}$ (azul) está **adelantado** respecto al fasor de tensión $\vec{U}$ (rojo) un ángulo $\varphi = 26,56^\circ$.
+
+Esto confirma el comportamiento **capacitivo** global del circuito.
+:::
+![Diagrama Fasorial U-I](media/fasores_ui_ejercicio.png){width=90%}
+:::
+
+:::
+
+
+## Circuito RLC Paralelo
+
+De forma análoga al circuito serie, el circuito RLC paralelo es el estándar para analizar componentes conectados a la misma tensión.
+
+::: {layout="[60, 40]"}
+![Esquema RLC Paralelo](media/esquema_rlc_paralelo.png){width=100%}
+
+![Diagrama Vectorial de Corrientes](media/corrientes_paralelo_fiel.png){width=100%}
+:::
+
+Tomando como referencia de ángulos la tensión común $(\varphi_U=0^\circ, \vec{U}=U\angle 0^\circ)$ la corriente en cada rama es:
+
+$$
+\begin{aligned}
+\vec{I}_R &= \frac{\vec{U}}{R} = G \cdot \vec{U} \\
+\vec{I}_C &= \frac{\vec{U}}{-\mathrm{j}X_C} = \mathrm{j} \cdot \frac{1}{X_C} \cdot \vec{U} \\
+\vec{I}_L &= \frac{\vec{U}}{\mathrm{j}X_L} = -\mathrm{j} \cdot \frac{1}{X_L} \cdot \vec{U}
+\end{aligned}
+$$
+
+La corriente total $\vec{I}$ es la suma vectorial de las corrientes de rama (Ley de Kirchhoff de los nodos); así tenemos:
+
+$$
+\begin{aligned}
+\vec{I} &= \vec{I}_R + \vec{I}_C + \vec{I}_L= \\
+&= \frac{1}{R} \cdot \vec{U} + \mathrm{j} \frac{1}{X_C} \cdot \vec{U} - \mathrm{j} \frac{1}{X_L} \cdot \vec{U}= \\
+&= \left[ \frac{1}{R} + \mathrm{j} \cdot \left(\frac{1}{X_C} - \frac{1}{X_L}\right) \right] \cdot \vec{U}
+\end{aligned}
+$$
+
+::: {.callout-warning icon="false" style="width:80%;margin:auto"}
+## 📘 Diccionario: Admitancia, Conductancia y Susceptancia
+
+En circuitos paralelo, es más cómodo trabajar con la facilidad que ofrecen los elementos al paso de la corriente (inverso de la oposición). Todas se miden en **Siemens (S)**.
+
+1.  **Admitancia ($\vec{Y}$):**
+    Es la inversa de la Impedancia. Representa la facilidad total al paso de la corriente alterna.
+    $$\vec{Y} = \frac{1}{\vec{Z}}$$
+
+2.  **Conductancia ($G$):**
+    Es la inversa de la Resistencia. Representa la parte real de la admitancia.
+    $$G = \frac{1}{R}$$
+
+3.  **Susceptancia ($B$):**
+    Es la inversa de la Reactancia. Representa la parte imaginaria.
+
+    \vspace{-1em} <div style="margin-top: -1em;"></div>
+
+    * **Susceptancia Capacitiva ($B_C$):** $B_C = \frac{1}{X_C} = \omega \cdot C$
+    * **Susceptancia Inductiva ($B_L$):** $B_L = \frac{1}{X_L} = \frac{1}{\omega \cdot L}$
+
+⚠️ **¡Cuidado con los signos!**
+Al trabajar con admitancias, los signos imaginarios se invierten respecto a las impedancias (porque $1/\mathrm{j} = -\mathrm{j}$):
+
+\vspace{-1em} <div style="margin-top: -1em;"></div>
+
+* El **Condensador** aporta susceptancia **positiva** ($+\mathrm{j}B_C$).
+* La **Bobina** aporta susceptancia **negativa** ($-\mathrm{j}B_L$).
+
+Si necesitas la Impedancia equivalente total, simplemente invierte el resultado final: $\vec{Z}_{T} = 1 / \vec{Y}_{T}$.
+:::
+
+\vspace{1em}  <br>
+
+La expresión anterior se puede poner como la Ley de Ohm generalizada $\vec{I} = \vec{Y} \cdot \vec{U}$, donde el término entre corchetes es la **Admitancia ($\vec{Y}$)**.
+
+$$
+\vec{I} = (G + \mathrm{j} \cdot B) \cdot \vec{U} = \vec{Y} \cdot \vec{U}
+$$
+
+La **admitancia** del circuito (inversa de la impedancia, $\vec{Y} = 1/\vec{Z}$) es:
+
+$$
+\vec{Y} = \frac{1}{R} + \mathrm{j} \cdot \left( \omega \cdot C - \frac{1}{\omega \cdot L} \right)
+$$
+
+En forma polar sería:
+
+$$
+\vec{Y} = |\vec{Y}| \angle \varphi = 
+\left\{
+\begin{aligned}
+|\vec{Y}| &= \sqrt{G^2 + B^2} = \sqrt{\left(\frac{1}{R}\right)^2 + (B_C - B_L)^2} = \sqrt{\left(\frac{1}{R}\right)^2 + \left( \omega \cdot C - \frac{1}{\omega \cdot L} \right)^2} \\[2ex]
+\varphi &= \arctan\left( \frac{B}{G} \right) = \arctan\left( \frac{B_C - B_L}{G} \right) = \arctan\left( \frac{\omega \cdot C - \frac{1}{\omega \cdot L}}{1/R} \right)
+\end{aligned}
+\right.
+$$
+
+![Triángulo de Admitancias](media/admitancias_paralelo_fiel.png){fig-align="center" width=50%}
+
+
+::: {.callout-important icon="false" style="width:90%;margin:auto"}
+## 💡 Ejercicio Resuelto: Análisis RLC Paralelo
+
+**Enunciado:**
+En un circuito RLC paralelo con $R=20\ \Omega$, $L=100/\pi\ \text{mH}$ y $C=1/2\pi\ \text{mF}$, funcionando a $f=50\ \text{Hz}$ y conectado a $U=230\ \text{V}$, calcula:\
+&nbsp;&nbsp;&nbsp;&nbsp;**a)** Admitancia e Impedancia equivalente.\
+&nbsp;&nbsp;&nbsp;&nbsp;**b)** Intensidad por cada elemento.\
+&nbsp;&nbsp;&nbsp;&nbsp;**c)** Diagrama fasorial de la tensión y las corrientes.\
+
+---
+
+**Solución:**
+
+**Paso previo:** Calculamos conductancias y susceptancias.
+$$
+\begin{aligned}
+G &= \frac{1}{R} = \frac{1}{20} = 0,05\ \text{S} \\
+X_L &= 10\ \Omega \Rightarrow B_L = \frac{1}{X_L} = 0,1\ \text{S} \\
+X_C &= 20\ \Omega \Rightarrow B_C = \frac{1}{X_C} = 0,05\ \text{S}
+\end{aligned}
+$$
+
+**a) Admitancia ($\vec{Y}$) e Impedancia ($\vec{Z}$):**
+$$
+\vec{Y} = G + \mathrm{j}(B_C - B_L) = 0,05 + \mathrm{j}(0,05 - 0,1) = 0,05 - \mathrm{j}0,05\ \text{S}
+$$
+En polar: $\vec{Y} = \sqrt{0,05^2 + 0,05^2} \angle \arctan(-1) = 0,0707 \angle -45^\circ\ \text{S}$.
+
+La impedancia es la inversa:
+$$
+\vec{Z} = \frac{1}{\vec{Y}} = \frac{1}{0,0707 \angle -45^\circ} = 14,14 \angle 45^\circ\ \Omega \quad (= 10 + \mathrm{j}10\ \Omega)
+$$
+
+**b) Corrientes de Rama:**
+Tomando $\vec{U} = 230 \angle 0^\circ\ \text{V}$:
+$$
+\begin{aligned}
+\vec{I}_R &= \vec{U} \cdot G = 230 \cdot 0,05 = 11,5 \angle 0^\circ\ \text{A} (=11,5\ \text{A}) \\
+\vec{I}_L &= \vec{U} \cdot (-\mathrm{j}B_L) = 230 \cdot 0,1 \angle -90^\circ = 23 \angle -90^\circ\ \text{A} (=-23\mathrm{j}\ \text{A}) \\
+\vec{I}_C &= \vec{U} \cdot (\mathrm{j}B_C) = 230 \cdot 0,05 \angle 90^\circ = 11,5 \angle 90^\circ\ \text{A} (=11,5\mathrm{j}\ \text{A})
+\end{aligned}
+$$
+
+**Cálculo de la Total:** $\vec{I}_T = \vec{I}_R + \vec{I}_L + \vec{I}_C = 11,5 + \mathrm{j}(11,5 - 23) = 11,5 - \mathrm{j}11,5\ \text{A}$.
+$$|\vec{I}_T| = 16,26\ \text{A} \quad ; \quad \varphi = -45^\circ$$
+
+::: {layout-ncol=2}
+:::{}
+**Resultado:**
+$$\vec{I}_T = 16,26 \phase{-45^\circ}\ \text{A}$$
+El circuito es **Inductivo** (la corriente total retrasa $45^\circ$).
+:::
+![Triángulo de Corrientes](media/triangulo_paralelo_real.png){width=90%}
+:::
+
+---
+
+**c) Diagrama Fasorial:**
+Representamos la tensión y las corrientes. Observa que $\vec{I}_L$ (23 A) es mayor que $\vec{I}_C$ (11,5 A), "tirando" de la resultante hacia abajo.
+
+::: {layout-ncol=2}
+:::{}
+* **Tensión ($\vec{U}$):** Referencia horizontal.
+* **Corrientes:** La suma vectorial da una resultante en el cuarto cuadrante.
+
+Se ve claramente que la intensidad total $\vec{I}_T$ (flecha roja) está retrasada respecto a la tensión, confirmando el carácter inductivo.
+:::
+
+![Diagrama Fasorial Completo](media/fasorial_paralelo_real.png){width=95%}
+:::
+:::
+
+
+
+## Frecuencia de Resonancia
+
+En los circuitos RLC, existe una frecuencia específica muy especial en la que los efectos de la bobina y el condensador se anulan mutuamente. Este fenómeno se conoce como **Resonancia**.
+
+### Condición de Resonancia
+
+La resonancia ocurre cuando la Reactancia Inductiva iguala en magnitud a la Reactancia Capacitiva.
+
+$$
+X_L = X_C
+$$
+
+A partir de esta igualdad, podemos deducir el valor de la frecuencia de resonancia ($f_0$):
+
+$$
+\begin{aligned}
+\omega_0 \cdot L &= \frac{1}{\omega_0 \cdot C} \\[1ex]
+\omega_0^2 &= \frac{1}{L \cdot C} \\[1ex]
+\omega_0 &= \frac{1}{\sqrt{L \cdot C}}
+\end{aligned}
+$$
+
+Como $\omega = 2 \pi f$, despejamos la frecuencia:
+
+::: {.callout-warning icon="false" style="width:300px;margin:auto"}
+## 🚩 Fórmula de Thomson (Frecuencia de Resonancia)
+
+$$
+f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L \cdot C}}
+$$
+:::
+
+### Comportamiento del Circuito
+
+A esta frecuencia $f_0$, el circuito se comporta como si fuera **Puramente Resistivo**, ya que las partes imaginarias se cancelan ($\mathrm{j}X_L - \mathrm{j}X_C = 0$).
+
+
+
+::: {layout-ncol=2}
+![Comportamiento en Frecuencia](media/resonancia_graficas.png){fig-align="center" width=100%}
+
+::: {}
+**Análisis Gráfico:**
+
+1.  **Bajas Frecuencias ($f < f_0$):**
+    El condensador domina ($X_C$ es muy grande). El circuito es **Capacitivo**.
+
+2.  **Punto de Resonancia ($f = f_0$):**
+    $X_L$ y $X_C$ se cruzan. La impedancia es puramente resistiva ($\vec{Z}=R$).
+
+3.  **Altas Frecuencias ($f > f_0$):**
+    La bobina domina ($X_L$ crece). El circuito se vuelve **Inductivo**.
+:::
+:::
+
+### Diferencias: Resonancia Serie vs Paralelo
+
+Aunque la frecuencia $f_0$ se calcula igual para ambos, las consecuencias físicas son opuestas:
+
+| Característica | **Resonancia SERIE** | **Resonancia PARALELO** |
+| :--- | :--- | :--- |
+| **Impedancia Total** | **Mínima** ($\vec{Z} = R$) | **Máxima** ($\vec{Z} \to \infty$ idealmente) |
+| **Intensidad de Fuente** | **Máxima** | **Mínima** |
+| **Peligro / Efecto** | **Sobretensiones:**<br>En $L$ y $C$ puede haber voltajes mucho mayores que la fuente. | **Sobrecorrientes:**<br>Entre $L$ y $C$ circula una corriente interna muy alta (corriente oscilante). |
+
+: Comparativa de efectos de la resonancia. {#tbl-resonancia-comparativa}
+
+::: {.callout-tip icon="false"}
+## ⚠️ Precaución en el Laboratorio
+En resonancia serie, aunque la fuente sea de solo 10V, ¡la tensión en la bobina o el condensador podría alcanzar cientos de voltios! ($U_L = Q \cdot U_{\text{fuente}}$). Hay que tener cuidado manipulando los circuitos cerca de $f_0$.
+:::
+
+---
+
+::: {.callout-important icon="false" style="width:90%;margin:auto"}
+## 📝 Ejercicios de Repaso
+
+Resuelve los siguientes circuitos considerando una frecuencia de red de **50 Hz** ($\omega = 100\pi \ \text{rad/s}$).
+
+### Circuitos Serie {.unnumbered}
+
+**1. RLC con Impedancia Exacta**\
+Disponemos de una resistencia $R=8 \ \Omega$, una bobina ideal de inductancia $L=40/\pi \ \text{mH}$ y un condensador de capacidad $C=1000/\pi \ \mu\text{F}$ conectados en serie. Se aplica una tensión de $200 \ \text{V}$.\
+&nbsp;&nbsp;&nbsp;**a)** Calcula la reactancia inductiva ($X_L$) y capacitiva ($X_C$).\
+&nbsp;&nbsp;&nbsp;**b)** Determina la impedancia total en forma binómica y polar.\
+&nbsp;&nbsp;&nbsp;**c)** Calcula la intensidad que circula por el circuito.\
+&nbsp;&nbsp;&nbsp;*Soluciones:* $X_L=4 \ \Omega, X_C=10 \ \Omega$; $\vec{Z}=8-\mathrm{j}6 = 10 \phase{-36,87^\circ} \ \Omega$; $I=20 \ \text{A}$.
+
+**2. La Bobina Real**\
+Una bobina real tiene una resistencia interna de $30 \ \Omega$ y una inductancia de $127,3 \ \text{mH}$ ($L \approx 0,4/\pi \ \text{H}$). Se conecta en serie con un condensador de $C=50 \ \mu\text{F}$. El conjunto se alimenta a $230 \ \text{V}$.\
+&nbsp;&nbsp;&nbsp;**a)** Calcula la impedancia compleja de la bobina ($\vec{Z}_{\text{bobina}}$) y la del condensador ($\vec{Z}_C$).\
+&nbsp;&nbsp;&nbsp;**b)** Obtén la impedancia total del circuito y la intensidad.\
+&nbsp;&nbsp;&nbsp;**c)** ¿El circuito se comporta globalmente como inductivo o capacitivo?\
+&nbsp;&nbsp;&nbsp;*Soluciones:* $\vec{Z}_{\text{bobina}}=30+\mathrm{j}40 \ \Omega$; $\vec{Z}_C=-\mathrm{j}63,66 \ \Omega$; $\vec{Z}_T=30-\mathrm{j}23,66 \ \Omega$; $I=6,02 \ \text{A}$; Capacitivo.
+
+---
+
+### Circuitos Paralelo {.unnumbered}
+
+**3. Corrientes de Rama**\
+Se conectan en paralelo una resistencia $R=20 \ \Omega$, una bobina $L=100/\pi \ \text{mH}$ y un condensador $C=500/\pi \ \mu\text{F}$ a una fuente de $100 \ \text{V}$.\
+&nbsp;&nbsp;&nbsp;**a)** Calcula la corriente que circula por cada rama ($\vec{I}_R, \vec{I}_L, \vec{I}_C$).\
+&nbsp;&nbsp;&nbsp;**b)** Calcula la corriente total mediante suma vectorial. Dibuja el diagrama fasorial.\
+&nbsp;&nbsp;&nbsp;*Soluciones:* $I_R=5 \ \text{A} \phase{0^\circ}$; $I_L=10 \ \text{A} \phase{-90^\circ}$; $I_C=5 \ \text{A} \phase{90^\circ}$; $I_{total}=7,07 \ \text{A} \phase{-45^\circ}$.
+
+**4. Cálculo por Admitancias**\
+Un circuito paralelo está formado por una conductancia $G=0,03 \ \text{S}$, una susceptancia inductiva $B_L=0,04 \ \text{S}$ y un condensador cuya reactancia es $X_C=20 \ \Omega$. La tensión aplicada es de $200 \ \text{V}$.\
+&nbsp;&nbsp;&nbsp;**a)** Determina la susceptancia del condensador ($B_C$) en Siemens.\
+&nbsp;&nbsp;&nbsp;**b)** Calcula la admitancia total $\vec{Y}$ en forma binómica y polar.\
+&nbsp;&nbsp;&nbsp;**c)** Determina la intensidad total y la impedancia equivalente del conjunto.\
+&nbsp;&nbsp;&nbsp;*Soluciones:* $B_C=0,05 \ \text{S}$; $\vec{Y}=0,03+\mathrm{j}0,01 \ \text{S} = 0,0316 \phase{18,43^\circ} \ \text{S}$; $I=6,32 \ \text{A}$; $\vec{Z}_{eq}=31,62 \phase{-18,43^\circ} \ \Omega$.
+:::

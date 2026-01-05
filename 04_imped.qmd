@@ -1,10 +1,8 @@
----
-format: html
----
-
 # Impedancia
 
-El concepto de impedancia es una **generalización del concepto de resistencia.** Hemos visto que en CA los elementos conectados en el circuito, en general, introducen un desfase entre la intensidad y la tensión. Este desfase hace que no haya una proporcionalidad entre los valores instantáneos de intensidad y tensión, como ocurría en corriente continua. No se cumple la ley de Ohm, tal y como la conocíamos, con los valores instantáneos $i(t)$ y $v(t)$. Sin embargo, **esta proporcionalidad sí existe entre los fasores**, y también entre los valores máximos $U_0$ e $I_0$, o los valores eficaces $U$, $I$. Esto hace que podamos expresar la ley de Ohm con estos valores.
+El concepto de impedancia es una **generalización del concepto de resistencia.** Hemos visto que en CA los elementos conectados en el circuito, en general, introducen un desfase entre la intensidad y la tensión. Este desfase hace que no haya una proporcionalidad entre los valores instantáneos de intensidad y tensión, como ocurría en corriente continua.
+
+No se cumple la ley de Ohm, tal y como la conocíamos, con los valores instantáneos $i(t)$ y $v(t)$. Sin embargo, **esta proporcionalidad sí existe entre los fasores**, y también entre los valores máximos $U_0$ e $I_0$, o los valores eficaces $U$, $I$. Esto hace que podamos expresar la ley de Ohm con estos valores.
 
 La magnitud que relaciona los valores máximos (y los eficaces) de tensión e intensidad en un circuito, se denomina impedancia ($Z$), y se mide en ohmios.
 
@@ -222,6 +220,7 @@ Como puedes observar, trabajar en paralelo es más dificultoso que hacerlo en se
 :::
 
 ---
+
 ::: {.callout-important style="width:90%;margin:auto"}
 ## 🏠 Ejercicios Propuestos
 

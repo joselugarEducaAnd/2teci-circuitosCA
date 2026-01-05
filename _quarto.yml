@@ -2,27 +2,35 @@ project:
   type: book
   output-dir: docs
 
+#lang: es
+
+language:
+  es:
+    section-title-appendices: "Anexos"
+
 book:
   title: "Unidad 6: Circuitos de Corriente Alterna"
   subtitle: "Tecnología e Ingeniería II - 2º Bachillerato"
   author: "José Luis García Jiménez"
-  language: es
   output-file: "Unidad_6_Circuitos_CA"
   
   sidebar:
     logo: logoMajuelo.jpeg
+    style: "docked"
     search: true
     collapse-level: 0
-    style: "docked"
     
   chapters:
     - index.qmd
     - 01_corriente_alterna.qmd
     - 02_representacion.qmd
     - 03_respuesta_comp.qmd
-    - 04_impedancia.qmd
+    - 04_imped.qmd
     - 05_circuitos_rlc.qmd
     - 06_potencia_ca.qmd
+  appendices:
+    - anexo_complejos.qmd
+    - apendice_PAU.qmd
 
 format:
   html:
@@ -69,12 +77,4 @@ format:
       - left=25mm
       - right=25mm
     include-in-header:
-      text: |
-        \usepackage{amsmath}
-        \usepackage{amssymb}
-        \usepackage{steinmetz}
-        \usepackage{circuitikz}
-        \newcommand{\sen}{\operatorname{sen}}
-        \newcommand{\dotZ}{\dot{Z}}
-        \newcommand{\dotI}{\dot{I}}
-        \newcommand{\VA}{\text{ VA}}
+      - preamble.tex

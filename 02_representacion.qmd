@@ -1,8 +1,3 @@
----
-page-layout: full  
----
-
-
 # Representación de señales sinusoidales.
 
 Una señal sinusoidal genérica es aquella que sigue una variación dada por alguna de las siguientes expresiones:
@@ -117,6 +112,7 @@ Del mismo modo que la intensidad eficaz es $I_{e}=\frac{I_{0}}{\sqrt{2}}$, el vo
 
 
 ## Representación fasorial y compleja
+
 Una magnitud sinusoidal se puede representar como la proyección vertical de un **vector rotativo (fasor)** que gira a una velocidad angular $\omega$ en sentido contrario al de las agujas del reloj. Su módulo es igual al valor de cresta ($U_p$) y su posición inicial es la fase inicial ($\varphi$).
 
 ::: {.content-visible when-format="html"}
@@ -129,8 +125,11 @@ Una magnitud sinusoidal se puede representar como la proyección vertical de un 
 
 
 ### Formas de expresar un fasor
-* **Forma polar:** $U = U_{p} \angle \varphi$.
-* **Forma compleja:** $U = U_{p} \cos \varphi + j \cdot \sin \varphi$. En Electrotecnia se utiliza **$j$** para no confundirla con la intensidad. Representa un **giro de +90°**.
+
+**Nota sobre notación:** Al tratarse de una magnitud vectorial, a partir de ahora utilizaremos la notación de vector con flecha (ej. $\vec{U}, \vec{I}$) para referirnos al fasor completo (número complejo), distinguiéndolo así claramente de su módulo o valor escalar (ej. $U, I$).
+
+* **Forma polar:** $\vec{U} = U_{p} \angle \varphi$.
+* **Forma compleja:** $\vec{U} = U_{p} \cos \varphi + j \cdot \sin \varphi$. En Electrotecnia se utiliza **$j$** para no confundirla con la intensidad. Representa un **giro de +90°**.
 
 ::: {style="width: 90%; margin: auto;"}
 ::: {.callout-important icon="false"}
@@ -145,15 +144,15 @@ Debemos representar un vector de módulo 3, con un desfase inicial $\varphi=-\fr
 
 La representación polar es la siguiente:
 
-$$I=I_{p}\angle \varphi=3\phase{-60º} \, \text{A}$$
+$$\vec{I}=I_{p}\angle \varphi=3\phase{-60º} \, \text{A}$$
 
 o, expresando el ángulo en radianes:
 
-$$I=I_{p}\angle \varphi=3\phase{-\pi /3} \, \text{A}$$
+$$\vec{I}=I_{p}\angle \varphi=3\phase{-\pi /3} \, \text{A}$$
 
 La representación en forma de número complejo es:
 
-$$I=I_{p}\cos \varphi + j \cdot I_{p} \sen \varphi=3·\cos(-60º)+j·3·\sen(-60º)=1,5-1,5\sqrt{3}j\, \text{A}$$
+$$\vec{I}=I_{p}\cos \varphi + j \cdot I_{p} \sen \varphi=3·\cos(-60º)+j·3·\sen(-60º)=1,5-1,5\sqrt{3}j\, \text{A}$$
 
 Y, por último, la representación gráfica sería:
 
@@ -161,5 +160,3 @@ Y, por último, la representación gráfica sería:
 
 :::
 :::
-
-
