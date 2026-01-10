@@ -77,4 +77,14 @@ format:
       - left=25mm
       - right=25mm
     include-in-header:
-      - preamble.tex
+      text: |
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{steinmetz}
+        \newcommand{\sen}{\operatorname{sen}}
+        \newcommand{\dotZ}{\dot{Z}}
+        \newcommand{\dotI}{\dot{I}}
+        \newcommand{\VA}{\text{ VA}}
+        \usepackage{enumitem}
+        \setlist[enumerate,1]{label=\arabic*.} % Nivel 1: 1.
+        \setlist[enumerate,2]{label=\alph*)}   % Nivel 2: a)
