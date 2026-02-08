@@ -1,0 +1,16 @@
+% --- CONFIGURACIÓN DE IDIOMA MANUAL (Para evitar error de hooks) ---
+% Cargamos babel manualmente con opciones que evitan el conflicto con @startsection
+\usepackage[spanish,es-nodecimaldot,es-notilde,es-noquoting]{babel}
+
+% --- PAQUETES MATEMÁTICOS ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{steinmetz}
+\usepackage{circuitikz}
+
+% --- COMANDOS PERSONALIZADOS ---
+% Usamos providecommand para 'sen' para evitar conflictos si ya existe
+\providecommand{\sen}{\operatorname{sen}}
+\newcommand{\dotZ}{\dot{Z}}
+\newcommand{\dotI}{\dot{I}}
+\newcommand{\VA}{\text{ VA}}
