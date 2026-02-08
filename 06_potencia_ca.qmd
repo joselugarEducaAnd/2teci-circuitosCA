@@ -1,0 +1,298 @@
+# Potencia en Corriente Alterna
+
+En corriente continua, la potencia era simple: $P = V \cdot I$. Sin embargo, en corriente alterna, el desfase entre tensión e intensidad hace que aparezcan **tres formas de entender la energía**.
+
+## Conceptos Fundamentales
+
+Cuando aplicamos una tensión alterna a una carga, la energía fluye. Dependiendo de si la carga almacena energía (bobinas/condensadores) o la consume (resistencias), definimos:
+
+### A. Potencia Activa ($P$) {-}
+Es la **potencia útil**, la que realmente realiza un trabajo (calor, luz, movimiento). Se disipa en las resistencias.
+
+\vspace{-1em} <div style="margin-top: -1em;"></div>
+
+* **Símbolo:** $P$
+* **Unidad:** Vatio (**W**)
+* **Fórmula:** $P = U \cdot I \cdot \cos \varphi$
+
+### B. Potencia Reactiva ($Q$) {-}
+Es una potencia "de ida y vuelta". No realiza trabajo útil; simplemente se dedica a crear y destruir campos magnéticos (bobinas) y eléctricos (condensadores). La fuente la entrega y el componente la devuelve 50 veces por segundo.
+
+\vspace{-1em} <div style="margin-top: -1em;"></div>
+
+* **Símbolo:** $Q$
+* **Unidad:** Voltamperio reactivo (**var**)
+* **Fórmula:** $Q = U \cdot I \cdot \sen \varphi$
+
+::: {.callout-warning icon="false" style="width:70%;margin:auto"}
+## ⚠️ Ojo con las unidades: ¿var o VAr?
+
+Existe una discrepancia habitual entre la norma técnica y la costumbre académica:
+
+1.  **La Norma (Lo correcto):** La Comisión Electrotécnica Internacional (IEC) establece que el símbolo único y oficial es **var** (en minúsculas). Así lo usaremos en estos apuntes.
+2.  **La Costumbre (Lo habitual):** En muchos libros de texto, exámenes de Selectividad y placas de características industriales, verás escrito **VAr** o **VAR** (usando mayúsculas por venir de Voltio y Amperio).
+
+**Consejo para el examen:** Aunque `var` es lo técnicamente perfecto, si en el enunciado de tu examen aparece `VAr`, puedes usar esa notación sin miedo. Ambas se aceptan universalmente en el ámbito de la ingeniería práctica.
+:::
+
+### C. Potencia Aparente ($S$) {-}
+Es la potencia total que debe suministrar la fuente (o la que dimensiona los cables y transformadores). Es la suma vectorial de las anteriores.
+
+\vspace{-1em} <div style="margin-top: -1em;"></div>
+
+* **Símbolo:** $S$ (o $|\vec{S}|$)
+* **Unidad:** Voltamperio (**VA**)
+* **Fórmula:** $S = U \cdot I = \sqrt{P^2 + Q^2}$
+
+---
+
+## Potencia en los Elementos Básicos
+
+Analicemos qué ocurre en cada componente puro observando sus ondas de tensión (marrón) y potencia instantánea (rojo).
+
+![Ondas de potencia instantánea en R, L y C](media/ondas_potencia.png){width=100%}
+
+| Elemento | Desfase ($\varphi$) | Potencia Activa ($P$) | Potencia Reactiva ($Q$) | Comportamiento |
+| :--- | :---: | :---: | :---: | :--- |
+| **Resistencia** | $0^\circ$ | **$U \cdot I$** | $0$ | Consume energía constantemente. |
+| **Bobina** | $90^\circ$ | $0$ | **$+ U \cdot I$** | Absorbe $Q$ (positiva). No se calienta. |
+| **Condensador** | $-90^\circ$ | $0$ | **$- U \cdot I$** | Cede $Q$ (negativa). No se calienta. |
+
+: Resumen de potencias por componente. {#tbl-potencias-componentes}
+
+::: {.callout-warning icon="false" style="width:70%;margin:auto"}
+## Convenio de Signos para Q
+* **$Q > 0$ (Inductiva):** Decimos que el circuito **absorbe** potencia reactiva. El vector $Q$ apunta hacia **arriba**.
+* **$Q < 0$ (Capacitiva):** Decimos que el circuito **cede** potencia reactiva (o absorbe negativa). El vector $Q$ apunta hacia **abajo**.
+:::
+
+---
+
+## El Triángulo de Potencias
+
+Al igual que teníamos un triángulo de impedancias, tenemos un **Triángulo de Potencias**. Relaciona las tres magnitudes mediante Pitágoras.
+
+::: {layout="[60, 40]"}
+::: {}
+**Relaciones Trigonométricas:**
+
+* **Hipotenusa:** Potencia Aparente ($\vec{S}$).
+* **Cateto Horizontal:** Potencia Activa ($P$).
+* **Cateto Vertical:** Potencia Reactiva ($Q$).
+
+Matemáticamente, definimos la **Potencia Compleja ($\vec{S}$)** como:
+
+$$
+\vec{S} = P + \mathrm{j}Q
+$$
+:::
+
+![Triángulo Inductivo ($Q>0$)](media/triangulo_potencias_gen.png){fig-align="center" width="400px"}
+:::
+
+### El Factor de Potencia ($f.d.p.$)
+
+Es un indicador de la **eficiencia** del sistema. Se define como el coseno del ángulo $\varphi$:
+
+$$
+f.d.p. = \cos \varphi = \frac{P}{S}
+$$
+
+* **$\cos \varphi = 1$:** Toda la potencia es útil ($S=P$). Caso ideal (Resistivo puro).
+* **$\cos \varphi < 1$:** Parte de la energía se desperdicia circulando como reactiva.
+
+En el mundo real, la inmensa mayoría de las instalaciones industriales tienen un **carácter fuertemente inductivo**. Esto significa que consumen mucha potencia reactiva positiva ($Q > 0$) y tienen un factor de potencia bajo ($\cos \varphi < 0,8$).
+
+### ¿Por qué el consumo es Inductivo? {-}
+La razón son las **Máquinas Eléctricas**.
+Tanto los **motores** (bombas, ventiladores, cintas transportadoras) como los **transformadores** funcionan basados en campos magnéticos. Para crear estos campos magnéticos, necesitan absorber corriente reactiva de la red para magnetizar sus bobinas.
+
+### ¿Por qué es necesario corregirlo? {-}
+Tener un factor de potencia bajo ($\cos \varphi$ pequeño) implica tener un ángulo $\varphi$ grande, lo que obliga a la empresa eléctrica a suministrar mucha Potencia Aparente ($S$) para conseguir la misma Potencia Activa ($P$).
+
+$$
+I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
+$$
+
+Si el $\cos \varphi$ es bajo, la Intensidad Total ($I$) se dispara para mantener la misma potencia útil ($P$). Esto provoca:
+
+\vspace{-1em} <div style="margin-top: -1em;"></div>
+
+1.  **Pérdidas de energía:** Más corriente calienta más los cables (efecto Joule).
+2.  **Sobredimensionamiento:** Se necesitan transformadores y cables más gruesos.
+3.  **Penalizaciones económicas:** Las compañías eléctricas cobran un recargo muy alto en la factura si tu factor de potencia es bajo (normalmente si es menor de 0,95).
+
+### ¿Cómo se corrige? (Compensación) {-}
+La solución consiste en instalar elementos que generen la potencia reactiva que los motores necesitan, para no tener que pedirla a la red eléctrica.
+El elemento ideal es el **Condensador** (Batería de Condensadores).
+
+* Los motores **absorben** $Q$ (Inductiva, hacia arriba).
+* Los condensadores **ceden** $Q$ (Capacitiva, hacia abajo).
+
+Al conectarlos en paralelo, la $Q_C$ del condensador cancela gran parte de la $Q_L$ del motor.
+
+::: {layout-ncol=2}
+![Efecto de la Compensación](media/triangulo_compensacion.png){width=90%}
+
+::: {}
+**Análisis del Gráfico:**
+
+1.  **Estado Inicial (Rojo):** Tenemos una carga con mucho consumo de reactiva ($Q_{inicial}$) y un ángulo $\varphi_1$ grande. La corriente necesaria ($S_{inicial}$) es muy alta.
+
+2.  **Acción (Verde):** Introducimos una batería de condensadores que aporta una $Q_C$ en sentido contrario (hacia abajo).
+
+3.  **Estado Final (Naranja):** La reactiva neta baja a $Q_{final}$.
+    * La **Potencia Activa ($P$) se mantiene igual** (la máquina trabaja igual).
+    * La **Potencia Aparente ($S_{final}$) disminuye**.
+    * La intensidad total que circula por la línea baja, ahorrando dinero y pérdidas.
+:::
+:::
+---
+
+
+::: {.callout-important icon="false" style="width:90%;margin:auto"}
+## 💡 Ejemplo Resuelto: Motor Monofásico
+
+Un motor eléctrico (carga inductiva) se conecta a una red de $230\ \text{V}$. Consume una intensidad de $5\ \text{A}$ con un factor de potencia de $\mathbf{0,8}$ (inductivo). Calcula $P, Q, S$ y dibuja el triángulo.
+
+**Solución:**
+
+1.  **Potencia Aparente ($S$):** Es lo primero que podemos calcular con $U$ e $I$.
+    $$S = U \cdot I = 230 \cdot 5 = \mathbf{1150\ \text{VA}}$$
+
+2.  **Ángulo ($\varphi$):**
+    $$\cos \varphi = 0,8 \Rightarrow \varphi = \arccos(0,8) = 36,87^\circ$$
+    Como es inductivo, $\varphi > 0$.
+
+3.  **Potencia Activa ($P$):**
+    $$P = S \cdot \cos \varphi = 1150 \cdot 0,8 = \mathbf{920\ \text{W}}$$
+
+4.  **Potencia Reactiva ($Q$):**
+    Calculamos el seno: $\sen(36,87^\circ) = 0,6$.
+    $$Q = S \cdot \sen \varphi = 1150 \cdot 0,6 = \mathbf{690\ \text{var}}$$
+
+::: {layout-ncol=2}
+:::{}
+**Triángulo de Potencias:**
+Como es inductivo, la $Q$ se dibuja hacia arriba.
+$$\vec{S} = 920 + \mathrm{j}690\ \text{VA}$$
+:::
+![Triángulo del Motor](media/triangulo_potencias_ejemplo.png){width=80%}
+:::
+:::
+
+---
+
+## Ejercicios Propuestos
+
+::: {.callout-important icon="false" style="width:90%;margin:auto"}
+## 📝 Practica tú mismo
+
+**1.** Una estufa de resistencia pura $R=50\ \Omega$ se conecta a $230\ \text{V}$.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a)** Calcula su potencia activa, reactiva y aparente. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b)** ¿Cuánto vale su factor de potencia?
+
+*Soluciones:* $P=1058\ \text{W}$; $Q=0$; $S=1058\ \text{VA}$; $\cos\varphi=1$.
+
+---
+
+**2.** Un condensador de $C=100\ \mu\text{F}$ se conecta a $230\ \text{V}$ / $50\ \text{Hz}$.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a)** Calcula la reactancia $X_C$ y la potencia reactiva $Q$. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b)** ¿Absorbe o cede potencia reactiva?
+
+*Soluciones:* $X_C=31,83\ \Omega$; $Q = -1661\ \text{var}$; Cede reactiva (Capacitivo).
+
+---
+
+**3.** Una instalación consume una potencia activa $P=3000\ \text{W}$ y una reactiva inductiva $Q=4000\ \text{var}$.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a)** Calcula la potencia aparente total. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b)** Halla el factor de potencia. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c)** Si la tensión es $230\ \text{V}$, ¿qué corriente circula por el cable general?
+
+*Soluciones:* $S=5000\ \text{VA}$; $\cos\varphi=0,6$; $I=21,74\ \text{A}$.
+
+---
+
+**4.**En el circuito de la figura, calcular:\
+&nbsp;&nbsp;&nbsp; **a)** La intensidad que circula por cada rama. \
+&nbsp;&nbsp;&nbsp; **b)** La impedancia equivalente vista desde el generador. \
+&nbsp;&nbsp;&nbsp; **c)** Las potencias activa y reactiva totales.
+
+**Datos:** $X_{C2}=10\ \Omega$; $X_{C1} = X_L = R = 5\ \Omega$; $E = 50\ \text{V}$.
+
+![](media/ejercicio_potencia4.png){fig-align="center" width=400px}
+
+**Soluciones:**
+**a)** $\vec{I}_{\text{Rama1}} = 5 \sqrt{2} \phase 45^\circ\ \text{A}$; $\quad \vec{I}_{\text{Rama2}} = 5 \phase 90^\circ\ \text{A}$;$\vec{I}_{\text{Rama3}} = 5 \sqrt{2} \phase -45^\circ\ \text{A}$;
+**b)** $\vec{Z}_{eq} = 4 + 2\mathrm{j}\ \Omega$ ($2 \sqrt{5} \phase 26,56^\circ\ \Omega$).
+**c)** $P_T = 500\ \text{W}$; $\quad Q_T = 250\ \text{var}$ (Inductiva).
+
+---
+
+**5.** En el circuito de la figura se muestra un circuito de corriente alterna en el que las indicaciones de los aparatos de medida, supuestos ideales, son las siguientes:
+
+* Voltímetro, $100\ \text{V}$ (valor eficaz).
+* Amperímetro, $20\ \text{A}$ (valor eficaz).
+* Vatímetro, $1200\ \text{W}$.
+
+Hallar $\vec{Z}$, $R$, $X$ y $\vec{U}_s$, tomando $\vec{I}$ como origen de fases.
+
+![](media/ejercicio_potencia5.png){fig-align="center" width=60%}
+
+**Soluciones:**
+**Impedancia:** $\vec{Z} = 3 + \mathrm{j}4\ \Omega$ ($5 \phase 53,13^\circ\ \Omega$).
+**Componentes:** $R = 3\ \Omega$; $\quad X = 4\ \Omega$.
+**Tensión fuente:** $\vec{U}_s = 80 + 100\mathrm{j}\ \text{V}$ ($128 \phase 51,31^\circ\ \text{V}$).
+
+---
+
+**6.** El circuito de la figura se alimenta con una fuente de tensión de valor eficaz $220\text{V}/50\text{Hz}$. Se pide:\
+&nbsp;&nbsp;&nbsp; **a)** Calcular el valor de la lectura del amperímetro A. \
+&nbsp;&nbsp;&nbsp; **b)** Determinar la lectura del voltímetro V. \
+&nbsp;&nbsp;&nbsp; **c)** Calcular las potencias totales consumidas en el circuito y representar el triángulo de potencias.
+
+
+![](media/ejercicio_potencia6.png){fig-align="center" width=60%}
+
+**Soluciones:**
+**a)** Lectura A $= 5 \sqrt{2}\ \text{A}$.
+**b)** Lectura V $= 155,56\ \text{V}$.
+**c)** $P = 1100\ \text{W}$; $\quad Q = -1100\ \text{var}$; $\quad S = 1555,63\ \text{VA}$.
+
+---
+
+**7.** En el circuito de la figura se sabe que los elementos R-L constituyen una carga que absorbe $2000\ \text{W}$ con el factor de potencia 0,5 si se cortocircuita el condensador C. Si la tensión de la fuente es de $220\ \text{V}/50\text{Hz}$, calcula el valor que debe tener el condensador para que el factor de potencia del conjunto R-L-C sea unitario.
+
+![](media/ejercicio_potencia7.png){fig-align="center" width=400px}
+
+**Solución: $C = 36,75\ \mu\text{F}$.**
+
+---
+
+**8.** Se conecta a una línea de $220\ \text{V}$ un receptor monofásico inductivo (motor eléctrico) que consume una potencia activa de $5\ \text{kW}$ con un factor de potencia de $0,7$. Se pide:
+
+&nbsp;&nbsp;&nbsp; **a)** Calcular las potencias reactiva y aparente. \
+&nbsp;&nbsp;&nbsp; **b)** Calcular la capacidad equivalente del condensador que se ha de conectar si se desea mejorar el factor de potencia a $0,95$. \
+&nbsp;&nbsp;&nbsp; **c)** Calcular la reducción de corriente por la línea al conectar el condensador. \
+&nbsp;&nbsp;&nbsp; **d)** ¿Ha cambiado la potencia activa al mejorar el factor de potencia? Justifica la respuesta.
+
+**Soluciones:**
+**a)** $S = 7142,8\ \text{VA}$; $\quad Q = 5101\ \text{var}$.
+**b)** $Q_C = 3457,5\ \text{var} \Rightarrow C = 227,4\ \mu\text{F}$.
+**c)** La corriente baja de $32,47\ \text{A}$ a $23,92\ \text{A}$. Reducción: $\Delta I = 8,55\ \text{A}$.
+**d)** No. La potencia activa ($P$) depende del trabajo que realiza el motor, y eso no cambia al añadir condensadores en paralelo.
+
+---
+
+**9.** Una carga de corriente alterna monofásica de $50\ \text{Hz}$ es alimentada a una tensión de $220\ \text{V}$ (valor eficaz). Sabiendo que la potencia aparente absorbida por dicha carga es de $20\ \text{kVA}$, con $\cos \varphi = 0,8$ inductivo, se pide:
+
+&nbsp;&nbsp;&nbsp; **a)** Las potencias activa y reactiva consumidas por la carga. \
+&nbsp;&nbsp;&nbsp; **b)** La impedancia compleja de la carga. \
+&nbsp;&nbsp;&nbsp; **c)** El condensador que conectado en paralelo con la carga hace que el factor de potencia de la instalación sea $0,95$ inductivo.
+
+**Soluciones:**
+**a)** $P = 16\ \text{kW}$; $\quad Q = 12\ \text{kvar}$.
+**b)** $\vec{Z} = 1,936 + \mathrm{j}1,452\ \Omega$ ($2,42 \angle 36,87^\circ\ \Omega$).
+**c)** $Q_C = 6740,8\ \text{var} \Rightarrow C = 443,3\ \mu\text{F}$.
+
+:::
