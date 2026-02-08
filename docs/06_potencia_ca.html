@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Potencia en Corriente Alterna – Unidad 6: Circuitos de Corriente Alterna</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./anexo_complejos.html" rel="next">
+<link href="./05_circuitos_rlc.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4ba85d4b4427d31d840a79ec76a35f2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+background: #453f93;
+      }
+</style>
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/enclose']},
+  tex: {
+    packages: {'[+]': ['enclose']},
+    macros: {
+      sen: '{\\operatorname{sen}}',
+      phase: ['{\\enclose{phasorangle}{#1}}', 1],
+      dotZ: '{\\dot{Z}}',
+      dotI: '{\\dot{I}}',
+      VA: '{\\text{ VA}}'
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_potencia_ca.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Potencia en Corriente Alterna</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Potencia en Corriente Alterna</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./logoMajuelo.jpeg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./logoMajuelo.jpeg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Unidad 6: Circuitos de Corriente Alterna</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_corriente_alterna.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Corriente alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_representacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Representación de señales sinusoidales.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_respuesta_comp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Respuesta de los componentes básicos a la Corriente Alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_imped.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_circuitos_rlc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Circuitos RLC</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_potencia_ca.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Potencia en Corriente Alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./anexo_complejos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Números Complejos en CA</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apendice_PAU.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Problemas de Corriente Alterna (Ponencia 2025)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+<p>En corriente continua, la potencia era simple: <span class="math inline">\(P = V \cdot I\)</span>. Sin embargo, en corriente alterna, el desfase entre tensión e intensidad hace que aparezcan <strong>tres formas de entender la energía</strong>.</p>
+<section id="conceptos-fundamentales" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="conceptos-fundamentales"><span class="header-section-number">6.1</span> Conceptos Fundamentales</h2>
+<p>Cuando aplicamos una tensión alterna a una carga, la energía fluye. Dependiendo de si la carga almacena energía (bobinas/condensadores) o la consume (resistencias), definimos:</p>
+<section id="a.-potencia-activa-p" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="a.-potencia-activa-p">A. Potencia Activa (<span class="math inline">\(P\)</span>)</h3>
+<p>Es la <strong>potencia útil</strong>, la que realmente realiza un trabajo (calor, luz, movimiento). Se disipa en las resistencias.</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(P\)</span></li>
+<li><strong>Unidad:</strong> Vatio (<strong>W</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(P = U \cdot I \cdot \cos \varphi\)</span></li>
+</ul>
+</section>
+<section id="b.-potencia-reactiva-q" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="b.-potencia-reactiva-q">B. Potencia Reactiva (<span class="math inline">\(Q\)</span>)</h3>
+<p>Es una potencia “de ida y vuelta”. No realiza trabajo útil; simplemente se dedica a crear y destruir campos magnéticos (bobinas) y eléctricos (condensadores). La fuente la entrega y el componente la devuelve 50 veces por segundo.</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(Q\)</span></li>
+<li><strong>Unidad:</strong> Voltamperio reactivo (<strong>var</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(Q = U \cdot I \cdot \sen \varphi\)</span></li>
+</ul>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="width:70%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>⚠️ Ojo con las unidades: ¿var o VAr?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Existe una discrepancia habitual entre la norma técnica y la costumbre académica:</p>
+<ol type="1">
+<li><strong>La Norma (Lo correcto):</strong> La Comisión Electrotécnica Internacional (IEC) establece que el símbolo único y oficial es <strong>var</strong> (en minúsculas). Así lo usaremos en estos apuntes.</li>
+<li><strong>La Costumbre (Lo habitual):</strong> En muchos libros de texto, exámenes de Selectividad y placas de características industriales, verás escrito <strong>VAr</strong> o <strong>VAR</strong> (usando mayúsculas por venir de Voltio y Amperio).</li>
+</ol>
+<p><strong>Consejo para el examen:</strong> Aunque <code>var</code> es lo técnicamente perfecto, si en el enunciado de tu examen aparece <code>VAr</code>, puedes usar esa notación sin miedo. Ambas se aceptan universalmente en el ámbito de la ingeniería práctica.</p>
+</div>
+</div>
+</section>
+<section id="c.-potencia-aparente-s" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="c.-potencia-aparente-s">C. Potencia Aparente (<span class="math inline">\(S\)</span>)</h3>
+<p>Es la potencia total que debe suministrar la fuente (o la que dimensiona los cables y transformadores). Es la suma vectorial de las anteriores.</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(S\)</span> (o <span class="math inline">\(|\vec{S}|\)</span>)</li>
+<li><strong>Unidad:</strong> Voltamperio (<strong>VA</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(S = U \cdot I = \sqrt{P^2 + Q^2}\)</span></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="potencia-en-los-elementos-básicos" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="potencia-en-los-elementos-básicos"><span class="header-section-number">6.2</span> Potencia en los Elementos Básicos</h2>
+<p>Analicemos qué ocurre en cada componente puro observando sus ondas de tensión (marrón) y potencia instantánea (rojo).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ondas_potencia.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Ondas de potencia instantánea en R, L y C</figcaption>
+</figure>
+</div>
+<div id="tbl-potencias-componentes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potencias-componentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Resumen de potencias por componente.
+</figcaption>
+<div aria-describedby="tbl-potencias-componentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: center;">Desfase (<span class="math inline">\(\varphi\)</span>)</th>
+<th style="text-align: center;">Potencia Activa (<span class="math inline">\(P\)</span>)</th>
+<th style="text-align: center;">Potencia Reactiva (<span class="math inline">\(Q\)</span>)</th>
+<th style="text-align: left;">Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Resistencia</strong></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(U \cdot I\)</span></strong></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: left;">Consume energía constantemente.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Bobina</strong></td>
+<td style="text-align: center;"><span class="math inline">\(90^\circ\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(+ U \cdot I\)</span></strong></td>
+<td style="text-align: left;">Absorbe <span class="math inline">\(Q\)</span> (positiva). No se calienta.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Condensador</strong></td>
+<td style="text-align: center;"><span class="math inline">\(-90^\circ\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(- U \cdot I\)</span></strong></td>
+<td style="text-align: left;">Cede <span class="math inline">\(Q\)</span> (negativa). No se calienta.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="width:70%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Convenio de Signos para Q
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong><span class="math inline">\(Q &gt; 0\)</span> (Inductiva):</strong> Decimos que el circuito <strong>absorbe</strong> potencia reactiva. El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>arriba</strong>.</li>
+<li><strong><span class="math inline">\(Q &lt; 0\)</span> (Capacitiva):</strong> Decimos que el circuito <strong>cede</strong> potencia reactiva (o absorbe negativa). El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>abajo</strong>.</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="el-triángulo-de-potencias" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="el-triángulo-de-potencias"><span class="header-section-number">6.3</span> El Triángulo de Potencias</h2>
+<p>Al igual que teníamos un triángulo de impedancias, tenemos un <strong>Triángulo de Potencias</strong>. Relaciona las tres magnitudes mediante Pitágoras.</p>
+<div class="quarto-layout-panel" data-layout="[60, 40]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<p><strong>Relaciones Trigonométricas:</strong></p>
+<ul>
+<li><strong>Hipotenusa:</strong> Potencia Aparente (<span class="math inline">\(\vec{S}\)</span>).</li>
+<li><strong>Cateto Horizontal:</strong> Potencia Activa (<span class="math inline">\(P\)</span>).</li>
+<li><strong>Cateto Vertical:</strong> Potencia Reactiva (<span class="math inline">\(Q\)</span>).</li>
+</ul>
+<p>Matemáticamente, definimos la <strong>Potencia Compleja (<span class="math inline">\(\vec{S}\)</span>)</strong> como:</p>
+<p><span class="math display">\[
+\vec{S} = P + \mathrm{j}Q
+\]</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_potencias_gen.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Triángulo Inductivo (<span class="math inline">\(Q&gt;0\)</span>)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="el-factor-de-potencia-f.d.p." class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="el-factor-de-potencia-f.d.p."><span class="header-section-number">6.3.1</span> El Factor de Potencia (<span class="math inline">\(f.d.p.\)</span>)</h3>
+<p>Es un indicador de la <strong>eficiencia</strong> del sistema. Se define como el coseno del ángulo <span class="math inline">\(\varphi\)</span>:</p>
+<p><span class="math display">\[
+f.d.p. = \cos \varphi = \frac{P}{S}
+\]</span></p>
+<ul>
+<li><strong><span class="math inline">\(\cos \varphi = 1\)</span>:</strong> Toda la potencia es útil (<span class="math inline">\(S=P\)</span>). Caso ideal (Resistivo puro).</li>
+<li><strong><span class="math inline">\(\cos \varphi &lt; 1\)</span>:</strong> Parte de la energía se desperdicia circulando como reactiva.</li>
+</ul>
+<p>En el mundo real, la inmensa mayoría de las instalaciones industriales tienen un <strong>carácter fuertemente inductivo</strong>. Esto significa que consumen mucha potencia reactiva positiva (<span class="math inline">\(Q &gt; 0\)</span>) y tienen un factor de potencia bajo (<span class="math inline">\(\cos \varphi &lt; 0,8\)</span>).</p>
+</section>
+<section id="por-qué-el-consumo-es-inductivo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-qué-el-consumo-es-inductivo">¿Por qué el consumo es Inductivo?</h3>
+<p>La razón son las <strong>Máquinas Eléctricas</strong>. Tanto los <strong>motores</strong> (bombas, ventiladores, cintas transportadoras) como los <strong>transformadores</strong> funcionan basados en campos magnéticos. Para crear estos campos magnéticos, necesitan absorber corriente reactiva de la red para magnetizar sus bobinas.</p>
+</section>
+<section id="por-qué-es-necesario-corregirlo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-qué-es-necesario-corregirlo">¿Por qué es necesario corregirlo?</h3>
+<p>Tener un factor de potencia bajo (<span class="math inline">\(\cos \varphi\)</span> pequeño) implica tener un ángulo <span class="math inline">\(\varphi\)</span> grande, lo que obliga a la empresa eléctrica a suministrar mucha Potencia Aparente (<span class="math inline">\(S\)</span>) para conseguir la misma Potencia Activa (<span class="math inline">\(P\)</span>).</p>
+<p><span class="math display">\[
+I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
+\]</span></p>
+<p>Si el <span class="math inline">\(\cos \varphi\)</span> es bajo, la Intensidad Total (<span class="math inline">\(I\)</span>) se dispara para mantener la misma potencia útil (<span class="math inline">\(P\)</span>). Esto provoca:</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ol type="1">
+<li><strong>Pérdidas de energía:</strong> Más corriente calienta más los cables (efecto Joule).</li>
+<li><strong>Sobredimensionamiento:</strong> Se necesitan transformadores y cables más gruesos.</li>
+<li><strong>Penalizaciones económicas:</strong> Las compañías eléctricas cobran un recargo muy alto en la factura si tu factor de potencia es bajo (normalmente si es menor de 0,95).</li>
+</ol>
+</section>
+<section id="cómo-se-corrige-compensación" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="cómo-se-corrige-compensación">¿Cómo se corrige? (Compensación)</h3>
+<p>La solución consiste en instalar elementos que generen la potencia reactiva que los motores necesitan, para no tener que pedirla a la red eléctrica. El elemento ideal es el <strong>Condensador</strong> (Batería de Condensadores).</p>
+<ul>
+<li>Los motores <strong>absorben</strong> <span class="math inline">\(Q\)</span> (Inductiva, hacia arriba).</li>
+<li>Los condensadores <strong>ceden</strong> <span class="math inline">\(Q\)</span> (Capacitiva, hacia abajo).</li>
+</ul>
+<p>Al conectarlos en paralelo, la <span class="math inline">\(Q_C\)</span> del condensador cancela gran parte de la <span class="math inline">\(Q_L\)</span> del motor.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_compensacion.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Efecto de la Compensación</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Análisis del Gráfico:</strong></p>
+<ol type="1">
+<li><p><strong>Estado Inicial (Rojo):</strong> Tenemos una carga con mucho consumo de reactiva (<span class="math inline">\(Q_{inicial}\)</span>) y un ángulo <span class="math inline">\(\varphi_1\)</span> grande. La corriente necesaria (<span class="math inline">\(S_{inicial}\)</span>) es muy alta.</p></li>
+<li><p><strong>Acción (Verde):</strong> Introducimos una batería de condensadores que aporta una <span class="math inline">\(Q_C\)</span> en sentido contrario (hacia abajo).</p></li>
+<li><p><strong>Estado Final (Naranja):</strong> La reactiva neta baja a <span class="math inline">\(Q_{final}\)</span>.</p>
+<ul>
+<li>La <strong>Potencia Activa (<span class="math inline">\(P\)</span>) se mantiene igual</strong> (la máquina trabaja igual).</li>
+<li>La <strong>Potencia Aparente (<span class="math inline">\(S_{final}\)</span>) disminuye</strong>.</li>
+<li>La intensidad total que circula por la línea baja, ahorrando dinero y pérdidas.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>💡 Ejemplo Resuelto: Motor Monofásico
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un motor eléctrico (carga inductiva) se conecta a una red de <span class="math inline">\(230\ \text{V}\)</span>. Consume una intensidad de <span class="math inline">\(5\ \text{A}\)</span> con un factor de potencia de <span class="math inline">\(\mathbf{0,8}\)</span> (inductivo). Calcula <span class="math inline">\(P, Q, S\)</span> y dibuja el triángulo.</p>
+<p><strong>Solución:</strong></p>
+<ol type="1">
+<li><p><strong>Potencia Aparente (<span class="math inline">\(S\)</span>):</strong> Es lo primero que podemos calcular con <span class="math inline">\(U\)</span> e <span class="math inline">\(I\)</span>. <span class="math display">\[S = U \cdot I = 230 \cdot 5 = \mathbf{1150\ \text{VA}}\]</span></p></li>
+<li><p><strong>Ángulo (<span class="math inline">\(\varphi\)</span>):</strong> <span class="math display">\[\cos \varphi = 0,8 \Rightarrow \varphi = \arccos(0,8) = 36,87^\circ\]</span> Como es inductivo, <span class="math inline">\(\varphi &gt; 0\)</span>.</p></li>
+<li><p><strong>Potencia Activa (<span class="math inline">\(P\)</span>):</strong> <span class="math display">\[P = S \cdot \cos \varphi = 1150 \cdot 0,8 = \mathbf{920\ \text{W}}\]</span></p></li>
+<li><p><strong>Potencia Reactiva (<span class="math inline">\(Q\)</span>):</strong> Calculamos el seno: <span class="math inline">\(\sen(36,87^\circ) = 0,6\)</span>. <span class="math display">\[Q = S \cdot \sen \varphi = 1150 \cdot 0,6 = \mathbf{690\ \text{var}}\]</span></p></li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Triángulo de Potencias:</strong> Como es inductivo, la <span class="math inline">\(Q\)</span> se dibuja hacia arriba. <span class="math display">\[\vec{S} = 920 + \mathrm{j}690\ \text{VA}\]</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_potencias_ejemplo.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Triángulo del Motor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="ejercicios-propuestos" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="ejercicios-propuestos"><span class="header-section-number">6.4</span> Ejercicios Propuestos</h2>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>📝 Practica tú mismo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1.</strong> Una estufa de resistencia pura <span class="math inline">\(R=50\ \Omega\)</span> se conecta a <span class="math inline">\(230\ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>a)</strong> Calcula su potencia activa, reactiva y aparente.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>b)</strong> ¿Cuánto vale su factor de potencia?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(P=1058\ \text{W}\)</span>; <span class="math inline">\(Q=0\)</span>; <span class="math inline">\(S=1058\ \text{VA}\)</span>; <span class="math inline">\(\cos\varphi=1\)</span>.</p>
+<hr>
+<p><strong>2.</strong> Un condensador de <span class="math inline">\(C=100\ \mu\text{F}\)</span> se conecta a <span class="math inline">\(230\ \text{V}\)</span> / <span class="math inline">\(50\ \text{Hz}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>a)</strong> Calcula la reactancia <span class="math inline">\(X_C\)</span> y la potencia reactiva <span class="math inline">\(Q\)</span>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>b)</strong> ¿Absorbe o cede potencia reactiva?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(X_C=31,83\ \Omega\)</span>; <span class="math inline">\(Q = -1661\ \text{var}\)</span>; Cede reactiva (Capacitivo).</p>
+<hr>
+<p><strong>3.</strong> Una instalación consume una potencia activa <span class="math inline">\(P=3000\ \text{W}\)</span> y una reactiva inductiva <span class="math inline">\(Q=4000\ \text{var}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>a)</strong> Calcula la potencia aparente total.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>b)</strong> Halla el factor de potencia.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>c)</strong> Si la tensión es <span class="math inline">\(230\ \text{V}\)</span>, ¿qué corriente circula por el cable general?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(S=5000\ \text{VA}\)</span>; <span class="math inline">\(\cos\varphi=0,6\)</span>; <span class="math inline">\(I=21,74\ \text{A}\)</span>.</p>
+<hr>
+<p><strong>4.</strong>En el circuito de la figura, calcular:<br>
+&nbsp;&nbsp;&nbsp; <strong>a)</strong> La intensidad que circula por cada rama.<br>
+&nbsp;&nbsp;&nbsp; <strong>b)</strong> La impedancia equivalente vista desde el generador.<br>
+&nbsp;&nbsp;&nbsp; <strong>c)</strong> Las potencias activa y reactiva totales.</p>
+<p><strong>Datos:</strong> <span class="math inline">\(X_{C2}=10\ \Omega\)</span>; <span class="math inline">\(X_{C1} = X_L = R = 5\ \Omega\)</span>; <span class="math inline">\(E = 50\ \text{V}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ejercicio_potencia4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(\vec{I}_{\text{Rama1}} = 5 \sqrt{2} \phase 45^\circ\ \text{A}\)</span>; <span class="math inline">\(\quad \vec{I}_{\text{Rama2}} = 5 \phase 90^\circ\ \text{A}\)</span>;<span class="math inline">\(\vec{I}_{\text{Rama3}} = 5 \sqrt{2} \phase -45^\circ\ \text{A}\)</span>; <strong>b)</strong> <span class="math inline">\(\vec{Z}_{eq} = 4 + 2\mathrm{j}\ \Omega\)</span> (<span class="math inline">\(2 \sqrt{5} \phase 26,56^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(P_T = 500\ \text{W}\)</span>; <span class="math inline">\(\quad Q_T = 250\ \text{var}\)</span> (Inductiva).</p>
+<hr>
+<p><strong>5.</strong> En el circuito de la figura se muestra un circuito de corriente alterna en el que las indicaciones de los aparatos de medida, supuestos ideales, son las siguientes:</p>
+<ul>
+<li>Voltímetro, <span class="math inline">\(100\ \text{V}\)</span> (valor eficaz).</li>
+<li>Amperímetro, <span class="math inline">\(20\ \text{A}\)</span> (valor eficaz).</li>
+<li>Vatímetro, <span class="math inline">\(1200\ \text{W}\)</span>.</li>
+</ul>
+<p>Hallar <span class="math inline">\(\vec{Z}\)</span>, <span class="math inline">\(R\)</span>, <span class="math inline">\(X\)</span> y <span class="math inline">\(\vec{U}_s\)</span>, tomando <span class="math inline">\(\vec{I}\)</span> como origen de fases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ejercicio_potencia5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>Impedancia:</strong> <span class="math inline">\(\vec{Z} = 3 + \mathrm{j}4\ \Omega\)</span> (<span class="math inline">\(5 \phase 53,13^\circ\ \Omega\)</span>). <strong>Componentes:</strong> <span class="math inline">\(R = 3\ \Omega\)</span>; <span class="math inline">\(\quad X = 4\ \Omega\)</span>. <strong>Tensión fuente:</strong> <span class="math inline">\(\vec{U}_s = 80 + 100\mathrm{j}\ \text{V}\)</span> (<span class="math inline">\(128 \phase 51,31^\circ\ \text{V}\)</span>).</p>
+<hr>
+<p><strong>6.</strong> El circuito de la figura se alimenta con una fuente de tensión de valor eficaz <span class="math inline">\(220\text{V}/50\text{Hz}\)</span>. Se pide:<br>
+&nbsp;&nbsp;&nbsp; <strong>a)</strong> Calcular el valor de la lectura del amperímetro A.<br>
+&nbsp;&nbsp;&nbsp; <strong>b)</strong> Determinar la lectura del voltímetro V.<br>
+&nbsp;&nbsp;&nbsp; <strong>c)</strong> Calcular las potencias totales consumidas en el circuito y representar el triángulo de potencias.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ejercicio_potencia6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>a)</strong> Lectura A <span class="math inline">\(= 5 \sqrt{2}\ \text{A}\)</span>. <strong>b)</strong> Lectura V <span class="math inline">\(= 155,56\ \text{V}\)</span>. <strong>c)</strong> <span class="math inline">\(P = 1100\ \text{W}\)</span>; <span class="math inline">\(\quad Q = -1100\ \text{var}\)</span>; <span class="math inline">\(\quad S = 1555,63\ \text{VA}\)</span>.</p>
+<hr>
+<p><strong>7.</strong> En el circuito de la figura se sabe que los elementos R-L constituyen una carga que absorbe <span class="math inline">\(2000\ \text{W}\)</span> con el factor de potencia 0,5 si se cortocircuita el condensador C. Si la tensión de la fuente es de <span class="math inline">\(220\ \text{V}/50\text{Hz}\)</span>, calcula el valor que debe tener el condensador para que el factor de potencia del conjunto R-L-C sea unitario.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ejercicio_potencia7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+</figure>
+</div>
+<p><strong>Solución: <span class="math inline">\(C = 36,75\ \mu\text{F}\)</span>.</strong></p>
+<hr>
+<p><strong>8.</strong> Se conecta a una línea de <span class="math inline">\(220\ \text{V}\)</span> un receptor monofásico inductivo (motor eléctrico) que consume una potencia activa de <span class="math inline">\(5\ \text{kW}\)</span> con un factor de potencia de <span class="math inline">\(0,7\)</span>. Se pide:</p>
+<p>&nbsp;&nbsp;&nbsp; <strong>a)</strong> Calcular las potencias reactiva y aparente.<br>
+&nbsp;&nbsp;&nbsp; <strong>b)</strong> Calcular la capacidad equivalente del condensador que se ha de conectar si se desea mejorar el factor de potencia a <span class="math inline">\(0,95\)</span>.<br>
+&nbsp;&nbsp;&nbsp; <strong>c)</strong> Calcular la reducción de corriente por la línea al conectar el condensador.<br>
+&nbsp;&nbsp;&nbsp; <strong>d)</strong> ¿Ha cambiado la potencia activa al mejorar el factor de potencia? Justifica la respuesta.</p>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(S = 7142,8\ \text{VA}\)</span>; <span class="math inline">\(\quad Q = 5101\ \text{var}\)</span>. <strong>b)</strong> <span class="math inline">\(Q_C = 3457,5\ \text{var} \Rightarrow C = 227,4\ \mu\text{F}\)</span>. <strong>c)</strong> La corriente baja de <span class="math inline">\(32,47\ \text{A}\)</span> a <span class="math inline">\(23,92\ \text{A}\)</span>. Reducción: <span class="math inline">\(\Delta I = 8,55\ \text{A}\)</span>. <strong>d)</strong> No.&nbsp;La potencia activa (<span class="math inline">\(P\)</span>) depende del trabajo que realiza el motor, y eso no cambia al añadir condensadores en paralelo.</p>
+<hr>
+<p><strong>9.</strong> Una carga de corriente alterna monofásica de <span class="math inline">\(50\ \text{Hz}\)</span> es alimentada a una tensión de <span class="math inline">\(220\ \text{V}\)</span> (valor eficaz). Sabiendo que la potencia aparente absorbida por dicha carga es de <span class="math inline">\(20\ \text{kVA}\)</span>, con <span class="math inline">\(\cos \varphi = 0,8\)</span> inductivo, se pide:</p>
+<p>&nbsp;&nbsp;&nbsp; <strong>a)</strong> Las potencias activa y reactiva consumidas por la carga.<br>
+&nbsp;&nbsp;&nbsp; <strong>b)</strong> La impedancia compleja de la carga.<br>
+&nbsp;&nbsp;&nbsp; <strong>c)</strong> El condensador que conectado en paralelo con la carga hace que el factor de potencia de la instalación sea <span class="math inline">\(0,95\)</span> inductivo.</p>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(P = 16\ \text{kW}\)</span>; <span class="math inline">\(\quad Q = 12\ \text{kvar}\)</span>. <strong>b)</strong> <span class="math inline">\(\vec{Z} = 1,936 + \mathrm{j}1,452\ \Omega\)</span> (<span class="math inline">\(2,42 \angle 36,87^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(Q_C = 6740,8\ \text{var} \Rightarrow C = 443,3\ \mu\text{F}\)</span>.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./05_circuitos_rlc.html" class="pagination-link" aria-label="Circuitos RLC">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Circuitos RLC</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./anexo_complejos.html" class="pagination-link" aria-label="Números Complejos en CA">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Números Complejos en CA</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

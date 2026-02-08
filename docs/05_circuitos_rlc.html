@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Circuitos RLC – Unidad 6: Circuitos de Corriente Alterna</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06_potencia_ca.html" rel="next">
+<link href="./04_imped.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4ba85d4b4427d31d840a79ec76a35f2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+background: #453f93;
+      }
+</style>
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/enclose']},
+  tex: {
+    packages: {'[+]': ['enclose']},
+    macros: {
+      sen: '{\\operatorname{sen}}',
+      phase: ['{\\enclose{phasorangle}{#1}}', 1],
+      dotZ: '{\\dot{Z}}',
+      dotI: '{\\dot{I}}',
+      VA: '{\\text{ VA}}'
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_circuitos_rlc.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Circuitos RLC</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Circuitos RLC</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./logoMajuelo.jpeg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./logoMajuelo.jpeg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Unidad 6: Circuitos de Corriente Alterna</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_corriente_alterna.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Corriente alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_representacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Representación de señales sinusoidales.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_respuesta_comp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Respuesta de los componentes básicos a la Corriente Alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_imped.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_circuitos_rlc.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Circuitos RLC</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_potencia_ca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Potencia en Corriente Alterna</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./anexo_complejos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Números Complejos en CA</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apendice_PAU.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Problemas de Corriente Alterna (Ponencia 2025)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+<section id="circuito-rlc-serie" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="circuito-rlc-serie"><span class="header-section-number">5.1</span> Circuito RLC serie</h2>
+<p>Uno de los circuitos típicos en corriente alterna es el circuito RLC serie que se muestra en la siguiente figura:</p>
+<div class="quarto-layout-panel" data-layout="[70, 30]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/esquema_rlc_serie.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Esquema RLC</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/tensiones_rlc_fiel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Diagrama Vectorial de Tensiones</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Tomando como <strong>referencia de ángulos la intensidad</strong> <span class="math inline">\((\varphi_I=0^\circ, \vec{I}=I\angle 0^\circ)\)</span> la tensión en cada elemento es:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{U}_R &amp;= R \cdot \vec{I} \\
+\vec{U}_L &amp;= \mathrm{j} \cdot X_L \cdot \vec{I} \\
+\vec{U}_C &amp;= -\mathrm{j} \cdot X_C \cdot \vec{I}
+\end{aligned}
+\]</span></p>
+<p>La tensión total <span class="math inline">\(\vec{U}\)</span> es la suma vectorial de las tensiones parciales; así tenemos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{U} &amp;= \vec{U}_R + \vec{U}_L + \vec{U}_C = \\
+&amp;= R \cdot \vec{I} + \mathrm{j} \cdot X_L \cdot \vec{I} - \mathrm{j} \cdot X_C \cdot \vec{I} = \\
+&amp;= [R + \mathrm{j} \cdot (X_L - X_C)] \cdot \vec{I}
+\end{aligned}
+\]</span></p>
+<p>La expresión anterior se puede poner como:</p>
+<p><span class="math display">\[
+\vec{U} = (R + \mathrm{j} \cdot X) \cdot \vec{I} = \vec{Z} \cdot \vec{I}
+\]</span></p>
+<p>La impedancia del circuito es:</p>
+<p><span class="math display">\[
+\vec{Z} = R + \mathrm{j} \cdot (X_L - X_C) = R + \mathrm{j} \cdot \left( \omega \cdot L - \frac{1}{\omega \cdot C} \right)
+\]</span></p>
+<p>Expresado en coordenadas polares resulta:</p>
+<p><span class="math display">\[
+\vec{Z} = |\vec{Z}| \angle \varphi =
+\left\{
+\begin{aligned}
+|\vec{Z}| &amp;= \sqrt{R^2 + X^2} = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{R^2 + \left( \omega \cdot L - \frac{1}{\omega \cdot C} \right)^2} \\[2ex]
+\varphi &amp;= \arctan\left( \frac{X}{R} \right) = \arctan\left( \frac{X_L - X_C}{R} \right) = \arctan\left( \frac{\omega \cdot L - \frac{1}{\omega \cdot C}}{R} \right)
+\end{aligned}
+\right.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/impedancias_rlc_fiel.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Triángulo de Impedancias</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>💡 Ejercicio Resuelto: Análisis RLC Serie
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Enunciado:</strong> En un circuito RLC serie con <span class="math inline">\(R=20\ \Omega\)</span>, <span class="math inline">\(L=100/\pi\ \text{mH}\)</span> y <span class="math inline">\(C=1/2\pi\ \text{mF}\)</span>, funcionando a una frecuencia de <span class="math inline">\(50\ \text{Hz}\)</span>, calcula:<br>
+&nbsp;&nbsp;&nbsp;<strong>a)</strong> La impedancia total (módulo y argumento).<br>
+&nbsp;&nbsp;&nbsp;<strong>b)</strong> La intensidad que circula si la tensión es de <span class="math inline">\(230\ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;<strong>c)</strong> Diagrama fasorial.</p>
+<hr>
+<p><strong>Solución:</strong></p>
+<p><strong>1. Cálculo de Reactancias:</strong> Primero obtenemos los valores óhmicos de la bobina y el condensador a <span class="math inline">\(f=50\text{Hz}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_L &amp;= \omega \cdot L = 2\pi \cdot 50 \cdot \frac{100}{\pi} \cdot 10^{-3} = 10\ \Omega \\
+X_C &amp;= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi} \cdot 10^{-3}} = \frac{1}{50 \cdot 10^{-3}} = 20\ \Omega
+\end{aligned}
+\]</span></p>
+<p><strong>2. Cálculo de la Impedancia (<span class="math inline">\(\vec{Z}\)</span>):</strong> Como <span class="math inline">\(X_C &gt; X_L\)</span>, el circuito será capacitivo. Restamos las reactancias (<span class="math inline">\(X = X_L - X_C = 10 - 20 = -10\ \Omega\)</span>).</p>
+<ul>
+<li><p><strong>Forma Binómica:</strong> <span class="math display">\[\vec{Z} = R + \mathrm{j}(X_L - X_C) = 20 - \mathrm{j}10\ \Omega\]</span></p></li>
+<li><p><strong>Forma Polar:</strong> Pasamos a polar calculando módulo y argumento: <span class="math display">\[|\vec{Z}| = \sqrt{20^2 + (-10)^2} = 22,36\ \Omega\]</span> <span class="math display">\[\varphi = \arctan\left(\frac{-10}{20}\right) = -26,56^\circ\]</span></p></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Resultado Impedancia:</strong> <span class="math display">\[\vec{Z} = 22,36 \phase{-26,56^\circ}\ \Omega\]</span></p>
+<p>Como <span class="math inline">\(\varphi &lt; 0\)</span>, confirmamos que la tensión está <strong>retrasada</strong> respecto a la intensidad (comportamiento capacitivo).</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_ejemplo_serie.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Triángulo de Impedancias</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><strong>3. Cálculo de la Intensidad (<span class="math inline">\(\vec{I}\)</span>):</strong> Aplicamos la Ley de Ohm generalizada. Tomamos la tensión como referencia de fase (<span class="math inline">\(0^\circ\)</span>):</p>
+<p><span class="math display">\[
+\vec{I} = \frac{\vec{U}}{\vec{Z}} = \frac{230 \phase{0^\circ}}{22,36 \phase{-26,56^\circ}} = 10,29 \phase{0^\circ - (-26,56^\circ)}\ \text{A}
+\]</span></p>
+<p><span class="math display">\[\boxed{\vec{I} = 10,29 \phase{26,56^\circ}\ \text{A}}\]</span></p>
+<hr>
+<p><strong>4. Diagrama Fasorial U-I (Apartado c):</strong> Representamos los fasores resultantes.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li><strong>Tensión (<span class="math inline">\(\vec{U}\)</span>):</strong> En el eje real (<span class="math inline">\(0^\circ\)</span>).</li>
+<li><strong>Intensidad (<span class="math inline">\(\vec{I}\)</span>):</strong> Girada <span class="math inline">\(+26,56^\circ\)</span>.</li>
+</ul>
+<p>Como se observa en el diagrama, el fasor de intensidad <span class="math inline">\(\vec{I}\)</span> (azul) está <strong>adelantado</strong> respecto al fasor de tensión <span class="math inline">\(\vec{U}\)</span> (rojo) un ángulo <span class="math inline">\(\varphi = 26,56^\circ\)</span>.</p>
+<p>Esto confirma el comportamiento <strong>capacitivo</strong> global del circuito.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/fasores_ui_ejercicio.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Diagrama Fasorial U-I</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="circuito-rlc-paralelo" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="circuito-rlc-paralelo"><span class="header-section-number">5.2</span> Circuito RLC Paralelo</h2>
+<p>De forma análoga al circuito serie, el circuito RLC paralelo es el estándar para analizar componentes conectados a la misma tensión.</p>
+<div class="quarto-layout-panel" data-layout="[60, 40]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/esquema_rlc_paralelo.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Esquema RLC Paralelo</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/corrientes_paralelo_fiel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Diagrama Vectorial de Corrientes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Tomando como referencia de ángulos la tensión común <span class="math inline">\((\varphi_U=0^\circ, \vec{U}=U\angle 0^\circ)\)</span> la corriente en cada rama es:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{I}_R &amp;= \frac{\vec{U}}{R} = G \cdot \vec{U} \\
+\vec{I}_C &amp;= \frac{\vec{U}}{-\mathrm{j}X_C} = \mathrm{j} \cdot \frac{1}{X_C} \cdot \vec{U} \\
+\vec{I}_L &amp;= \frac{\vec{U}}{\mathrm{j}X_L} = -\mathrm{j} \cdot \frac{1}{X_L} \cdot \vec{U}
+\end{aligned}
+\]</span></p>
+<p>La corriente total <span class="math inline">\(\vec{I}\)</span> es la suma vectorial de las corrientes de rama (Ley de Kirchhoff de los nodos); así tenemos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{I} &amp;= \vec{I}_R + \vec{I}_C + \vec{I}_L= \\
+&amp;= \frac{1}{R} \cdot \vec{U} + \mathrm{j} \frac{1}{X_C} \cdot \vec{U} - \mathrm{j} \frac{1}{X_L} \cdot \vec{U}= \\
+&amp;= \left[ \frac{1}{R} + \mathrm{j} \cdot \left(\frac{1}{X_C} - \frac{1}{X_L}\right) \right] \cdot \vec{U}
+\end{aligned}
+\]</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="width:80%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>📘 Diccionario: Admitancia, Conductancia y Susceptancia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En circuitos paralelo, es más cómodo trabajar con la facilidad que ofrecen los elementos al paso de la corriente (inverso de la oposición). Todas se miden en <strong>Siemens (S)</strong>.</p>
+<ol type="1">
+<li><p><strong>Admitancia (<span class="math inline">\(\vec{Y}\)</span>):</strong> Es la inversa de la Impedancia. Representa la facilidad total al paso de la corriente alterna. <span class="math display">\[\vec{Y} = \frac{1}{\vec{Z}}\]</span></p></li>
+<li><p><strong>Conductancia (<span class="math inline">\(G\)</span>):</strong> Es la inversa de la Resistencia. Representa la parte real de la admitancia. <span class="math display">\[G = \frac{1}{R}\]</span></p></li>
+<li><p><strong>Susceptancia (<span class="math inline">\(B\)</span>):</strong> Es la inversa de la Reactancia. Representa la parte imaginaria.</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ul>
+<li><strong>Susceptancia Capacitiva (<span class="math inline">\(B_C\)</span>):</strong> <span class="math inline">\(B_C = \frac{1}{X_C} = \omega \cdot C\)</span></li>
+<li><strong>Susceptancia Inductiva (<span class="math inline">\(B_L\)</span>):</strong> <span class="math inline">\(B_L = \frac{1}{X_L} = \frac{1}{\omega \cdot L}\)</span></li>
+</ul></li>
+</ol>
+<p>⚠️ <strong>¡Cuidado con los signos!</strong> Al trabajar con admitancias, los signos imaginarios se invierten respecto a las impedancias (porque <span class="math inline">\(1/\mathrm{j} = -\mathrm{j}\)</span>):</p>
+<div style="margin-top: -1em;">
+
+</div>
+<ul>
+<li>El <strong>Condensador</strong> aporta susceptancia <strong>positiva</strong> (<span class="math inline">\(+\mathrm{j}B_C\)</span>).</li>
+<li>La <strong>Bobina</strong> aporta susceptancia <strong>negativa</strong> (<span class="math inline">\(-\mathrm{j}B_L\)</span>).</li>
+</ul>
+<p>Si necesitas la Impedancia equivalente total, simplemente invierte el resultado final: <span class="math inline">\(\vec{Z}_{T} = 1 / \vec{Y}_{T}\)</span>.</p>
+</div>
+</div>
+<p><br></p>
+<p>La expresión anterior se puede poner como la Ley de Ohm generalizada <span class="math inline">\(\vec{I} = \vec{Y} \cdot \vec{U}\)</span>, donde el término entre corchetes es la <strong>Admitancia (<span class="math inline">\(\vec{Y}\)</span>)</strong>.</p>
+<p><span class="math display">\[
+\vec{I} = (G + \mathrm{j} \cdot B) \cdot \vec{U} = \vec{Y} \cdot \vec{U}
+\]</span></p>
+<p>La <strong>admitancia</strong> del circuito (inversa de la impedancia, <span class="math inline">\(\vec{Y} = 1/\vec{Z}\)</span>) es:</p>
+<p><span class="math display">\[
+\vec{Y} = \frac{1}{R} + \mathrm{j} \cdot \left( \omega \cdot C - \frac{1}{\omega \cdot L} \right)
+\]</span></p>
+<p>En forma polar sería:</p>
+<p><span class="math display">\[
+\vec{Y} = |\vec{Y}| \angle \varphi =
+\left\{
+\begin{aligned}
+|\vec{Y}| &amp;= \sqrt{G^2 + B^2} = \sqrt{\left(\frac{1}{R}\right)^2 + (B_C - B_L)^2} = \sqrt{\left(\frac{1}{R}\right)^2 + \left( \omega \cdot C - \frac{1}{\omega \cdot L} \right)^2} \\[2ex]
+\varphi &amp;= \arctan\left( \frac{B}{G} \right) = \arctan\left( \frac{B_C - B_L}{G} \right) = \arctan\left( \frac{\omega \cdot C - \frac{1}{\omega \cdot L}}{1/R} \right)
+\end{aligned}
+\right.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/admitancias_paralelo_fiel.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Triángulo de Admitancias</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>💡 Ejercicio Resuelto: Análisis RLC Paralelo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Enunciado:</strong> En un circuito RLC paralelo con <span class="math inline">\(R=20\ \Omega\)</span>, <span class="math inline">\(L=100/\pi\ \text{mH}\)</span> y <span class="math inline">\(C=1/2\pi\ \text{mF}\)</span>, funcionando a <span class="math inline">\(f=50\ \text{Hz}\)</span> y conectado a <span class="math inline">\(U=230\ \text{V}\)</span>, calcula:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>a)</strong> Admitancia e Impedancia equivalente.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>b)</strong> Intensidad por cada elemento.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>c)</strong> Diagrama fasorial de la tensión y las corrientes.<br>
+</p>
+<hr>
+<p><strong>Solución:</strong></p>
+<p><strong>Paso previo:</strong> Calculamos conductancias y susceptancias. <span class="math display">\[
+\begin{aligned}
+G &amp;= \frac{1}{R} = \frac{1}{20} = 0,05\ \text{S} \\
+X_L &amp;= 10\ \Omega \Rightarrow B_L = \frac{1}{X_L} = 0,1\ \text{S} \\
+X_C &amp;= 20\ \Omega \Rightarrow B_C = \frac{1}{X_C} = 0,05\ \text{S}
+\end{aligned}
+\]</span></p>
+<p><strong>a) Admitancia (<span class="math inline">\(\vec{Y}\)</span>) e Impedancia (<span class="math inline">\(\vec{Z}\)</span>):</strong> <span class="math display">\[
+\vec{Y} = G + \mathrm{j}(B_C - B_L) = 0,05 + \mathrm{j}(0,05 - 0,1) = 0,05 - \mathrm{j}0,05\ \text{S}
+\]</span> En polar: <span class="math inline">\(\vec{Y} = \sqrt{0,05^2 + 0,05^2} \angle \arctan(-1) = 0,0707 \angle -45^\circ\ \text{S}\)</span>.</p>
+<p>La impedancia es la inversa: <span class="math display">\[
+\vec{Z} = \frac{1}{\vec{Y}} = \frac{1}{0,0707 \angle -45^\circ} = 14,14 \angle 45^\circ\ \Omega \quad (= 10 + \mathrm{j}10\ \Omega)
+\]</span></p>
+<p><strong>b) Corrientes de Rama:</strong> Tomando <span class="math inline">\(\vec{U} = 230 \angle 0^\circ\ \text{V}\)</span>: <span class="math display">\[
+\begin{aligned}
+\vec{I}_R &amp;= \vec{U} \cdot G = 230 \cdot 0,05 = 11,5 \angle 0^\circ\ \text{A} (=11,5\ \text{A}) \\
+\vec{I}_L &amp;= \vec{U} \cdot (-\mathrm{j}B_L) = 230 \cdot 0,1 \angle -90^\circ = 23 \angle -90^\circ\ \text{A} (=-23\mathrm{j}\ \text{A}) \\
+\vec{I}_C &amp;= \vec{U} \cdot (\mathrm{j}B_C) = 230 \cdot 0,05 \angle 90^\circ = 11,5 \angle 90^\circ\ \text{A} (=11,5\mathrm{j}\ \text{A})
+\end{aligned}
+\]</span></p>
+<p><strong>Cálculo de la Total:</strong> <span class="math inline">\(\vec{I}_T = \vec{I}_R + \vec{I}_L + \vec{I}_C = 11,5 + \mathrm{j}(11,5 - 23) = 11,5 - \mathrm{j}11,5\ \text{A}\)</span>. <span class="math display">\[|\vec{I}_T| = 16,26\ \text{A} \quad ; \quad \varphi = -45^\circ\]</span></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Resultado:</strong> <span class="math display">\[\vec{I}_T = 16,26 \phase{-45^\circ}\ \text{A}\]</span> El circuito es <strong>Inductivo</strong> (la corriente total retrasa <span class="math inline">\(45^\circ\)</span>).</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/triangulo_paralelo_real.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Triángulo de Corrientes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>c) Diagrama Fasorial:</strong> Representamos la tensión y las corrientes. Observa que <span class="math inline">\(\vec{I}_L\)</span> (23 A) es mayor que <span class="math inline">\(\vec{I}_C\)</span> (11,5 A), “tirando” de la resultante hacia abajo.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li><strong>Tensión (<span class="math inline">\(\vec{U}\)</span>):</strong> Referencia horizontal.</li>
+<li><strong>Corrientes:</strong> La suma vectorial da una resultante en el cuarto cuadrante.</li>
+</ul>
+<p>Se ve claramente que la intensidad total <span class="math inline">\(\vec{I}_T\)</span> (flecha roja) está retrasada respecto a la tensión, confirmando el carácter inductivo.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/fasorial_paralelo_real.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Diagrama Fasorial Completo</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="frecuencia-de-resonancia" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="frecuencia-de-resonancia"><span class="header-section-number">5.3</span> Frecuencia de Resonancia</h2>
+<p>En los circuitos RLC, existe una frecuencia específica muy especial en la que los efectos de la bobina y el condensador se anulan mutuamente. Este fenómeno se conoce como <strong>Resonancia</strong>.</p>
+<section id="condición-de-resonancia" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="condición-de-resonancia"><span class="header-section-number">5.3.1</span> Condición de Resonancia</h3>
+<p>La resonancia ocurre cuando la Reactancia Inductiva iguala en magnitud a la Reactancia Capacitiva.</p>
+<p><span class="math display">\[
+X_L = X_C
+\]</span></p>
+<p>A partir de esta igualdad, podemos deducir el valor de la frecuencia de resonancia (<span class="math inline">\(f_0\)</span>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\omega_0 \cdot L &amp;= \frac{1}{\omega_0 \cdot C} \\[1ex]
+\omega_0^2 &amp;= \frac{1}{L \cdot C} \\[1ex]
+\omega_0 &amp;= \frac{1}{\sqrt{L \cdot C}}
+\end{aligned}
+\]</span></p>
+<p>Como <span class="math inline">\(\omega = 2 \pi f\)</span>, despejamos la frecuencia:</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="width:300px;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>🚩 Fórmula de Thomson (Frecuencia de Resonancia)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L \cdot C}}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="comportamiento-del-circuito" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="comportamiento-del-circuito"><span class="header-section-number">5.3.2</span> Comportamiento del Circuito</h3>
+<p>A esta frecuencia <span class="math inline">\(f_0\)</span>, el circuito se comporta como si fuera <strong>Puramente Resistivo</strong>, ya que las partes imaginarias se cancelan (<span class="math inline">\(\mathrm{j}X_L - \mathrm{j}X_C = 0\)</span>).</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/resonancia_graficas.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Comportamiento en Frecuencia</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Análisis Gráfico:</strong></p>
+<ol type="1">
+<li><p><strong>Bajas Frecuencias (<span class="math inline">\(f &lt; f_0\)</span>):</strong> El condensador domina (<span class="math inline">\(X_C\)</span> es muy grande). El circuito es <strong>Capacitivo</strong>.</p></li>
+<li><p><strong>Punto de Resonancia (<span class="math inline">\(f = f_0\)</span>):</strong> <span class="math inline">\(X_L\)</span> y <span class="math inline">\(X_C\)</span> se cruzan. La impedancia es puramente resistiva (<span class="math inline">\(\vec{Z}=R\)</span>).</p></li>
+<li><p><strong>Altas Frecuencias (<span class="math inline">\(f &gt; f_0\)</span>):</strong> La bobina domina (<span class="math inline">\(X_L\)</span> crece). El circuito se vuelve <strong>Inductivo</strong>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="diferencias-resonancia-serie-vs-paralelo" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="diferencias-resonancia-serie-vs-paralelo"><span class="header-section-number">5.3.3</span> Diferencias: Resonancia Serie vs Paralelo</h3>
+<p>Aunque la frecuencia <span class="math inline">\(f_0\)</span> se calcula igual para ambos, las consecuencias físicas son opuestas:</p>
+<div id="tbl-resonancia-comparativa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-resonancia-comparativa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Comparativa de efectos de la resonancia.
+</figcaption>
+<div aria-describedby="tbl-resonancia-comparativa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;"><strong>Resonancia SERIE</strong></th>
+<th style="text-align: left;"><strong>Resonancia PARALELO</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Impedancia Total</strong></td>
+<td style="text-align: left;"><strong>Mínima</strong> (<span class="math inline">\(\vec{Z} = R\)</span>)</td>
+<td style="text-align: left;"><strong>Máxima</strong> (<span class="math inline">\(\vec{Z} \to \infty\)</span> idealmente)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Intensidad de Fuente</strong></td>
+<td style="text-align: left;"><strong>Máxima</strong></td>
+<td style="text-align: left;"><strong>Mínima</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Peligro / Efecto</strong></td>
+<td style="text-align: left;"><strong>Sobretensiones:</strong><br>En <span class="math inline">\(L\)</span> y <span class="math inline">\(C\)</span> puede haber voltajes mucho mayores que la fuente.</td>
+<td style="text-align: left;"><strong>Sobrecorrientes:</strong><br>Entre <span class="math inline">\(L\)</span> y <span class="math inline">\(C\)</span> circula una corriente interna muy alta (corriente oscilante).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>⚠️ Precaución en el Laboratorio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En resonancia serie, aunque la fuente sea de solo 10V, ¡la tensión en la bobina o el condensador podría alcanzar cientos de voltios! (<span class="math inline">\(U_L = Q \cdot U_{\text{fuente}}\)</span>). Hay que tener cuidado manipulando los circuitos cerca de <span class="math inline">\(f_0\)</span>.</p>
+</div>
+</div>
+<hr>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="width:90%;margin:auto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>📝 Ejercicios de Repaso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Resuelve los siguientes circuitos considerando una frecuencia de red de <strong>50 Hz</strong> (<span class="math inline">\(\omega = 100\pi \ \text{rad/s}\)</span>).</p>
+<section id="circuitos-serie" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="circuitos-serie">Circuitos Serie</h3>
+<p><strong>1. RLC con Impedancia Exacta</strong><br>
+Disponemos de una resistencia <span class="math inline">\(R=8 \ \Omega\)</span>, una bobina ideal de inductancia <span class="math inline">\(L=40/\pi \ \text{mH}\)</span> y un condensador de capacidad <span class="math inline">\(C=1000/\pi \ \mu\text{F}\)</span> conectados en serie. Se aplica una tensión de <span class="math inline">\(200 \ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;<strong>a)</strong> Calcula la reactancia inductiva (<span class="math inline">\(X_L\)</span>) y capacitiva (<span class="math inline">\(X_C\)</span>).<br>
+&nbsp;&nbsp;&nbsp;<strong>b)</strong> Determina la impedancia total en forma binómica y polar.<br>
+&nbsp;&nbsp;&nbsp;<strong>c)</strong> Calcula la intensidad que circula por el circuito.<br>
+&nbsp;&nbsp;&nbsp;<em>Soluciones:</em> <span class="math inline">\(X_L=4 \ \Omega, X_C=10 \ \Omega\)</span>; <span class="math inline">\(\vec{Z}=8-\mathrm{j}6 = 10 \phase{-36,87^\circ} \ \Omega\)</span>; <span class="math inline">\(I=20 \ \text{A}\)</span>.</p>
+<p><strong>2. La Bobina Real</strong><br>
+Una bobina real tiene una resistencia interna de <span class="math inline">\(30 \ \Omega\)</span> y una inductancia de <span class="math inline">\(127,3 \ \text{mH}\)</span> (<span class="math inline">\(L \approx 0,4/\pi \ \text{H}\)</span>). Se conecta en serie con un condensador de <span class="math inline">\(C=50 \ \mu\text{F}\)</span>. El conjunto se alimenta a <span class="math inline">\(230 \ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;<strong>a)</strong> Calcula la impedancia compleja de la bobina (<span class="math inline">\(\vec{Z}_{\text{bobina}}\)</span>) y la del condensador (<span class="math inline">\(\vec{Z}_C\)</span>).<br>
+&nbsp;&nbsp;&nbsp;<strong>b)</strong> Obtén la impedancia total del circuito y la intensidad.<br>
+&nbsp;&nbsp;&nbsp;<strong>c)</strong> ¿El circuito se comporta globalmente como inductivo o capacitivo?<br>
+&nbsp;&nbsp;&nbsp;<em>Soluciones:</em> <span class="math inline">\(\vec{Z}_{\text{bobina}}=30+\mathrm{j}40 \ \Omega\)</span>; <span class="math inline">\(\vec{Z}_C=-\mathrm{j}63,66 \ \Omega\)</span>; <span class="math inline">\(\vec{Z}_T=30-\mathrm{j}23,66 \ \Omega\)</span>; <span class="math inline">\(I=6,02 \ \text{A}\)</span>; Capacitivo.</p>
+<hr>
+</section>
+<section id="circuitos-paralelo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="circuitos-paralelo">Circuitos Paralelo</h3>
+<p><strong>3. Corrientes de Rama</strong><br>
+Se conectan en paralelo una resistencia <span class="math inline">\(R=20 \ \Omega\)</span>, una bobina <span class="math inline">\(L=100/\pi \ \text{mH}\)</span> y un condensador <span class="math inline">\(C=500/\pi \ \mu\text{F}\)</span> a una fuente de <span class="math inline">\(100 \ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;<strong>a)</strong> Calcula la corriente que circula por cada rama (<span class="math inline">\(\vec{I}_R, \vec{I}_L, \vec{I}_C\)</span>).<br>
+&nbsp;&nbsp;&nbsp;<strong>b)</strong> Calcula la corriente total mediante suma vectorial. Dibuja el diagrama fasorial.<br>
+&nbsp;&nbsp;&nbsp;<em>Soluciones:</em> <span class="math inline">\(I_R=5 \ \text{A} \phase{0^\circ}\)</span>; <span class="math inline">\(I_L=10 \ \text{A} \phase{-90^\circ}\)</span>; <span class="math inline">\(I_C=5 \ \text{A} \phase{90^\circ}\)</span>; <span class="math inline">\(I_{total}=7,07 \ \text{A} \phase{-45^\circ}\)</span>.</p>
+<p><strong>4. Cálculo por Admitancias</strong><br>
+Un circuito paralelo está formado por una conductancia <span class="math inline">\(G=0,03 \ \text{S}\)</span>, una susceptancia inductiva <span class="math inline">\(B_L=0,04 \ \text{S}\)</span> y un condensador cuya reactancia es <span class="math inline">\(X_C=20 \ \Omega\)</span>. La tensión aplicada es de <span class="math inline">\(200 \ \text{V}\)</span>.<br>
+&nbsp;&nbsp;&nbsp;<strong>a)</strong> Determina la susceptancia del condensador (<span class="math inline">\(B_C\)</span>) en Siemens.<br>
+&nbsp;&nbsp;&nbsp;<strong>b)</strong> Calcula la admitancia total <span class="math inline">\(\vec{Y}\)</span> en forma binómica y polar.<br>
+&nbsp;&nbsp;&nbsp;<strong>c)</strong> Determina la intensidad total y la impedancia equivalente del conjunto.<br>
+&nbsp;&nbsp;&nbsp;<em>Soluciones:</em> <span class="math inline">\(B_C=0,05 \ \text{S}\)</span>; <span class="math inline">\(\vec{Y}=0,03+\mathrm{j}0,01 \ \text{S} = 0,0316 \phase{18,43^\circ} \ \text{S}\)</span>; <span class="math inline">\(I=6,32 \ \text{A}\)</span>; <span class="math inline">\(\vec{Z}_{eq}=31,62 \phase{-18,43^\circ} \ \Omega\)</span>.</p>
+</section>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./04_imped.html" class="pagination-link" aria-label="Impedancia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Impedancia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06_potencia_ca.html" class="pagination-link" aria-label="Potencia en Corriente Alterna">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Potencia en Corriente Alterna</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
