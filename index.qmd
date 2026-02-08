@@ -10,7 +10,7 @@ En esta unidad de **Tecnología e Ingeniería II**, estudiaremos el comportamien
 
 ## Contenidos de la unidad
 
-A continuación se detallan las secciones que componen esta unidad:
+A continuación, se detallan las secciones que componen esta unidad:
 
 1. **Corriente alterna**: Conceptos básicos y generación.
 2. **Representación de señales sinusoidales**: Análisis trigonométrico y fasorial.
