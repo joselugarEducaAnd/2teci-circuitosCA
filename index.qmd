@@ -8,7 +8,7 @@ page-layout: full
 
 En esta unidad de **Tecnología e Ingeniería II**, estudiaremos el comportamiento de los circuitos eléctricos cuando la tensión y la corriente varían de forma sinusoidal en el tiempo.
 
-## Contenidos de la unidad
+## Contenidos de la unidad 
 
 A continuación, se detallan las secciones que componen esta unidad:
 
