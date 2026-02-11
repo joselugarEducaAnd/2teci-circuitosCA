@@ -129,7 +129,7 @@ Una magnitud sinusoidal se puede representar como la proyección vertical de un 
 **Nota sobre notación:** Al tratarse de una magnitud vectorial, a partir de ahora utilizaremos la notación de vector con flecha (ej. $\vec{U}, \vec{I}$) para referirnos al fasor completo (número complejo), distinguiéndolo así claramente de su módulo o valor escalar (ej. $U, I$).
 
 * **Forma polar:** $\vec{U} = U_{p} \angle \varphi$.
-* **Forma compleja:** $\vec{U} = U_{p} \cos \varphi + j \cdot \sin \varphi$. Donde $j=\sqrt{-1}$ es la *unidad imaginaria*, que en Electrotecnia se denomina **$j$** para no confundirla con la intensidad. Representa un **giro de +90°** en el diagrama fasorial.
+* **Forma compleja:** $\vec{U} = U_{p} \cos \varphi + j \cdot U_{p} \sin \varphi$. Donde $j=\sqrt{-1}$ es la *unidad imaginaria*, que en Electrotecnia se denomina **$j$** para no confundirla con la intensidad. Representa un **giro de +90°** en el diagrama fasorial.
 
 ::: {style="width: 90%; margin: auto;"}
 ::: {.callout-important icon="false"}
