@@ -84,8 +84,9 @@ i(t) = C \cdot \frac{du(t)}{dt} = C \cdot \omega \cdot ( \sqrt{2}U) \cdot \sen(\
 $$
 
 Obtenemos una intensidad con la misma pulsación que la tensión aplicada y con las características siguientes:
+
 - Un valor de pico $I_p=\omega \cdot C \cdot \sqrt{2} U$. Por lo tanto, **la intensidad eficaz es** $I=\omega \cdot C \cdot U$**.**
--   La intensidad se encuentra adelantada 90° ($\pi/2$) con respecto a la tensión; la **fase inicial de la intensidad es** $\varphi_I = \varphi + \frac{\pi}{2}$**.**
+- La intensidad se encuentra adelantada 90° ($\pi/2$) con respecto a la tensión; la **fase inicial de la intensidad es** $\varphi_I = \varphi + \frac{\pi}{2}$**.**
 
 Al cociente $1/\omega \cdot C$ se le llama **reactancia capacitiva** y se representa por $X_C$, es decir:
 

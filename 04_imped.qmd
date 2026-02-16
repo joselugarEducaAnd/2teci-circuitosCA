@@ -184,9 +184,8 @@ A diferencia de las resistencias, las impedancias son **números complejos**. Pa
 
 ::: {.callout-important style="width:90%;margin:auto"}
 ## Ejemplo
-**Dada una resistencia de 5 ohmios y una inductancia de 50 mH que están trabajando a 50 Hz, calcula la impedancia equivalente en los siguientes casos:**
-
-**a) Cuando están conectadas en serie.**
+**Dada una resistencia de $5 \ \Omega$ y una inductancia de $50 \text{ mH}$ que están trabajando a 50 Hz, calcula la impedancia equivalente en los siguientes casos:**\
+**a) Cuando están conectadas en serie.**\
 **b) Cuando están conectadas en paralelo.**
 
 *Soluciones:*
