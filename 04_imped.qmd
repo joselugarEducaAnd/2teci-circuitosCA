@@ -235,8 +235,9 @@ Una resistencia de $10 \ \Omega$ se conecta en serie con un condensador de capac
 \vspace{-1em}
 <div style="margin-top: -1em;"></div>
 
-* Calcula la reactancia capacitiva $X_C$.
-* Determina la impedancia total en forma binómica y polar.
+a) Calcula la reactancia capacitiva $X_C$.
+b) Determina la impedancia total en forma binómica y polar.
+
 * *Solución:* $\vec{Z} = 10 - 31,83 \mathrm{j} \ \Omega = 33,36 \phase{-72,56^\circ} \ \Omega$.
 
 **2. Bobina Real**
@@ -249,8 +250,9 @@ Una bobina real se modela como una resistencia de $4 \ \Omega$ en serie con una 
 \vspace{-1em}
 <div style="margin-top: -1em;"></div>
 
-* Expresa la impedancia total del componente.
-* Si duplicamos la frecuencia a $120 \ \text{Hz}$, ¿cuál sería la nueva impedancia?
+a) Expresa la impedancia total del componente.
+b) Si duplicamos la frecuencia a $120 \ \text{Hz}$, ¿cuál sería la nueva impedancia?
+
 * *Solución ($60 \text{Hz}$):* $\vec{Z} = 4 + 7,54 \mathrm{j} \ \Omega$.
 
 **3. Identificación de componentes**
@@ -263,8 +265,9 @@ Una "Caja Negra" (impedancia desconocida) tiene un valor de $\vec{Z} = 20 \angle
 \vspace{-1em}
 <div style="margin-top: -1em;"></div>
 
-* Determina la parte real ($R$) y la parte imaginaria ($X$).
-* ¿Es una carga inductiva o capacitiva? Calcula el valor de $L$ o $C$ correspondiente.
+a) Determina la parte real ($R$) y la parte imaginaria ($X$).
+b) ¿Es una carga inductiva o capacitiva? Calcula el valor de $L$ o $C$ correspondiente.
+
 * *Solución:* $R = 14,14 \ \Omega$; $X = 14,14 \ \Omega$ (Inductiva); $L = 45 \ \text{mH}$.
 
 **4. Impedancia Mixta**
