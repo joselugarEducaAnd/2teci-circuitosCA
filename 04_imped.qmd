@@ -324,7 +324,7 @@ a) El valor de la resistencia.
 b) La reactancia capacitiva.
 c) El triángulo de impedancias.
 
-* *Solución:* $a) \ R=30 \ \Omega ;b) \ X_c=4,41 \ \Omega; c) \ \vec{Z} = 6,67 \phase{-41,41^\circ} \ \Omega$.
+* *Solución:* $a) \ R=30 \ \Omega ;b) \ X_c=26,46 \ \Omega; c) \ \vec{Z} = 40 \phase{-41,41^\circ} \ \Omega$.
 
 **8. Corrientes en Paralelo**
 
@@ -351,5 +351,5 @@ a) La representación vectorial de las corrientes y la medida del amperímetro $
 b) El valor de $R$.
 c) El valor de $L$.
 
-* *Solución:* $a) \ 6,93 \ \text{A} ;b) \ 20 \ \Omega; c) \ 53,87 \ \text{mH}$.
+* *Solución:* $a) \ 6,93 \ \text{A} ;b) \ 31,75 \ \Omega; c) \ 63,66 \ \text{mH}$.
 :::
