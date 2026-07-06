@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6  Potencia en Corriente Alterna</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
+     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
+     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
+<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
+<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
+<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
+<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
+<li class="active"><a href="../html/6-potencia-en-ca.html" class="active no-ch">6 · Potencia en CA</a></li>
+<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
+<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
+</ul></nav><main id="page-6-potencia-en-ca" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">6 · Potencia en CA</h1></div>
+</header>
+<div id="page-content-page-6-potencia-en-ca" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p>En corriente continua, la potencia era simple: <span class="math inline">\(P = V \cdot I\)</span>. Sin embargo, en corriente alterna, el desfase entre tensión e intensidad hace que aparezcan <strong>tres formas de entender la energía</strong>.</p>
+<section class="level2" data-number="6.1" id="conceptos-fundamentales">
+<h2 class="" data-number="6.1"><span class="header-section-number">6.1</span> Conceptos Fundamentales</h2>
+<p>Cuando aplicamos una tensión alterna a una carga, la energía fluye. Dependiendo de si la carga almacena energía (bobinas/condensadores) o la consume (resistencias), definimos:</p>
+<section class="level3 unnumbered" id="a.-potencia-activa-p">
+<h3 class="unnumbered">A. Potencia Activa (<span class="math inline">\(P\)</span>)</h3>
+<p>Es la <strong>potencia útil</strong>, la que realmente realiza un trabajo (calor, luz, movimiento). Se disipa en las resistencias.</p>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(P\)</span></li>
+<li><strong>Unidad:</strong> Vatio (<strong>W</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(P = U \cdot I \cdot \cos \varphi\)</span></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="b.-potencia-reactiva-q">
+<h3 class="unnumbered">B. Potencia Reactiva (<span class="math inline">\(Q\)</span>)</h3>
+<p>Es una potencia “de ida y vuelta”. No realiza trabajo útil; simplemente se dedica a crear y destruir campos magnéticos (bobinas) y eléctricos (condensadores). La fuente la entrega y el componente la devuelve 50 veces por segundo.</p>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(Q\)</span></li>
+<li><strong>Unidad:</strong> Voltamperio reactivo (<strong>var</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(Q = U \cdot I \cdot \operatorname{sen} \varphi\)</span></li>
+</ul>
+<div class="marco marco-formula"><p class="marco-titulo">Warning⚠️ Ojo con las unidades: ¿var o VAr?</p>
+<p>Existe una discrepancia habitual entre la norma técnica y la costumbre académica:</p>
+<ol type="1">
+<li><strong>La Norma (Lo correcto):</strong> La Comisión Electrotécnica Internacional (IEC) establece que el símbolo único y oficial es <strong>var</strong> (en minúsculas). Así lo usaremos en estos apuntes.</li>
+<li><strong>La Costumbre (Lo habitual):</strong> En muchos libros de texto, exámenes de Selectividad y placas de características industriales, verás escrito <strong>VAr</strong> o <strong>VAR</strong> (usando mayúsculas por venir de Voltio y Amperio).</li>
+</ol>
+<p><strong>Consejo para el examen:</strong> Aunque <code>var</code> es lo técnicamente perfecto, si en el enunciado de tu examen aparece <code>VAr</code>, puedes usar esa notación sin miedo. Ambas se aceptan universalmente en el ámbito de la ingeniería práctica.</p>
+</div>
+</section>
+<section class="level3 unnumbered" id="c.-potencia-aparente-s">
+<h3 class="unnumbered">C. Potencia Aparente (<span class="math inline">\(S\)</span>)</h3>
+<p>Es la potencia total que debe suministrar la fuente (o la que dimensiona los cables y transformadores). Es la suma vectorial de las anteriores.</p>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><strong>Símbolo:</strong> <span class="math inline">\(S\)</span> (o <span class="math inline">\(|\vec{S}|\)</span>)</li>
+<li><strong>Unidad:</strong> Voltamperio (<strong>VA</strong>)</li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(S = U \cdot I = \sqrt{P^2 + Q^2}\)</span></li>
+</ul>
+<hr/>
+</section>
+</section>
+<section class="level2" data-number="6.2" id="potencia-en-los-elementos-básicos">
+<h2 class="" data-number="6.2"><span class="header-section-number">6.2</span> Potencia en los Elementos Básicos</h2>
+<p>Analicemos qué ocurre en cada componente puro observando sus ondas de tensión (marrón) y potencia instantánea (rojo).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/ondas_potencia.png" style="width:100.0%"/></p>
+<figcaption>Ondas de potencia instantánea en R, L y C</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="tbl-potencias-componentes">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-potencias-componentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 6.1: Resumen de potencias por componente.
+</figcaption>
+<div aria-describedby="tbl-potencias-componentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table tabla-datos">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 21%"/>
+<col style="width: 21%"/>
+<col style="width: 21%"/>
+<col style="width: 17%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: center;">Desfase (<span class="math inline">\(\varphi\)</span>)</th>
+<th style="text-align: center;">Potencia Activa (<span class="math inline">\(P\)</span>)</th>
+<th style="text-align: center;">Potencia Reactiva (<span class="math inline">\(Q\)</span>)</th>
+<th style="text-align: left;">Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Resistencia</strong></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(U \cdot I\)</span></strong></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: left;">Consume energía constantemente.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Bobina</strong></td>
+<td style="text-align: center;"><span class="math inline">\(90^\circ\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(+ U \cdot I\)</span></strong></td>
+<td style="text-align: left;">Absorbe <span class="math inline">\(Q\)</span> (positiva). No se calienta.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Condensador</strong></td>
+<td style="text-align: center;"><span class="math inline">\(-90^\circ\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="math inline">\(- U \cdot I\)</span></strong></td>
+<td style="text-align: left;">Cede <span class="math inline">\(Q\)</span> (negativa). No se calienta.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="marco marco-formula"><p class="marco-titulo">WarningConvenio de Signos para Q</p>
+<ul>
+<li><strong><span class="math inline">\(Q &gt; 0\)</span> (Inductiva):</strong> Decimos que el circuito <strong>absorbe</strong> potencia reactiva. El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>arriba</strong>.</li>
+<li><strong><span class="math inline">\(Q &lt; 0\)</span> (Capacitiva):</strong> Decimos que el circuito <strong>cede</strong> potencia reactiva (o absorbe negativa). El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>abajo</strong>.</li>
+</ul>
+</div>
+<hr/>
+</section>
+<section class="level2" data-number="6.3" id="el-triángulo-de-potencias">
+<h2 class="" data-number="6.3"><span class="header-section-number">6.3</span> El Triángulo de Potencias</h2>
+<p>Al igual que teníamos un triángulo de impedancias, tenemos un <strong>Triángulo de Potencias</strong>. Relaciona las tres magnitudes mediante Pitágoras.</p>
+<div class="quarto-layout-panel" data-layout="[60, 40]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<p><strong>Relaciones Trigonométricas:</strong></p>
+<ul>
+<li><strong>Hipotenusa:</strong> Potencia Aparente (<span class="math inline">\(\vec{S}\)</span>).</li>
+<li><strong>Cateto Horizontal:</strong> Potencia Activa (<span class="math inline">\(P\)</span>).</li>
+<li><strong>Cateto Vertical:</strong> Potencia Reactiva (<span class="math inline">\(Q\)</span>).</li>
+</ul>
+<p>Matemáticamente, definimos la <strong>Potencia Compleja (<span class="math inline">\(\vec{S}\)</span>)</strong> como:</p>
+<p><span class="math display">\[
+\vec{S} = P + \mathrm{j}Q
+\]</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/triangulo_potencias_gen.png" width="400"/></p>
+<figcaption>Triángulo Inductivo (<span class="math inline">\(Q&gt;0\)</span>)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section class="level3" data-number="6.3.1" id="el-factor-de-potencia-f.d.p.">
+<h3 class="" data-number="6.3.1"><span class="header-section-number">6.3.1</span> El Factor de Potencia (<span class="math inline">\(f.d.p.\)</span>)</h3>
+<p>Es un indicador de la <strong>eficiencia</strong> del sistema. Se define como el coseno del ángulo <span class="math inline">\(\varphi\)</span>:</p>
+<p><span class="math display">\[
+f.d.p. = \cos \varphi = \frac{P}{S}
+\]</span></p>
+<ul>
+<li><strong><span class="math inline">\(\cos \varphi = 1\)</span>:</strong> Toda la potencia es útil (<span class="math inline">\(S=P\)</span>). Caso ideal (Resistivo puro).</li>
+<li><strong><span class="math inline">\(\cos \varphi &lt; 1\)</span>:</strong> Parte de la energía se desperdicia circulando como reactiva.</li>
+</ul>
+<p>En el mundo real, la inmensa mayoría de las instalaciones industriales tienen un <strong>carácter fuertemente inductivo</strong>. Esto significa que consumen mucha potencia reactiva positiva (<span class="math inline">\(Q &gt; 0\)</span>) y tienen un factor de potencia bajo (<span class="math inline">\(\cos \varphi &lt; 0,8\)</span>).</p>
+</section>
+<section class="level3 unnumbered" id="por-qué-el-consumo-es-inductivo">
+<h3 class="unnumbered">¿Por qué el consumo es Inductivo?</h3>
+<p>La razón son las <strong>Máquinas Eléctricas</strong>. Tanto los <strong>motores</strong> (bombas, ventiladores, cintas transportadoras) como los <strong>transformadores</strong> funcionan basados en campos magnéticos. Para crear estos campos magnéticos, necesitan absorber corriente reactiva de la red para magnetizar sus bobinas.</p>
+</section>
+<section class="level3 unnumbered" id="por-qué-es-necesario-corregirlo">
+<h3 class="unnumbered">¿Por qué es necesario corregirlo?</h3>
+<p>Tener un factor de potencia bajo (<span class="math inline">\(\cos \varphi\)</span> pequeño) implica tener un ángulo <span class="math inline">\(\varphi\)</span> grande, lo que obliga a la empresa eléctrica a suministrar mucha Potencia Aparente (<span class="math inline">\(S\)</span>) para conseguir la misma Potencia Activa (<span class="math inline">\(P\)</span>).</p>
+<p><span class="math display">\[
+I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
+\]</span></p>
+<p>Si el <span class="math inline">\(\cos \varphi\)</span> es bajo, la Intensidad Total (<span class="math inline">\(I\)</span>) se dispara para mantener la misma potencia útil (<span class="math inline">\(P\)</span>). Esto provoca:</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="1">
+<li><strong>Pérdidas de energía:</strong> Más corriente calienta más los cables (efecto Joule).</li>
+<li><strong>Sobredimensionamiento:</strong> Se necesitan transformadores y cables más gruesos.</li>
+<li><strong>Penalizaciones económicas:</strong> Las compañías eléctricas cobran un recargo muy alto en la factura si tu factor de potencia es bajo (normalmente si es menor de 0,95).</li>
+</ol>
+</section>
+<section class="level3 unnumbered" id="cómo-se-corrige-compensación">
+<h3 class="unnumbered">¿Cómo se corrige? (Compensación)</h3>
+<p>La solución consiste en instalar elementos que generen la potencia reactiva que los motores necesitan, para no tener que pedirla a la red eléctrica. El elemento ideal es el <strong>Condensador</strong> (Batería de Condensadores).</p>
+<ul>
+<li>Los motores <strong>absorben</strong> <span class="math inline">\(Q\)</span> (Inductiva, hacia arriba).</li>
+<li>Los condensadores <strong>ceden</strong> <span class="math inline">\(Q\)</span> (Capacitiva, hacia abajo).</li>
+</ul>
+<p>Al conectarlos en paralelo, la <span class="math inline">\(Q_C\)</span> del condensador cancela gran parte de la <span class="math inline">\(Q_L\)</span> del motor.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/triangulo_compensacion.png" style="width:90.0%"/></p>
+<figcaption>Efecto de la Compensación</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Análisis del Gráfico:</strong></p>
+<ol type="1">
+<li><p><strong>Estado Inicial (Rojo):</strong> Tenemos una carga con mucho consumo de reactiva (<span class="math inline">\(Q_{inicial}\)</span>) y un ángulo <span class="math inline">\(\varphi_1\)</span> grande. La corriente necesaria (<span class="math inline">\(S_{inicial}\)</span>) es muy alta.</p></li>
+<li><p><strong>Acción (Verde):</strong> Introducimos una batería de condensadores que aporta una <span class="math inline">\(Q_C\)</span> en sentido contrario (hacia abajo).</p></li>
+<li><p><strong>Estado Final (Naranja):</strong> La reactiva neta baja a <span class="math inline">\(Q_{final}\)</span>.</p>
+<ul>
+<li>La <strong>Potencia Activa (<span class="math inline">\(P\)</span>) se mantiene igual</strong> (la máquina trabaja igual).</li>
+<li>La <strong>Potencia Aparente (<span class="math inline">\(S_{final}\)</span>) disminuye</strong>.</li>
+<li>La intensidad total que circula por la línea baja, ahorrando dinero y pérdidas.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<hr/>
+<div class="marco marco-formula"><p class="marco-titulo">Importante💡 Ejemplo Resuelto: Motor Monofásico</p>
+<p>Un motor eléctrico (carga inductiva) se conecta a una red de <span class="math inline">\(230\ \text{V}\)</span>. Consume una intensidad de <span class="math inline">\(5\ \text{A}\)</span> con un factor de potencia de <span class="math inline">\(\mathbf{0,8}\)</span> (inductivo). Calcula <span class="math inline">\(P, Q, S\)</span> y dibuja el triángulo.</p>
+<p><strong>Solución:</strong></p>
+<ol type="1">
+<li><p><strong>Potencia Aparente (<span class="math inline">\(S\)</span>):</strong> Es lo primero que podemos calcular con <span class="math inline">\(U\)</span> e <span class="math inline">\(I\)</span>. <span class="math display">\[S = U \cdot I = 230 \cdot 5 = \mathbf{1150\ \text{VA}}\]</span></p></li>
+<li><p><strong>Ángulo (<span class="math inline">\(\varphi\)</span>):</strong> <span class="math display">\[\cos \varphi = 0,8 \Rightarrow \varphi = \arccos(0,8) = 36,87^\circ\]</span> Como es inductivo, <span class="math inline">\(\varphi &gt; 0\)</span>.</p></li>
+<li><p><strong>Potencia Activa (<span class="math inline">\(P\)</span>):</strong> <span class="math display">\[P = S \cdot \cos \varphi = 1150 \cdot 0,8 = \mathbf{920\ \text{W}}\]</span></p></li>
+<li><p><strong>Potencia Reactiva (<span class="math inline">\(Q\)</span>):</strong> Calculamos el seno: <span class="math inline">\(\operatorname{sen}(36,87^\circ) = 0,6\)</span>. <span class="math display">\[Q = S \cdot \operatorname{sen} \varphi = 1150 \cdot 0,6 = \mathbf{690\ \text{var}}\]</span></p></li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Triángulo de Potencias:</strong> Como es inductivo, la <span class="math inline">\(Q\)</span> se dibuja hacia arriba. <span class="math display">\[\vec{S} = 920 + \mathrm{j}690\ \text{VA}\]</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/triangulo_potencias_ejemplo.png" style="width:80.0%"/></p>
+<figcaption>Triángulo del Motor</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr/>
+</section>
+</section>
+<section class="level2" data-number="6.4" id="ejercicios-propuestos">
+<h2 class="" data-number="6.4"><span class="header-section-number">6.4</span> Ejercicios Propuestos</h2>
+<div class="marco marco-formula"><p class="marco-titulo">Importante📝 Practica tú mismo</p>
+<p><strong>1.</strong> Una estufa de resistencia pura <span class="math inline">\(R=50\ \Omega\)</span> se conecta a <span class="math inline">\(230\ \text{V}\)</span>.<br/>
+       <strong>a)</strong> Calcula su potencia activa, reactiva y aparente.<br/>
+       <strong>b)</strong> ¿Cuánto vale su factor de potencia?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(P=1058\ \text{W}\)</span>; <span class="math inline">\(Q=0\)</span>; <span class="math inline">\(S=1058\ \text{VA}\)</span>; <span class="math inline">\(\cos\varphi=1\)</span>.</p>
+<hr/>
+<p><strong>2.</strong> Un condensador de <span class="math inline">\(C=100\ \mu\text{F}\)</span> se conecta a <span class="math inline">\(230\ \text{V}\)</span> / <span class="math inline">\(50\ \text{Hz}\)</span>.<br/>
+       <strong>a)</strong> Calcula la reactancia <span class="math inline">\(X_C\)</span> y la potencia reactiva <span class="math inline">\(Q\)</span>.<br/>
+       <strong>b)</strong> ¿Absorbe o cede potencia reactiva?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(X_C=31,83\ \Omega\)</span>; <span class="math inline">\(Q = -1661\ \text{var}\)</span>; Cede reactiva (Capacitivo).</p>
+<hr/>
+<p><strong>3.</strong> Una instalación consume una potencia activa <span class="math inline">\(P=3000\ \text{W}\)</span> y una reactiva inductiva <span class="math inline">\(Q=4000\ \text{var}\)</span>.<br/>
+       <strong>a)</strong> Calcula la potencia aparente total.<br/>
+       <strong>b)</strong> Halla el factor de potencia.<br/>
+       <strong>c)</strong> Si la tensión es <span class="math inline">\(230\ \text{V}\)</span>, ¿qué corriente circula por el cable general?</p>
+<p><em>Soluciones:</em> <span class="math inline">\(S=5000\ \text{VA}\)</span>; <span class="math inline">\(\cos\varphi=0,6\)</span>; <span class="math inline">\(I=21,74\ \text{A}\)</span>.</p>
+<hr/>
+<p><strong>4.</strong>En el circuito de la figura, calcular:<br/>
+    <strong>a)</strong> La intensidad que circula por cada rama.<br/>
+    <strong>b)</strong> La impedancia equivalente vista desde el generador.<br/>
+    <strong>c)</strong> Las potencias activa y reactiva totales.</p>
+<p><strong>Datos:</strong> <span class="math inline">\(X_{C2}=10\ \Omega\)</span>; <span class="math inline">\(X_{C1} = X_L = R = 5\ \Omega\)</span>; <span class="math inline">\(E = 50\ \text{V}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia4.png" width="400"/></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(\vec{I}_{\text{Rama1}} = 5 \sqrt{2} \enclose{phasorangle}{4}5^\circ\ \text{A}\)</span>; <span class="math inline">\(\quad \vec{I}_{\text{Rama2}} = 5 \enclose{phasorangle}{9}0^\circ\ \text{A}\)</span>;<span class="math inline">\(\vec{I}_{\text{Rama3}} = 5 \sqrt{2} \enclose{phasorangle}{-}45^\circ\ \text{A}\)</span>; <strong>b)</strong> <span class="math inline">\(\vec{Z}_{eq} = 4 + 2\mathrm{j}\ \Omega\)</span> (<span class="math inline">\(2 \sqrt{5} \enclose{phasorangle}{2}6,56^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(P_T = 500\ \text{W}\)</span>; <span class="math inline">\(\quad Q_T = 250\ \text{var}\)</span> (Inductiva).</p>
+<hr/>
+<p><strong>5.</strong> En el circuito de la figura se muestra un circuito de corriente alterna en el que las indicaciones de los aparatos de medida, supuestos ideales, son las siguientes:</p>
+<ul>
+<li>Voltímetro, <span class="math inline">\(100\ \text{V}\)</span> (valor eficaz).</li>
+<li>Amperímetro, <span class="math inline">\(20\ \text{A}\)</span> (valor eficaz).</li>
+<li>Vatímetro, <span class="math inline">\(1200\ \text{W}\)</span>.</li>
+</ul>
+<p>Hallar <span class="math inline">\(\vec{Z}\)</span>, <span class="math inline">\(R\)</span>, <span class="math inline">\(X\)</span> y <span class="math inline">\(\vec{U}_s\)</span>, tomando <span class="math inline">\(\vec{I}\)</span> como origen de fases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia5.png" style="width:60.0%"/></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>Impedancia:</strong> <span class="math inline">\(\vec{Z} = 3 + \mathrm{j}4\ \Omega\)</span> (<span class="math inline">\(5 \enclose{phasorangle}{5}3,13^\circ\ \Omega\)</span>). <strong>Componentes:</strong> <span class="math inline">\(R = 3\ \Omega\)</span>; <span class="math inline">\(\quad X = 4\ \Omega\)</span>. <strong>Tensión fuente:</strong> <span class="math inline">\(\vec{U}_s = 80 + 100\mathrm{j}\ \text{V}\)</span> (<span class="math inline">\(128 \enclose{phasorangle}{5}1,31^\circ\ \text{V}\)</span>).</p>
+<hr/>
+<p><strong>6.</strong> El circuito de la figura se alimenta con una fuente de tensión de valor eficaz <span class="math inline">\(220\text{V}/50\text{Hz}\)</span>. Se pide:<br/>
+    <strong>a)</strong> Calcular el valor de la lectura del amperímetro A.<br/>
+    <strong>b)</strong> Determinar la lectura del voltímetro V.<br/>
+    <strong>c)</strong> Calcular las potencias totales consumidas en el circuito y representar el triángulo de potencias.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia6.png" style="width:60.0%"/></p>
+</figure>
+</div>
+<p><strong>Soluciones:</strong> <strong>a)</strong> Lectura A <span class="math inline">\(= 5 \sqrt{2}\ \text{A}\)</span>. <strong>b)</strong> Lectura V <span class="math inline">\(= 155,56\ \text{V}\)</span>. <strong>c)</strong> <span class="math inline">\(P = 1100\ \text{W}\)</span>; <span class="math inline">\(\quad Q = -1100\ \text{var}\)</span>; <span class="math inline">\(\quad S = 1555,63\ \text{VA}\)</span>.</p>
+<hr/>
+<p><strong>7.</strong> En el circuito de la figura se sabe que los elementos R-L constituyen una carga que absorbe <span class="math inline">\(2000\ \text{W}\)</span> con el factor de potencia 0,5 si se cortocircuita el condensador C. Si la tensión de la fuente es de <span class="math inline">\(220\ \text{V}/50\text{Hz}\)</span>, calcula el valor que debe tener el condensador para que el factor de potencia del conjunto R-L-C sea unitario.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia7.png" width="400"/></p>
+</figure>
+</div>
+<p><strong>Solución: <span class="math inline">\(C = 36,75\ \mu\text{F}\)</span>.</strong></p>
+<hr/>
+<p><strong>8.</strong> Se conecta a una línea de <span class="math inline">\(220\ \text{V}\)</span> un receptor monofásico inductivo (motor eléctrico) que consume una potencia activa de <span class="math inline">\(5\ \text{kW}\)</span> con un factor de potencia de <span class="math inline">\(0,7\)</span>. Se pide:</p>
+<p>    <strong>a)</strong> Calcular las potencias reactiva y aparente.<br/>
+    <strong>b)</strong> Calcular la capacidad equivalente del condensador que se ha de conectar si se desea mejorar el factor de potencia a <span class="math inline">\(0,95\)</span>.<br/>
+    <strong>c)</strong> Calcular la reducción de corriente por la línea al conectar el condensador.<br/>
+    <strong>d)</strong> ¿Ha cambiado la potencia activa al mejorar el factor de potencia? Justifica la respuesta.</p>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(S = 7142,8\ \text{VA}\)</span>; <span class="math inline">\(\quad Q = 5101\ \text{var}\)</span>. <strong>b)</strong> <span class="math inline">\(Q_C = 3457,5\ \text{var} \Rightarrow C = 227,4\ \mu\text{F}\)</span>. <strong>c)</strong> La corriente baja de <span class="math inline">\(32,47\ \text{A}\)</span> a <span class="math inline">\(23,92\ \text{A}\)</span>. Reducción: <span class="math inline">\(\Delta I = 8,55\ \text{A}\)</span>. <strong>d)</strong> No. La potencia activa (<span class="math inline">\(P\)</span>) depende del trabajo que realiza el motor, y eso no cambia al añadir condensadores en paralelo.</p>
+<hr/>
+<p><strong>9.</strong> Una carga de corriente alterna monofásica de <span class="math inline">\(50\ \text{Hz}\)</span> es alimentada a una tensión de <span class="math inline">\(220\ \text{V}\)</span> (valor eficaz). Sabiendo que la potencia aparente absorbida por dicha carga es de <span class="math inline">\(20\ \text{kVA}\)</span>, con <span class="math inline">\(\cos \varphi = 0,8\)</span> inductivo, se pide:</p>
+<p>    <strong>a)</strong> Las potencias activa y reactiva consumidas por la carga.<br/>
+    <strong>b)</strong> La impedancia compleja de la carga.<br/>
+    <strong>c)</strong> El condensador que conectado en paralelo con la carga hace que el factor de potencia de la instalación sea <span class="math inline">\(0,95\)</span> inductivo.</p>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(P = 16\ \text{kW}\)</span>; <span class="math inline">\(\quad Q = 12\ \text{kvar}\)</span>. <strong>b)</strong> <span class="math inline">\(\vec{Z} = 1,936 + \mathrm{j}1,452\ \Omega\)</span> (<span class="math inline">\(2,42 \angle 36,87^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(Q_C = 6740,8\ \text{var} \Rightarrow C = 443,3\ \mu\text{F}\)</span>.</p>
+</div>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="5-circuitos-rlc.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="anexo-a-numeros-complejos.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

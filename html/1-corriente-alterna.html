@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1  Corriente alterna</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
+     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
+     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class="active"><a href="../html/1-corriente-alterna.html" class="active no-ch">1 · Corriente alterna</a></li>
+<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
+<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
+<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
+<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
+<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
+<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
+<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
+</ul></nav><main id="page-1-corriente-alterna" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">1 · Corriente alterna</h1></div>
+</header>
+<div id="page-content-page-1-corriente-alterna" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p>La corriente alterna (CA) es el flujo eléctrico <strong>periódico</strong>, <strong>alterno</strong> y cuya ley de variación en el tiempo es <strong>senoidal</strong>. Es la que generan los alternadores en las centrales eléctricas y la que se transporta a los lugares de consumo, donde la transformamos en otros tipos de energía.</p>
+<p>Por tanto, la CA es una corriente con las siguientes características:</p>
+<ul>
+<li>Es <strong>variable</strong> en el tiempo.</li>
+<li>Su sentido cambia periódicamente, pasando de <strong>positivo a negativo y viceversa</strong>.</li>
+<li>Es <strong>simétrica</strong> (alcanza los mismos valores en un sentido y en otro).</li>
+<li>Es <strong>sinusoidal</strong>. Es decir, sigue una expresión matemática de coseno (<span class="math inline">\(I(t) = I_0 \cdot \cos(\omega t)\)</span>) o seno (<span class="math inline">\(I(t) = I_0 \cdot \operatorname{sen}(\omega t)\)</span>).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/ca.png" width="400"/></p>
+<figcaption>Gráfica de corriente alterna</figcaption>
+</figure>
+</div>
+<p>La corriente alterna es producida por <strong>inducción</strong> en una espira o solenoide de <span class="math inline">\(N\)</span> espiras que gira en el interior de un campo magnético con velocidad angular <span class="math inline">\(\omega\)</span>. La máquina que genera esta corriente se denomina <strong>alternador</strong>. Los símbolos que se suelen utilizar para representar un alternador en un circuito son los siguientes:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/simb-fuenteCA.png" width="348"/></p>
+<figcaption>Símbolos de generador de CA</figcaption>
+</figure>
+</div>
+<section class="level2" data-number="1.1" id="conceptos-fundamentales">
+<h2 class="" data-number="1.1"><span class="header-section-number">1.1</span> Conceptos fundamentales</h2>
+<ul>
+<li><strong>Frecuencia:</strong> Es el número de veces que cambia de dirección la corriente en un segundo y se mide en <strong>hercios (Hz)</strong>.</li>
+<li><strong>Frecuencia en España:</strong> En nuestro sistema eléctrico se utilizan los <strong>50 Hz</strong>, aunque existen aplicaciones especiales (electrónica, radiocomunicaciones) donde se usan frecuencias de kHz o MHz.</li>
+<li><strong>Transmisión de energía:</strong> Aunque los electrones apenas se desplazan unas centésimas de milímetro antes de cambiar de sentido (debido a su baja velocidad de deriva), la energía se transmite como una <strong>onda electromagnética</strong> a velocidades cercanas a la de la luz, de forma similar a como se propagan las ondas sonoras en el aire.</li>
+</ul>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="../index.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="2-representacion-de-senales.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

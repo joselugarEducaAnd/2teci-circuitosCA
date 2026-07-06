@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3  Respuesta de los componentes básicos a la Corriente Alterna</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
+     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
+     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
+<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
+<li class="active"><a href="../html/3-respuesta-de-componentes.html" class="active no-ch">3 · Respuesta de componentes</a></li>
+<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
+<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
+<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
+<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
+<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
+</ul></nav><main id="page-3-respuesta-de-componentes" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">3 · Respuesta de componentes</h1></div>
+</header>
+<div id="page-content-page-3-respuesta-de-componentes" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><section class="level2" data-number="3.1" id="respuesta-de-una-resistencia">
+<h2 class="" data-number="3.1"><span class="header-section-number">3.1</span> Respuesta de una resistencia</h2>
+<p>Si a una resistencia de valor R ohmios (Ω) se la somete a una tensión sinusoidal de <strong>valor eficaz U</strong> y <strong>pulsación ω</strong>, la tensión instantánea aplicada a la resistencia es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot \operatorname{sen}(\omega t + \varphi)\]</span></p>
+<p>Según la ley de Ohm, tenemos que <span class="math inline">\(i(t) = u(t)/R\)</span>, y por tanto, la intensidad instantánea que circula por la resistencia es: <span class="math display">\[i(t) = \frac{\sqrt{2}U}{R} \cdot \operatorname{sen}(\omega  t + \varphi)\]</span> Analizando las expresiones de la tensión y la intensidad, podemos concluir que:</p>
+<ul>
+<li>La intensidad eficaz es <span class="math inline">\(I=\frac{U}{R}\)</span>, igual que en corriente continua.</li>
+<li>El desfase entre la tensión y la intensidad es nulo. Es decir, están en fase (<span class="math inline">\(\varphi_{I}=\varphi\)</span>)</li>
+</ul>
+<p>La representación gráfica de la tensión y la intensidad en una resistencia eléctrica será, por tanto:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelResistivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.2" id="respuesta-de-una-bobina">
+<h2 class="" data-number="3.2"><span class="header-section-number">3.2</span> Respuesta de una bobina</h2>
+<p>La característica básica de una bobina es su <strong>inductancia</strong>, que se denota mediante la letra <strong>L</strong> y se mide en <strong>Henrios (H)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>Si a una bobina de valor <strong>L henrios (H)</strong> se la somete a una intensidad sinusoidal de <strong>valor eficaz U</strong> y <strong>pulsación ω</strong>, la intensidad instantánea que circula por la bobina es:</p>
+<p><span class="math display">\[
+i(t) = (\sqrt{2}I) \cdot \operatorname{sen}(\omega t + \varphi)
+\]</span></p>
+<p>La ley que rige para una bobina es la siguiente:</p>
+<p><span class="math display">\[u(t) = L \cdot \frac{di(t)}{dt}\]</span></p>
+<p>Por lo tanto, la tensión instantánea en la bobina la obtenemos derivando la intensidad y resulta ser:</p>
+<p><span class="math display">\[u(t) = L \frac{di(t)}{dt} = L \cdot (\sqrt{2}I) \cdot \omega \cdot \operatorname{sen}(\omega  t + \varphi + \frac{\pi}{2})\]</span></p>
+<div class="marco marco-teoria"><p class="marco-titulo">NotaImportante</p>
+<p>En realidad, la derivada del seno es el coseno, pero el coseno de un ángulo es igual al seno de su complementario (<span class="math inline">\(\cos(\alpha) = \operatorname{sen}(\alpha + \frac{\pi}{2})\)</span>). Por lo tanto, podemos poner la expresión en forma de seno, para poder comparar los fasores de la tensión y la intensidad.</p>
+</div>
+<p>Por consiguiente, obtenemos una tensión con la misma pulsación que la intensidad y con las características siguientes:</p>
+<ul>
+<li><p>Un valor de pico <span class="math inline">\(U_p=\omega \cdot L \cdot \sqrt{2} I\)</span>. Por lo tanto, <strong>la tensión eficaz es</strong> <span class="math inline">\(U=\omega \cdot L \cdot I\)</span><strong>.</strong></p></li>
+<li><p>La tensión se encuentra adelantada 90° ($\pi/2 $ ) con respecto a la intensidad; la <strong>fase inicial de la tensión es</strong> <span class="math inline">\(\varphi_U = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></p></li>
+</ul>
+<p>Al producto <span class="math inline">\(\omega \cdot L\)</span> se le llama <strong>reactancia inductiva</strong> y se representa por <span class="math inline">\(X_L\)</span>, es decir:</p>
+<div class="marco marco-formula">
+<p><span class="math display">\[
+X_L=\omega \cdot L
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia inductiva en el SI es el ohmio (</strong><span class="math inline">\(\omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en una bobina es la mostrada en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelInductivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.3" id="respuesta-de-un-condensador">
+<h2 class="" data-number="3.3"><span class="header-section-number">3.3</span> Respuesta de un condensador</h2>
+<p>La característica básica de un condensador es su <strong>capacitancia</strong> o capacidad, que se denota mediante la letra <strong>C</strong> y se mide en <strong>Faradios (F)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>Si a un condensador de valor <strong>C faradios (F)</strong> se le somete a una tensión sinusoidal de valor eficaz U y pulsación co, la tensión instantánea aplicada al condensador es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot \operatorname{sen}(\omega t + \varphi)\]</span></p>
+<p>Aplicando la ley que rige un condensador, <span class="math inline">\(i(t) = C \cdot du(t) / dt\)</span>, la intensidad instantánea que circula por el condensador es: <span class="math display">\[
+i(t) = C \cdot \frac{du(t)}{dt} = C \cdot \omega \cdot ( \sqrt{2}U) \cdot \operatorname{sen}(\omega  t + \varphi + \frac{\pi}{2})
+\]</span></p>
+<p>Obtenemos una intensidad con la misma pulsación que la tensión aplicada y con las características siguientes:</p>
+<ul>
+<li>Un valor de pico <span class="math inline">\(I_p=\omega \cdot C \cdot \sqrt{2} U\)</span>. Por lo tanto, <strong>la intensidad eficaz es</strong> <span class="math inline">\(I=\omega \cdot C \cdot U\)</span><strong>.</strong></li>
+<li>La intensidad se encuentra adelantada 90° (<span class="math inline">\(\pi/2\)</span>) con respecto a la tensión; la <strong>fase inicial de la intensidad es</strong> <span class="math inline">\(\varphi_I = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></li>
+</ul>
+<p>Al cociente <span class="math inline">\(1/\omega \cdot C\)</span> se le llama <strong>reactancia capacitiva</strong> y se representa por <span class="math inline">\(X_C\)</span>, es decir:</p>
+<div class="marco marco-formula">
+<p><span class="math display">\[
+X_C=\frac{1}{\omega \cdot C}
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia capacitiva en el SI es el ohmio (</strong><span class="math inline">\(\omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en un condensador es la mostrada en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelCapacitivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.4" id="cuadro-resumen-con-las-respuestas-r-l-y-c">
+<h2 class="" data-number="3.4"><span class="header-section-number">3.4</span> Cuadro resumen con las respuestas R, L y C</h2>
+<div class="tabla-estilo-libro">
+<table class="caption-top table tabla-datos">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">Representación gráfica</th>
+<th style="text-align: center;">Relación Tensión/Intensidad</th>
+<th style="text-align: center;">Desfase rad (º)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Resistencia (<span class="math inline">\(R\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_R.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Bobina (<span class="math inline">\(L\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_L.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_L = \omega \cdot L\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\pi/2 \ (+90^\circ)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Condensador (<span class="math inline">\(C\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_C.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_C = \frac{1}{\omega \cdot C}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\pi/2 \ (-90^\circ)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" data-number="3.5" id="combinación-de-cargas-de-diferente-naturaleza">
+<h2 class="" data-number="3.5"><span class="header-section-number">3.5</span> Combinación de cargas de diferente naturaleza</h2>
+<p>Por lo general, en un circuito tendremos cargas que ofrecerán diferentes resistencias eléctricas. Además, algunas presentarán también carácter inductivo o capacitivo. Dependiendo de la combinación de elementos que tengamos en cada circuito, el desfase entre la intensidad y la tensión podrá tomar diferentes valores, no solo 0º, -90º o +90º. En este simulador puedes ver cómo cambiarían los fasores de la tensión y la intensidad dependiendo de cómo variemos las componentes R, L o C de un circuito:</p>
+<div class="card">
+<p>Controla el desfase con el deslizador.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" data-source-offset="-54" data-startfrom="140" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 139;"><span id="cb1-140"><a aria-hidden="true" href="#cb1-140" tabindex="-1"></a>viewof angulo_i_deg_anim_3 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">90</span><span class="op">,</span> <span class="dv">90</span>]<span class="op">,</span> {</span>
+<span id="cb1-141"><a aria-hidden="true" href="#cb1-141" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="op">-</span><span class="dv">45</span><span class="op">,</span> </span>
+<span id="cb1-142"><a aria-hidden="true" href="#cb1-142" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> </span>
+<span id="cb1-143"><a aria-hidden="true" href="#cb1-143" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Desfase I (grados):"</span></span>
+<span id="cb1-144"><a aria-hidden="true" href="#cb1-144" tabindex="-1"></a>})</span>
+<span id="cb1-145"><a aria-hidden="true" href="#cb1-145" tabindex="-1"></a></span>
+<span id="cb1-146"><a aria-hidden="true" href="#cb1-146" tabindex="-1"></a><span class="co">// --- 2. MOTOR DE TIEMPO (Continuo) ---</span></span>
+<span id="cb1-147"><a aria-hidden="true" href="#cb1-147" tabindex="-1"></a>now_3 <span class="op">=</span> {</span>
+<span id="cb1-148"><a aria-hidden="true" href="#cb1-148" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb1-149"><a aria-hidden="true" href="#cb1-149" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
+<span id="cb1-150"><a aria-hidden="true" href="#cb1-150" tabindex="-1"></a>    <span class="cf">await</span> <span class="kw">new</span> <span class="bu">Promise</span>(resolve <span class="kw">=&gt;</span> <span class="fu">requestAnimationFrame</span>(resolve))<span class="op">;</span></span>
+<span id="cb1-151"><a aria-hidden="true" href="#cb1-151" tabindex="-1"></a>  }</span>
+<span id="cb1-152"><a aria-hidden="true" href="#cb1-152" tabindex="-1"></a>}</span>
+<span id="cb1-153"><a aria-hidden="true" href="#cb1-153" tabindex="-1"></a></span>
+<span id="cb1-154"><a aria-hidden="true" href="#cb1-154" tabindex="-1"></a><span class="co">// Velocidad de la animación</span></span>
+<span id="cb1-155"><a aria-hidden="true" href="#cb1-155" tabindex="-1"></a>speed_3 <span class="op">=</span> <span class="fl">0.002</span> </span>
+<span id="cb1-156"><a aria-hidden="true" href="#cb1-156" tabindex="-1"></a>t_anim_3 <span class="op">=</span> now_3 <span class="op">*</span> speed_3</span>
+<span id="cb1-157"><a aria-hidden="true" href="#cb1-157" tabindex="-1"></a></span>
+<span id="cb1-158"><a aria-hidden="true" href="#cb1-158" tabindex="-1"></a><span class="co">// --- 3. LÓGICA DE TEXTO ---</span></span>
+<span id="cb1-159"><a aria-hidden="true" href="#cb1-159" tabindex="-1"></a><span class="fu">md</span><span class="vs">`**Estado:** </span><span class="sc">${</span></span>
+<span id="cb1-160"><a aria-hidden="true" href="#cb1-160" tabindex="-1"></a>  angulo_i_deg_anim_3 <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"&lt;span style='color:orange; font-weight:bold'&gt;⚡ INDUCTIVO (I retrasa)&lt;/span&gt;"</span> <span class="op">:</span></span>
+<span id="cb1-161"><a aria-hidden="true" href="#cb1-161" tabindex="-1"></a>  angulo_i_deg_anim_3 <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"&lt;span style='color:green; font-weight:bold'&gt;🔋 CAPACITIVO (I adelanta)&lt;/span&gt;"</span> <span class="op">:</span></span>
+<span id="cb1-162"><a aria-hidden="true" href="#cb1-162" tabindex="-1"></a>  <span class="st">"&lt;span style='color:blue; font-weight:bold'&gt;💡 RESISTIVO (En fase)&lt;/span&gt;"</span></span>
+<span id="cb1-163"><a aria-hidden="true" href="#cb1-163" tabindex="-1"></a><span class="sc">}</span><span class="vs">`</span></span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-1-1">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-1-2">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-1-3">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-1-4">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="expression" id="ojs-cell-1-5">
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" data-source-offset="-45" data-startfrom="171" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb2-171"><a aria-hidden="true" href="#cb2-171" tabindex="-1"></a>phi_rad_anim_3 <span class="op">=</span> angulo_i_deg_anim_3 <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">/</span> <span class="dv">180</span></span>
+<span id="cb2-172"><a aria-hidden="true" href="#cb2-172" tabindex="-1"></a></span>
+<span id="cb2-173"><a aria-hidden="true" href="#cb2-173" tabindex="-1"></a><span class="co">// Ángulos actuales (Rotación continua de fasores)</span></span>
+<span id="cb2-174"><a aria-hidden="true" href="#cb2-174" tabindex="-1"></a>ang_u_actual_3 <span class="op">=</span> t_anim_3 </span>
+<span id="cb2-175"><a aria-hidden="true" href="#cb2-175" tabindex="-1"></a>ang_i_actual_3 <span class="op">=</span> t_anim_3 <span class="op">+</span> phi_rad_anim_3</span>
+<span id="cb2-176"><a aria-hidden="true" href="#cb2-176" tabindex="-1"></a></span>
+<span id="cb2-177"><a aria-hidden="true" href="#cb2-177" tabindex="-1"></a><span class="co">// Coordenadas puntas fasores</span></span>
+<span id="cb2-178"><a aria-hidden="true" href="#cb2-178" tabindex="-1"></a>u_x_anim_3 <span class="op">=</span> <span class="fl">1.2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(ang_u_actual_3)</span>
+<span id="cb2-179"><a aria-hidden="true" href="#cb2-179" tabindex="-1"></a>u_y_anim_3 <span class="op">=</span> <span class="fl">1.2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(ang_u_actual_3)</span>
+<span id="cb2-180"><a aria-hidden="true" href="#cb2-180" tabindex="-1"></a>i_x_anim_3 <span class="op">=</span> <span class="fl">0.8</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(ang_i_actual_3)</span>
+<span id="cb2-181"><a aria-hidden="true" href="#cb2-181" tabindex="-1"></a>i_y_anim_3 <span class="op">=</span> <span class="fl">0.8</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(ang_i_actual_3)</span>
+<span id="cb2-182"><a aria-hidden="true" href="#cb2-182" tabindex="-1"></a></span>
+<span id="cb2-183"><a aria-hidden="true" href="#cb2-183" tabindex="-1"></a><span class="co">// Datos Ondas (Escala temporal real para 50Hz)</span></span>
+<span id="cb2-184"><a aria-hidden="true" href="#cb2-184" tabindex="-1"></a><span class="co">// 50Hz = 0.02s periodo. Mostramos 2 periodos (0.04s)</span></span>
+<span id="cb2-185"><a aria-hidden="true" href="#cb2-185" tabindex="-1"></a>x_domain_3 <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">0.041</span><span class="op">,</span> <span class="fl">0.0002</span>) </span>
+<span id="cb2-186"><a aria-hidden="true" href="#cb2-186" tabindex="-1"></a></span>
+<span id="cb2-187"><a aria-hidden="true" href="#cb2-187" tabindex="-1"></a>data_ondas_anim_3 <span class="op">=</span> [</span>
+<span id="cb2-188"><a aria-hidden="true" href="#cb2-188" tabindex="-1"></a>  <span class="op">...</span>x_domain_3<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({ </span>
+<span id="cb2-189"><a aria-hidden="true" href="#cb2-189" tabindex="-1"></a>      <span class="dt">t</span><span class="op">:</span> x<span class="op">,</span> </span>
+<span id="cb2-190"><a aria-hidden="true" href="#cb2-190" tabindex="-1"></a>      <span class="co">// omega = 2*pi*50</span></span>
+<span id="cb2-191"><a aria-hidden="true" href="#cb2-191" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="fl">1.2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">*</span> x <span class="op">+</span> t_anim_3)<span class="op">,</span> </span>
+<span id="cb2-192"><a aria-hidden="true" href="#cb2-192" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">"u(t)"</span><span class="op">,</span> </span>
+<span id="cb2-193"><a aria-hidden="true" href="#cb2-193" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">"#3daee9"</span> </span>
+<span id="cb2-194"><a aria-hidden="true" href="#cb2-194" tabindex="-1"></a>  }))<span class="op">,</span></span>
+<span id="cb2-195"><a aria-hidden="true" href="#cb2-195" tabindex="-1"></a>  <span class="op">...</span>x_domain_3<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({ </span>
+<span id="cb2-196"><a aria-hidden="true" href="#cb2-196" tabindex="-1"></a>      <span class="dt">t</span><span class="op">:</span> x<span class="op">,</span> </span>
+<span id="cb2-197"><a aria-hidden="true" href="#cb2-197" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="fl">0.8</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">*</span> x <span class="op">+</span> t_anim_3 <span class="op">+</span> phi_rad_anim_3)<span class="op">,</span> </span>
+<span id="cb2-198"><a aria-hidden="true" href="#cb2-198" tabindex="-1"></a>      <span class="dt">type</span><span class="op">:</span> <span class="st">"i(t)"</span><span class="op">,</span> </span>
+<span id="cb2-199"><a aria-hidden="true" href="#cb2-199" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">"#d62728"</span> </span>
+<span id="cb2-200"><a aria-hidden="true" href="#cb2-200" tabindex="-1"></a>  }))</span>
+<span id="cb2-201"><a aria-hidden="true" href="#cb2-201" tabindex="-1"></a>]</span>
+<span id="cb2-202"><a aria-hidden="true" href="#cb2-202" tabindex="-1"></a></span>
+<span id="cb2-203"><a aria-hidden="true" href="#cb2-203" tabindex="-1"></a><span class="co">// Líneas de proyección</span></span>
+<span id="cb2-204"><a aria-hidden="true" href="#cb2-204" tabindex="-1"></a>data_proyeccion_3 <span class="op">=</span> [</span>
+<span id="cb2-205"><a aria-hidden="true" href="#cb2-205" tabindex="-1"></a>  {<span class="dt">x1</span><span class="op">:</span> u_x_anim_3<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> u_y_anim_3<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> u_y_anim_3<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#3daee9"</span>}<span class="op">,</span></span>
+<span id="cb2-206"><a aria-hidden="true" href="#cb2-206" tabindex="-1"></a>  {<span class="dt">x1</span><span class="op">:</span> i_x_anim_3<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> i_y_anim_3<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> i_y_anim_3<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#d62728"</span>}</span>
+<span id="cb2-207"><a aria-hidden="true" href="#cb2-207" tabindex="-1"></a>]</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-1">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-2">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-3">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-4">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-5">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-6">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-7">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-8">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-9">
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div data-nodetype="declaration" id="ojs-cell-2-10">
+</div>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" data-source-offset="0" data-startfrom="212" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 211;"><span id="cb3-212"><a aria-hidden="true" href="#cb3-212" tabindex="-1"></a><span class="co">// GRÁFICO 1: FASORES</span></span>
+<span id="cb3-213"><a aria-hidden="true" href="#cb3-213" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb3-214"><a aria-hidden="true" href="#cb3-214" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb3-215"><a aria-hidden="true" href="#cb3-215" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb3-216"><a aria-hidden="true" href="#cb3-216" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-217"><a aria-hidden="true" href="#cb3-217" tabindex="-1"></a>  <span class="dt">aspectRatio</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-218"><a aria-hidden="true" href="#cb3-218" tabindex="-1"></a>  <span class="co">// Etiqueta de accesibilidad para evitar warnings de ese tipo</span></span>
+<span id="cb3-219"><a aria-hidden="true" href="#cb3-219" tabindex="-1"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">"Diagrama de fasores"</span><span class="op">,</span></span>
+<span id="cb3-220"><a aria-hidden="true" href="#cb3-220" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Real"</span>}<span class="op">,</span></span>
+<span id="cb3-221"><a aria-hidden="true" href="#cb3-221" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Imaginario"</span>}<span class="op">,</span></span>
+<span id="cb3-222"><a aria-hidden="true" href="#cb3-222" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-223"><a aria-hidden="true" href="#cb3-223" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb3-224"><a aria-hidden="true" href="#cb3-224" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb3-225"><a aria-hidden="true" href="#cb3-225" tabindex="-1"></a>    </span>
+<span id="cb3-226"><a aria-hidden="true" href="#cb3-226" tabindex="-1"></a>    <span class="co">// --- CORRECCIÓN 1: CÍRCULOS ---</span></span>
+<span id="cb3-227"><a aria-hidden="true" href="#cb3-227" tabindex="-1"></a>    <span class="co">// Usamos Plot.line (línea continua) en lugar de Plot.link</span></span>
+<span id="cb3-228"><a aria-hidden="true" href="#cb3-228" tabindex="-1"></a>    <span class="co">// z: null es vital para decirle "esto es una sola línea, no la rompas"</span></span>
+<span id="cb3-229"><a aria-hidden="true" href="#cb3-229" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">.</span><span class="fu">map</span>(a <span class="kw">=&gt;</span> ({<span class="dt">x</span><span class="op">:</span> <span class="fl">1.2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(a)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fl">1.2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(a)}))<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"gray"</span><span class="op">,</span> <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="kw">null</span>})<span class="op">,</span></span>
+<span id="cb3-230"><a aria-hidden="true" href="#cb3-230" tabindex="-1"></a>    </span>
+<span id="cb3-231"><a aria-hidden="true" href="#cb3-231" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">.</span><span class="fu">map</span>(a <span class="kw">=&gt;</span> ({<span class="dt">x</span><span class="op">:</span> <span class="fl">0.8</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(a)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fl">0.8</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(a)}))<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"gray"</span><span class="op">,</span> <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="kw">null</span>})<span class="op">,</span></span>
+<span id="cb3-232"><a aria-hidden="true" href="#cb3-232" tabindex="-1"></a>    </span>
+<span id="cb3-233"><a aria-hidden="true" href="#cb3-233" tabindex="-1"></a>    <span class="co">// Flechas (Fasores)</span></span>
+<span id="cb3-234"><a aria-hidden="true" href="#cb3-234" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">arrow</span>([{<span class="dt">x1</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span>u_x_anim_3<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span>u_y_anim_3}]<span class="op">,</span> {<span class="dt">x1</span><span class="op">:</span><span class="st">"x1"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span><span class="st">"y1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span><span class="st">"x2"</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span><span class="st">"y2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#3daee9"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span>})<span class="op">,</span></span>
+<span id="cb3-235"><a aria-hidden="true" href="#cb3-235" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">arrow</span>([{<span class="dt">x1</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span>i_x_anim_3<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span>i_y_anim_3}]<span class="op">,</span> {<span class="dt">x1</span><span class="op">:</span><span class="st">"x1"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span><span class="st">"y1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span><span class="st">"x2"</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span><span class="st">"y2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#d62728"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span>})<span class="op">,</span></span>
+<span id="cb3-236"><a aria-hidden="true" href="#cb3-236" tabindex="-1"></a>    </span>
+<span id="cb3-237"><a aria-hidden="true" href="#cb3-237" tabindex="-1"></a>    <span class="co">// Etiquetas</span></span>
+<span id="cb3-238"><a aria-hidden="true" href="#cb3-238" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">x</span><span class="op">:</span>u_x_anim_3<span class="op">,</span> <span class="dt">y</span><span class="op">:</span>u_y_anim_3<span class="op">,</span> <span class="dt">label</span><span class="op">:</span><span class="st">"U"</span>}]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span><span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span><span class="st">"label"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span><span class="dv">10</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span><span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb3-239"><a aria-hidden="true" href="#cb3-239" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">x</span><span class="op">:</span>i_x_anim_3<span class="op">,</span> <span class="dt">y</span><span class="op">:</span>i_y_anim_3<span class="op">,</span> <span class="dt">label</span><span class="op">:</span><span class="st">"I"</span>}]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span><span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span><span class="st">"label"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span><span class="dv">10</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span><span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb3-240"><a aria-hidden="true" href="#cb3-240" tabindex="-1"></a>    </span>
+<span id="cb3-241"><a aria-hidden="true" href="#cb3-241" tabindex="-1"></a>    <span class="co">// --- CORRECCIÓN 2: PROYECCIONES ---</span></span>
+<span id="cb3-242"><a aria-hidden="true" href="#cb3-242" tabindex="-1"></a>    <span class="co">// Usamos Plot.link (segmento de A a B) en lugar de Plot.line</span></span>
+<span id="cb3-243"><a aria-hidden="true" href="#cb3-243" tabindex="-1"></a>    <span class="co">// Esto usa correctamente x1, y1, x2, y2</span></span>
+<span id="cb3-244"><a aria-hidden="true" href="#cb3-244" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>(data_proyeccion_3<span class="op">,</span> {<span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="st">"y1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="st">"y2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"color"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4,4"</span><span class="op">,</span> <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span>})</span>
+<span id="cb3-245"><a aria-hidden="true" href="#cb3-245" tabindex="-1"></a>  ]</span>
+<span id="cb3-246"><a aria-hidden="true" href="#cb3-246" tabindex="-1"></a>})</span>
+<span id="cb3-247"><a aria-hidden="true" href="#cb3-247" tabindex="-1"></a><span class="co">// GRÁFICO 2: ONDAS</span></span>
+<span id="cb3-248"><a aria-hidden="true" href="#cb3-248" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb3-249"><a aria-hidden="true" href="#cb3-249" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb3-250"><a aria-hidden="true" href="#cb3-250" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb3-251"><a aria-hidden="true" href="#cb3-251" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-252"><a aria-hidden="true" href="#cb3-252" tabindex="-1"></a>  <span class="dt">ariaLabel</span><span class="op">:</span> <span class="st">"Gráfico de ondas"</span><span class="op">,</span></span>
+<span id="cb3-253"><a aria-hidden="true" href="#cb3-253" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Tiempo (s)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="fl">0.04</span>]}<span class="op">,</span></span>
+<span id="cb3-254"><a aria-hidden="true" href="#cb3-254" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Amplitud"</span>}<span class="op">,</span></span>
+<span id="cb3-255"><a aria-hidden="true" href="#cb3-255" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-256"><a aria-hidden="true" href="#cb3-256" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb3-257"><a aria-hidden="true" href="#cb3-257" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>]<span class="op">,</span> {<span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span>})<span class="op">,</span></span>
+<span id="cb3-258"><a aria-hidden="true" href="#cb3-258" tabindex="-1"></a>    </span>
+<span id="cb3-259"><a aria-hidden="true" href="#cb3-259" tabindex="-1"></a>    <span class="co">// --- CORRECCIÓN 3: ONDAS ---</span></span>
+<span id="cb3-260"><a aria-hidden="true" href="#cb3-260" tabindex="-1"></a>    <span class="co">// z: "type" agrupa los puntos correctamente en dos líneas (u e i)</span></span>
+<span id="cb3-261"><a aria-hidden="true" href="#cb3-261" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data_ondas_anim_3<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"t"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"color"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"type"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb3-262"><a aria-hidden="true" href="#cb3-262" tabindex="-1"></a>    </span>
+<span id="cb3-263"><a aria-hidden="true" href="#cb3-263" tabindex="-1"></a>    <span class="co">// Puntos instantáneos</span></span>
+<span id="cb3-264"><a aria-hidden="true" href="#cb3-264" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([{<span class="dt">x</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span>u_y_anim_3}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span><span class="dv">0</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span>i_y_anim_3}]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span><span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="st">"y"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> [<span class="st">"#3daee9"</span><span class="op">,</span> <span class="st">"#d62728"</span>]<span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">6</span>})<span class="op">,</span></span>
+<span id="cb3-265"><a aria-hidden="true" href="#cb3-265" tabindex="-1"></a>    </span>
+<span id="cb3-266"><a aria-hidden="true" href="#cb3-266" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="dt">x</span><span class="op">:</span> <span class="fl">0.02</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fl">1.3</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"u(t)"</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="fl">0.02</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="fl">0.9</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"i(t)"</span>}]<span class="op">,</span> {</span>
+<span id="cb3-267"><a aria-hidden="true" href="#cb3-267" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"label"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> [<span class="st">"#3daee9"</span><span class="op">,</span> <span class="st">"#d62728"</span>]<span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span></span>
+<span id="cb3-268"><a aria-hidden="true" href="#cb3-268" tabindex="-1"></a>    })</span>
+<span id="cb3-269"><a aria-hidden="true" href="#cb3-269" tabindex="-1"></a>  ]</span>
+<span id="cb3-270"><a aria-hidden="true" href="#cb3-270" tabindex="-1"></a>})</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output cell-output-display">
+<div data-nodetype="expression" id="ojs-cell-3">
+</div>
+</div>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output cell-output-display">
+<div data-nodetype="expression" id="ojs-cell-4">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="2-representacion-de-senales.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="4-impedancia.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

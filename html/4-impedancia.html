@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4  Impedancia</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
+     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
+     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
+<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
+<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
+<li class="active"><a href="../html/4-impedancia.html" class="active no-ch">4 · Impedancia</a></li>
+<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
+<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
+<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
+<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
+</ul></nav><main id="page-4-impedancia" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">4 · Impedancia</h1></div>
+</header>
+<div id="page-content-page-4-impedancia" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p>El concepto de impedancia es una <strong>generalización del concepto de resistencia.</strong> Hemos visto que en CA los elementos conectados en el circuito, en general, introducen un desfase entre la intensidad y la tensión. Este desfase hace que no haya una proporcionalidad entre los valores instantáneos de intensidad y tensión, como ocurría en corriente continua.</p>
+<p>No se cumple la ley de Ohm, tal y como la conocíamos, con los valores instantáneos <span class="math inline">\(i(t)\)</span> y <span class="math inline">\(v(t)\)</span>. Sin embargo, <strong>esta proporcionalidad sí existe entre los fasores</strong>, y también entre los valores máximos <span class="math inline">\(U_0\)</span> e <span class="math inline">\(I_0\)</span>, o los valores eficaces <span class="math inline">\(U\)</span>, <span class="math inline">\(I\)</span>. Esto hace que podamos expresar la ley de Ohm con estos valores.</p>
+<p>La magnitud que relaciona los valores máximos (y los eficaces) de tensión e intensidad en un circuito, se denomina impedancia (<span class="math inline">\(Z\)</span>), y se mide en ohmios.</p>
+<p>La resistencia eléctrica de un conductor se define como la oposición que ofrece al paso de una corriente eléctrica. Cuando la corriente que atraviesa a un conductor es una corriente sinusoidal, el concepto de resistencia se generaliza a impedancia.</p>
+<div class="marco marco-formula"><p class="marco-titulo">WarningDefinición</p>
+<p>La <strong>impedancia</strong> de un conductor se define como la <strong>oposición</strong> que ofrece al paso de una corriente eléctrica <strong>sinusoidal</strong>.</p>
+</div>
+<p>La impedancia se representa con la letra <span class="math inline">\(\vec{Z}\)</span>. Consideremos una impedancia <span class="math inline">\(\vec{Z}\)</span> alimentada por una señal sinusoidal de valor eficaz <span class="math inline">\(U\)</span>, fase inicial <span class="math inline">\(\varphi_U\)</span> y pulsación <span class="math inline">\(\omega\)</span>, tal como se muestra en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/circuito1.png" width="400"/></p>
+<figcaption>Circuito con Impedancia</figcaption>
+</figure>
+</div>
+<p>La tensión en la impedancia, que es la de la fuente, representada en forma de fasor es: <span class="math display">\[\vec{U} = \sqrt{2}U \enclose{phasorangle}{\varphi}_U\]</span></p>
+<p>La intensidad que circula por la impedancia tiene un valor eficaz <span class="math inline">\(I\)</span> y un desfase <span class="math inline">\(\varphi_I\)</span>. Representada en forma de fasor la intensidad es: <span class="math display">\[\vec{I} = \sqrt{2}I \enclose{phasorangle}{\varphi}_I\]</span></p>
+<p>El cociente entre el fasor tensión y el fasor intensidad representa la impedancia. Expresado matemáticamente es:</p>
+<p><span class="math display">\[
+\vec{Z}=\frac{\vec{U}}{\vec{I}}=\frac{\sqrt{2}U \enclose{phasorangle}{\varphi}_U}{\sqrt{2}I \enclose{phasorangle}{\varphi}_I}=\frac{U}{I}\enclose{phasorangle}{\varphi_U-\varphi_I}
+\]</span></p>
+<section class="level3" data-number="4.0.1" id="la-ley-de-ohm-generalizada">
+<h3 class="" data-number="4.0.1"><span class="header-section-number">4.0.1</span> La Ley de Ohm Generalizada</h3>
+<p>De forma análoga a la corriente continua, en corriente alterna existe una relación lineal fundamental entre la tensión y la intensidad, pero operando con <strong>números complejos</strong> (fasores).</p>
+<div class="marco marco-formula"><p class="marco-titulo">Warning⚡ Ley de Ohm para Corriente Alterna</p>
+<p>La intensidad que recorre un circuito o componente de corriente alterna es igual al cociente entre la tensión fasorial aplicada y su impedancia compleja.</p>
+<p><span class="math display">\[
+\vec{I} = \frac{\vec{U}}{\vec{Z}}
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(\vec{I}\)</span>: Es el fasor Intensidad (A).</li>
+<li><span class="math inline">\(\vec{U}\)</span>: Es el fasor Tensión (V).</li>
+<li><span class="math inline">\(\vec{Z}\)</span>: Es la Impedancia Compleja (<span class="math inline">\(\Omega\)</span>).</li>
+</ul>
+</div>
+<p>Esta expresión vectorial implica dos igualdades escalares separadas:</p>
+<ol type="1">
+<li><strong>En Módulos:</strong> La relación entre los valores eficaces. <span class="math display">\[I = \frac{U}{|\vec{Z}|} = \frac{U}{Z}\]</span></li>
+<li><strong>En Argumentos (Ángulos):</strong> El desfase de la intensidad es el de la tensión menos el de la impedancia. <span class="math display">\[\varphi_I = \varphi_U - \varphi_Z\]</span></li>
+</ol>
+</section>
+<section class="level2" data-number="4.1" id="triángulo-de-impedancias">
+<h2 class="" data-number="4.1"><span class="header-section-number">4.1</span> Triángulo de impedancias</h2>
+<div class="marco marco-teoria"><p class="marco-titulo">NotaObservación</p>
+<p>Una impedancia <strong>no es un fasor</strong> (no gira con el tiempo), pero se representa matemáticamente mediante un <strong>número complejo</strong> (vector fijo). Este vector, expresado en forma polar, contiene dos términos:</p>
+<ul>
+<li>El <strong>módulo (</strong><span class="math inline">\(Z\)</span>), que representa el cociente entre la tensión y la intensidad que soporta la impedancia. Las tensiones o intensidades pueden darse en valores eficaces o en valores de pico.</li>
+<li>El <strong>argumento (</strong><span class="math inline">\(\varphi\)</span>), que representa el <strong>desfase entre el fasor tensión y el fasor intensidad</strong>.</li>
+</ul>
+</div>
+<p>Si dibujamos ese vector, podremos ver gráficamente que la componente horizontal correspondería con la <strong>resistencia</strong> y la vertical con la <strong>reactancia</strong> (si es positiva sería inductiva y si es negativa sería capacitiva) del circuito. Esta representación se denomina “triángulo de impedancias” y tiene este aspecto:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/triangulo_impedancias.png" width="400"/></p>
+<figcaption>Triángulo de impedancias</figcaption>
+</figure>
+</div>
+<p>Viendo esta imagen podemos concluir que:</p>
+<ul>
+<li><p>A partir de la impedancia, podemos calcular la resistencia y la reactancia: <span class="math display">\[
+R=Z \cdot \cos \varphi
+\]</span> <span class="math display">\[
+X=Z \cdot \operatorname{sen} \varphi
+\]</span></p></li>
+<li><p>A partir de la resistencia y la reactancia, podemos calcular la impedancia: <span class="math display">\[
+|\vec{Z}|=Z=\sqrt{R^2+X^2}
+\]</span> <span class="math display">\[
+\varphi = \arctan \frac{X}{R}
+\]</span></p></li>
+</ul>
+</section>
+<section class="level2" data-number="4.2" id="representación-compleja-de-la-impedancia">
+<h2 class="" data-number="4.2"><span class="header-section-number">4.2</span> Representación compleja de la impedancia</h2>
+<p>Teniendo en cuenta que el eje horizontal es el eje real y el eje vertical es el eje imaginario, podemos representar el vector impedancia como un número complejo de la forma: <span class="math display">\[
+\vec{Z} = R + \mathrm{j} \cdot X
+\]</span></p>
+<p>Recordemos que:</p>
+<ul>
+<li><span class="math inline">\(R\)</span> <strong>es la resistencia:</strong> se mide en ohmios (<span class="math inline">\(\mathrm{\omega}\)</span>) y se puede calcular como <span class="math inline">\(R=Z \cdot \cos \varphi\)</span>.</li>
+<li><span class="math inline">\(X\)</span> <strong>es la reactancia:</strong> se mide también en ohmios (<span class="math inline">\(\mathrm{\omega}\)</span>) y se puede calcular como <span class="math inline">\(R=Z \cdot \operatorname{sen} \varphi\)</span>. Según el valor que tome la reactancia, la impedancia puede ser:
+<ul>
+<li><strong>Impedancia inductiva:</strong> cuando <span class="math inline">\(X&gt;0\)</span> y, por lo tanto <span class="math inline">\(\varphi &gt;0\)</span>, <strong>la tensión está en avance con respecto a la intensidad.</strong></li>
+<li><strong>Impedancia capacitiva:</strong> cuando <span class="math inline">\(X&lt;0\)</span> y, por lo tanto, <span class="math inline">\(\varphi &lt;0\)</span>, <strong>la tensión está en retraso con respecto a la intensidad</strong> o, lo que lo mismo, la intensidad va por delante de la tensión.</li>
+</ul></li>
+</ul>
+<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo</p>
+<p><strong>Determina el valor de la resistencia y reactancia de una impedancia que está sometida a una tensión de 220 V y por la que circula una intensidad de 10 A. Se sabe que la tensión está adelantada 30º con respecto a la intensidad.</strong></p>
+<p><em>Solución:</em></p>
+<p>Aplicando la definición de impedancia (en módulos), tenemos: <span class="math display">\[Z = \frac{U}{I} = \frac{220}{10} = 22 \ \Omega\]</span></p>
+<p>Tenemos una parte de la impedancia, pero falta saber qué desfase existe. Este dato nos lo dan con el desfase entre la tensión e intensidad, <span class="math inline">\(\varphi = \varphi_U - \varphi_I\)</span>, así <span class="math inline">\(\varphi = 30^\circ\)</span>. La impedancia expresada en forma polar vectorial es: <span class="math display">\[\vec{Z} = 22 \enclose{phasorangle}{3}0^\circ \ \Omega\]</span></p>
+<p>Para obtener <span class="math inline">\(R\)</span> y <span class="math inline">\(X\)</span> hacemos: <span class="math display">\[
+\begin{aligned}
+R &amp;= Z \cdot \cos \varphi = 22 \cdot \cos(30^\circ) = 11\sqrt{3} \ \Omega \\
+X &amp;= Z \cdot \operatorname{sen} \varphi = 22 \cdot \operatorname{sen}(30^\circ) = 11 \ \Omega
+\end{aligned}
+\quad \Rightarrow \quad
+\boxed{
+\begin{aligned}
+R &amp;= 11 \cdot \sqrt{3} \ \Omega \\
+X &amp;= 11 \ \Omega
+\end{aligned}
+}
+\]</span></p>
+<p>Se trata de una reactancia <strong>inductiva</strong>.</p>
+</div>
+<p><br/></p>
+<div class="marco marco-formula"><p class="marco-titulo">WarningImportante</p>
+<p>La <strong>representación compleja</strong> de las impedancias resistiva, inductiva y capacitiva es la siguiente:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{Z}_R &amp;= R \\[1ex]
+\vec{Z}_L &amp;= \mathrm{j} \cdot X_L = \mathrm{j} \cdot \omega \cdot L \\[1ex]
+\vec{Z}_C &amp;= -\mathrm{j} \cdot X_C = \frac{-\mathrm{j}}{\omega \cdot C}
+\end{aligned}
+\]</span></p>
+</div>
+<p><br/></p>
+<div class="marco marco-nota"><p class="marco-titulo">Tip¿Necesitas repasar los Números Complejos?</p>
+<p>Para trabajar con impedancias usaremos <strong>fasores</strong> y <strong>números complejos</strong> continuamente. Si no recuerdas cómo operar con ellos (suma, producto, paso a polar…), consulta el <strong><a href="anexo-a-numeros-complejos.html">Anexo de Matemáticas</a></strong> al final del libro.</p>
+</div>
+</section>
+<section class="level2" data-number="4.3" id="asociación-de-impedancias">
+<h2 class="" data-number="4.3"><span class="header-section-number">4.3</span> Asociación de impedancias</h2>
+<p>Las impedancias se pueden asociar de la misma forma en que se asociaban las resistencias: asociación en serie, en paralelo y mixta.</p>
+<ul>
+<li><p><strong>Asociación en serie:</strong> la impedancia equivalente es la suma vectorial de las impedancias parciales. <span class="math display">\[
+  \vec{Z}_T=\vec{Z}_1+\vec{Z}_2+\vec{Z}_3+...
+  \]</span></p></li>
+<li><p><strong>Asociación en paralelo:</strong> la inversa de la impedancia equivalente es la suma de las inversas de las impedancias parciales, es decir: <span class="math display">\[
+  \frac{1}{\vec{Z}_T}=\frac{1}{\vec{Z}_1}+\frac{1}{\vec{Z}_2}+\frac{1}{\vec{Z}_3}+...
+  \]</span></p></li>
+<li><p><strong>Asociación mixta:</strong> es una combinación de serie y paralelo. Aunque veremos algunos casos, serán muy sencillos y los resolveremos como serie puro y luego paralelo o viceversa.</p></li>
+</ul>
+<div class="marco marco-formula"><p class="marco-titulo">WarningImportante</p>
+<p>A diferencia de las resistencias, las impedancias son <strong>números complejos</strong>. Para sumar impedancias (caso de una conexión en serie) debemos <strong>sumar las partes reales (resistencias) e imaginarias (reactancias) por separado</strong>, para luego calcular el valor de la impedancia (<span class="math inline">\(\vec{Z}\)</span>) y del desfase total (<span class="math inline">\(\varphi\)</span>) aplicando lo visto en el triángulo de impedancias.</p>
+</div>
+<p><br/></p>
+<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo</p>
+<p><strong>Dada una resistencia de <span class="math inline">\(5 \ \Omega\)</span> y una inductancia de <span class="math inline">\(50 \text{ mH}\)</span> que están trabajando a 50 Hz, calcula la impedancia equivalente en los siguientes casos:</strong><br/>
+<strong>a) Cuando están conectadas en serie.</strong><br/>
+<strong>b) Cuando están conectadas en paralelo.</strong></p>
+<p><em>Soluciones:</em></p>
+<p>Lo primero es calcular el valor de <span class="math inline">\(X_L\)</span>: <span class="math display">\[X_L = \omega \cdot L = 2 \cdot \pi \cdot f \cdot L = 2 \cdot \pi \cdot 50 \cdot 50 \times 10^{-3} = 15,71 \ \Omega\]</span></p>
+<p><strong>a) Con la conexión en serie</strong>, la impedancia asociada a la resistencia es <span class="math inline">\(\vec{Z}_1 = R\)</span> y la asociada a la bobina (inductancia) es <span class="math inline">\(\vec{Z}_2 = \mathrm{j} \cdot X_L\)</span>. La impedancia equivalente es la suma de ambas:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{Z}_T &amp;= \vec{Z}_1 + \vec{Z}_2 = R + \mathrm{j} \cdot X_L = 5 + \mathrm{j} \cdot 15,71 \ \Omega \\
+\vec{Z}_T &amp;= \boxed{5 + \mathrm{j} \cdot 15,71 \ \Omega}
+\end{aligned}
+\]</span></p>
+<p><strong>b) Con la conexión en paralelo</strong>, la impedancia equivalente es:</p>
+<p><span class="math display">\[
+\frac{1}{\vec{Z}_T} = \frac{1}{\vec{Z}_1} + \frac{1}{\vec{Z}_2} = \frac{1}{R} + \frac{1}{\mathrm{j} \cdot X_L} = \frac{1}{5} + \frac{1}{\mathrm{j} \cdot 15,71}
+\]</span></p>
+<p>Teniendo en cuenta que, por las propiedades de los números complejos <span class="math inline">\(1/\mathrm{j} = -\mathrm{j}\)</span>, la expresión anterior se convierte en:</p>
+<p><span class="math display">\[
+\frac{1}{\vec{Z}_T} = \frac{1}{5} - \frac{\mathrm{j}}{15,71} = 0,2 - \mathrm{j} \cdot 63,65 \times 10^{-3} \ \Rightarrow \ \vec{Z}_T = \frac{1}{0,2 - \mathrm{j} \cdot 63,65 \times 10^{-3}} = \boxed{4,54 + 1,44 \cdot \mathrm{j} \ \Omega}
+\]</span></p>
+<p>Como puedes observar, trabajar en paralelo es más dificultoso que hacerlo en serie.</p>
+</div>
+<hr/>
+<div class="marco marco-formula"><p class="marco-titulo">Importante🏠 Ejercicios Propuestos</p>
+<p>Intenta resolver los siguientes problemas para afianzar el manejo de impedancias y números complejos. Recuerda aplicar la “Regla de Oro” del anexo.</p>
+<p><strong>1. Circuito R-C Serie</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>Una resistencia de <span class="math inline">\(10 \ \Omega\)</span> se conecta en serie con un condensador de capacitancia <span class="math inline">\(C = 100 \ \mu\text{F}\)</span>. El conjunto se conecta a una red de <span class="math inline">\(50 \ \text{Hz}\)</span>.</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="a">
+<li>Calcula la reactancia capacitiva <span class="math inline">\(X_C\)</span>.</li>
+<li>Determina la impedancia total en forma binómica y polar.</li>
+</ol>
+<ul>
+<li><em>Solución:</em> <span class="math inline">\(\vec{Z} = 10 - 31,83 \mathrm{j} \ \Omega = 33,36 \enclose{phasorangle}{-72,56^\circ} \ \Omega\)</span>.</li>
+</ul>
+<p><strong>2. Bobina Real</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>Una bobina real se modela como una resistencia de <span class="math inline">\(4 \ \Omega\)</span> en serie con una inductancia pura de <span class="math inline">\(0,02 \ \text{H}\)</span>. Si la frecuencia es de <span class="math inline">\(60 \ \text{Hz}\)</span>:</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="a">
+<li>Expresa la impedancia total del componente.</li>
+<li>Si duplicamos la frecuencia a <span class="math inline">\(120 \ \text{Hz}\)</span>, ¿cuál sería la nueva impedancia?</li>
+</ol>
+<ul>
+<li><em>Solución (<span class="math inline">\(60 \text{Hz}\)</span>):</em> <span class="math inline">\(\vec{Z} = 4 + 7,54 \mathrm{j} \ \Omega\)</span>.</li>
+</ul>
+<p><strong>3. Identificación de componentes</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>Una “Caja Negra” (impedancia desconocida) tiene un valor de <span class="math inline">\(\vec{Z} = 20 \angle 45^\circ \ \Omega\)</span> a una frecuencia de <span class="math inline">\(50 \ \text{Hz}\)</span>.</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="a">
+<li>Determina la parte real (<span class="math inline">\(R\)</span>) y la parte imaginaria (<span class="math inline">\(X\)</span>).</li>
+<li>¿Es una carga inductiva o capacitiva? Calcula el valor de <span class="math inline">\(L\)</span> o <span class="math inline">\(C\)</span> correspondiente.</li>
+</ol>
+<ul>
+<li><em>Solución:</em> <span class="math inline">\(R = 14,14 \ \Omega\)</span>; <span class="math inline">\(X = 14,14 \ \Omega\)</span> (Inductiva); <span class="math inline">\(L = 45 \ \text{mH}\)</span>.</li>
+</ul>
+<p><strong>4. Impedancia Mixta</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>Calcula la impedancia total de los siguientes circuitos e indica si tienen carácter inductivo o capacitivo. Considera una frecuencia <span class="math inline">\(f=400 \ \text{Hz}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/ejercicio4.png" width="650"/></p>
+<figcaption>Ejercicios Impedancia</figcaption>
+</figure>
+</div>
+<ul>
+<li><em>Solución 1:</em> <span class="math inline">\(\vec{Z} = 50 + 68,21 \mathrm{j} \ \Omega = 84,57 \enclose{phasorangle}{53,76^\circ} \ \Omega\)</span>.</li>
+<li><em>Solución 2:</em> <span class="math inline">\(\vec{Z} = 19,40 + 0,78 \mathrm{j} \ \Omega = 19,42 \enclose{phasorangle}{2,3^\circ} \ \Omega\)</span>.</li>
+</ul>
+<p><strong>5. Análisis Fasorial</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>Dibuja el diagrama fasorial correspondiente al circuito de la figura y calcula la tensión en la bobina.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/ejercicio5.png" width="350"/></p>
+<figcaption>Ejercicios Fasorial</figcaption>
+</figure>
+</div>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><em>Datos:</em> <span class="math inline">\(R = 2 \ \Omega\)</span>, <span class="math inline">\(L = \frac{1}{50\pi} \ \text{H}\)</span>, <span class="math inline">\(C = \frac{1}{300\pi} \ \text{F}\)</span>, <span class="math inline">\(U = 10 \ \text{V}\)</span> y <span class="math inline">\(f = 50 \ \text{Hz}\)</span>.</li>
+<li><em>Solución:</em> <span class="math inline">\(\vec{U}_L = 5 \sqrt{2} \mathrm{j} \ \text{V}\)</span> <em>(tomando como referencia de fases la intensidad de la resistencia)</em>.</li>
+</ul>
+<p><strong>6. Desfase en Serie RL</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>En un circuito <span class="math inline">\(R-L\)</span> serie hay un desfase de <span class="math inline">\(30^\circ\)</span> entre la tensión de alimentación y la tensión de la resistencia. Calcula el valor de la inductancia que consigue dicho desfase. Dibuja el triángulo de impedancias.</p>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><em>Datos:</em> <span class="math inline">\(f = 50 \ \text{Hz}\)</span>, <span class="math inline">\(U = 30 \ \text{V}\)</span>, <span class="math inline">\(R = 5 \ \Omega\)</span>.</li>
+<li><em>Solución:</em> <span class="math inline">\(L=9,188 \text{mH}\)</span>.</li>
+</ul>
+<p><strong>7. Circuito RC Serie</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>En un circuito la tensión en una resistencia vale <span class="math inline">\(15 \ \text{V}\)</span> y la intensidad que circula por un condensador colocado en serie con ella es de <span class="math inline">\(0,5 \ \text{A}\)</span>. Si la tensión de la fuente es de <span class="math inline">\(20 \ \text{V}\)</span> y la frecuencia de <span class="math inline">\(30 \ \text{Hz}\)</span>, calcula:</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="a">
+<li>El valor de la resistencia.</li>
+<li>La reactancia capacitiva.</li>
+<li>El triángulo de impedancias.</li>
+</ol>
+<ul>
+<li><em>Solución:</em> <span class="math inline">\(a) \ R=30 \ \Omega ;b) \ X_c=26,46 \ \Omega; c) \ \vec{Z} = 40 \enclose{phasorangle}{-41,41^\circ} \ \Omega\)</span>.</li>
+</ul>
+<p><strong>8. Corrientes en Paralelo</strong></p>
+<div style="margin-top: -1em;">
+</div>
+<p>En el circuito de la figura, que funciona a una frecuencia de <span class="math inline">\(50 \ \text{Hz}\)</span>, se obtienen las siguientes medidas con los aparatos de medida:</p>
+<div style="margin-top: -1em;">
+</div>
+<ul>
+<li><span class="math inline">\(A_1=13 \ \text{A}\)</span>.</li>
+<li><span class="math inline">\(A_2=11 \ \text{A}\)</span>.</li>
+<li><span class="math inline">\(V_1=220 \ \text{V}\)</span>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/ejercicio8.png" width="350"/></p>
+<figcaption>Ejercicios Paralelo</figcaption>
+</figure>
+</div>
+<p>Determina:</p>
+<div style="margin-top: -1em;">
+</div>
+<ol type="a">
+<li>La representación vectorial de las corrientes y la medida del amperímetro <span class="math inline">\(A_3\)</span>.</li>
+<li>El valor de <span class="math inline">\(R\)</span>.</li>
+<li>El valor de <span class="math inline">\(L\)</span>.</li>
+</ol>
+<ul>
+<li><em>Solución:</em> <span class="math inline">\(a) \ 6,93 \ \text{A} ;b) \ 31,75 \ \Omega; c) \ 63,66 \ \text{mH}\)</span>.</li>
+</ul>
+</div>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="3-respuesta-de-componentes.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="5-circuitos-rlc.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

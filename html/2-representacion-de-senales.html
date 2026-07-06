@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2  Representación de señales sinusoidales.</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
+     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
+     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
+<li class="active"><a href="../html/2-representacion-de-senales.html" class="active no-ch">2 · Representación de señales</a></li>
+<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
+<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
+<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
+<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
+<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
+<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
+</ul></nav><main id="page-2-representacion-de-senales" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">2 · Representación de señales</h1></div>
+</header>
+<div id="page-content-page-2-representacion-de-senales" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><p>Una señal sinusoidal genérica es aquella que sigue una variación dada por alguna de las siguientes expresiones:</p>
+<p><span class="math display">\[f(t) = A_p \cdot \sin(\omega \cdot t + \varphi)\]</span> <span class="math display">\[f(t) = A_p \cdot \cos(\omega \cdot t + \delta)\]</span></p>
+<p>En la siguiente imagen puedes ver la representación de una función <strong>seno</strong> con una amplitud <span class="math inline">\(A_p\)</span> de 1 y un desfase <span class="math inline">\(\varphi\)</span> de 30° (<span class="math inline">\(\pi/6\)</span> radianes) respecto al origen:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/graf-seno.png" style="width:70.0%"/></p>
+<figcaption>Representación de una función seno con desfase</figcaption>
+</figure>
+</div>
+<div style="width:75%; margin:auto;">
+<div class="marco marco-nota"><p class="marco-titulo">TipImportante</p>
+<p>La representación del coseno sería la misma onda desfasada <span class="math inline">\(\pi/2\)</span> radianes (90º) respecto a la anterior. Para simplificar, en este tema siempre utilizaremos la ley de variación basada en la función <strong>seno</strong>.</p>
+</div>
+</div>
+<section class="level2" data-number="2.1" id="descripción-de-una-señal-sinusoidal">
+<h2 class="" data-number="2.1"><span class="header-section-number">2.1</span> Descripción de una señal sinusoidal</h2>
+<p>Una función sinusoidal es una función periódica porque se repite a intervalos regulares de tiempo. El tiempo que tarda en repetirse se llama <strong>periodo (T)</strong> y se mide en <strong>segundos (s)</strong>. Se denomina <strong>frecuencia</strong> al número de veces que se repite la señal en un segundo, su unidad es el <strong>hercio (Hz)</strong>. La relación entre frecuencia y periodo es inversa: <span class="math inline">\(f = 1/T\)</span>.</p>
+<p>Para una señal sinusoidal de la forma <span class="math inline">\(f(t) = A_p \cdot \sin(\omega \cdot t + \varphi)\)</span>:</p>
+<ul>
+<li><strong><span class="math inline">\(A_p\)</span></strong> es la <strong>amplitud</strong>, es decir, el máximo valor que alcanza la señal.</li>
+<li><strong><span class="math inline">\(\omega\)</span></strong> es la <strong>frecuencia angular</strong> o <strong>pulsación</strong> expresada en <strong>rad/s</strong>, tiene unidades de velocidad angular. Su valor es: <span class="math inline">\(\omega = 2\pi \cdot f = \frac{2\pi}{T}\)</span>.</li>
+<li><strong><span class="math inline">\(t\)</span></strong> es el <strong>tiempo</strong> medido en <strong>segundos (s)</strong>.</li>
+<li><strong><span class="math inline">\(\varphi\)</span></strong> es el <strong>ángulo de fase inicial</strong> medido en <strong>radianes (rad)</strong>.</li>
+</ul>
+<p>Se llama <strong>ciclo</strong> al conjunto de valores que toma la función en <strong>un periodo</strong>. La representación en el tiempo es la utilizada cuando se estudian señales con un osciloscopio.</p>
+<div style="width: 90%; margin: auto;">
+<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo de análisis de onda</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejemploSinusoidal.png" style="width:50.0%"/></p>
+</figure>
+</div>
+<ul>
+<li><strong>Amplitud:</strong> <span class="math inline">\(A_p = 5\)</span></li>
+<li><strong>Periodo:</strong> <span class="math inline">\(T = 20 \text{ ms}\)</span></li>
+<li><strong>Frecuencia:</strong> <span class="math inline">\(f = 1/T = 50 \text{ Hz}\)</span></li>
+<li><strong>Pulsación:</strong> <span class="math inline">\(\omega = 2\pi \cdot f = 100\pi \text{ rad/s}\)</span></li>
+<li><strong>Fase inicial, <span class="math inline">\(\varphi\)</span>:</strong> La fase inicial está señalada en la figura; es necesario expresarla en radianes, no en tiempo. Para relacionar ambos sabemos que el periodo <span class="math inline">\(T\)</span> se corresponde con un ángulo de <span class="math inline">\(2\pi\)</span> radianes; según esto se puede establecer que: <span class="math display">\[\varphi = \frac{2\pi \cdot t_{0}}{T} = \frac{2\pi \cdot 2,5}{20} = \frac{\pi}{4} \text{ rad}\]</span></li>
+</ul>
+<p>La expresión que define la señal del ejemplo será, por lo tanto:</p>
+<p><span class="math display">\[f(t)=5\cdot\operatorname{sen}\left(100\pi t+\frac{\pi}{4}\right)\]</span></p>
+</div>
+</div>
+</section>
+<section class="level2" data-number="2.2" id="valores-significativos-de-una-señal-sinusoidal">
+<h2 class="" data-number="2.2"><span class="header-section-number">2.2</span> Valores significativos de una señal sinusoidal</h2>
+<details>
+<summary>
+<strong>Valor instantáneo</strong>
+</summary>
+<div style="padding-left: 1.5em; margin-top: 5px;">
+<p>Es el valor que tiene la onda en cada instante. Se puede calcular evaluando la expresión matemática en un instante de tiempo <span class="math inline">\(t\)</span> determinado.</p>
+</div>
+</details>
+<details>
+<summary>
+<strong>Valor de pico o valor de cresta</strong>
+</summary>
+<div style="padding-left: 1.5em; margin-top: 5px;">
+<p>Es el valor máximo que toma la señal, es decir, su amplitud.</p>
+</div>
+</details>
+<details>
+<summary>
+<strong>Valor medio</strong>
+</summary>
+<div style="padding-left: 1.5em; margin-top: 5px;">
+<p>Es la media aritmética de todos los valores instantáneos que pueden darse en un periodo. Se calcula matemáticamente así:</p>
+<p><span class="math display">\[U_m = \frac{1}{T} \int_0^T u(t)\,dt\]</span></p>
+<p>En el caso de la señal seno, el valor medio sería cero al ser una función simétrica. Por lo tanto, se utiliza el valor medio en un semiperiodo (T/2), que sí tiene un valor útil y que tiene esta expresión:</p>
+<p><span class="math display">\[U_m = \frac{1}{T/2} \int_0^{T/2} u(t)\,dt\]</span></p>
+</div>
+</details>
+<details>
+<summary>
+<strong>Valor eficaz</strong>
+</summary>
+<div style="padding-left: 1.5em; margin-top: 5px;">
+<p>Aunque el valor medio de la intensidad sea cero, eso no significa que no haya movimiento de electrones ni consumo de energía en una resistencia R. Los electrones están constantemente realizando un movimiento de vibración cambiando de sentido en cada semiperiodo. Este movimiento hace que, por efecto Joule, consuman energía en la resistencia, independientemente del sentido del movimiento.</p>
+<p>La potencia consumida será</p>
+<p><span class="math display">\[P(t) = R\,I^2 = R\,I_0^2\operatorname{sen}^2(\omega t)\]</span></p>
+<p>Y la energía consumida en un periodo, por tanto, será</p>
+<p><span class="math display">\[E = \int_{0}^{T}P(t)dt= \int_{0}^{T} R\,I_0^2\operatorname{sen}^2(\omega t) dt=R\,I_0^2\frac{T}{2}\]</span></p>
+<p>Si comparamos este resultado con una corriente continua que consumiera la misma energía (es decir, si estudiamos el problema “como si la corriente fuera continua”, circulando una intensidad Ie):</p>
+<p><span class="math display">\[E = R\,I_e^2T\]</span></p>
+<p>Vemos que la intensidad de corriente continua necesaria para consumir la misma energía que la corriente alterna es:</p>
+<p><span class="math display">\[I_{e}^{2}=\frac{I_{0}^{2}}{2}\Rightarrow I_{e}=\frac{I_{0}}{\sqrt{2}}\]</span></p>
+<p>Este valor se denomina <strong>valor eficaz</strong>, y es el más usado al estudiar circuitos de corriente alterna ya que, como ya veremos, usando valores eficaces sí se cumple la ley de Ohm, cosa que no ocurre con los valores instantáneos, debido al desfase.</p>
+<p>Del mismo modo que la intensidad eficaz es <span class="math inline">\(I_{e}=\frac{I_{0}}{\sqrt{2}}\)</span>, el voltaje eficaz es <span class="math inline">\(V_{e}=\frac{V_{0}}{\sqrt{2}}\)</span></p>
+</div>
+</details>
+</section>
+<section class="level2" data-number="2.3" id="representación-fasorial-y-compleja">
+<h2 class="" data-number="2.3"><span class="header-section-number">2.3</span> Representación fasorial y compleja</h2>
+<p>Una magnitud sinusoidal se puede representar como la proyección vertical de un <strong>vector rotativo (fasor)</strong> que gira a una velocidad angular <span class="math inline">\(\omega\)</span> en sentido contrario al de las agujas del reloj. Su módulo es igual al valor de cresta (<span class="math inline">\(U_p\)</span>) y su posición inicial es la fase inicial (<span class="math inline">\(\varphi\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid figure-img" src="../content/resources/FresnelGenerico.gif" style="width:80.0%"/></p>
+<figcaption>Animación del concepto de fasor</figcaption>
+</figure>
+</div>
+<section class="level3" data-number="2.3.1" id="formas-de-expresar-un-fasor">
+<h3 class="" data-number="2.3.1"><span class="header-section-number">2.3.1</span> Formas de expresar un fasor</h3>
+<p><strong>Nota sobre notación:</strong> Al tratarse de una magnitud vectorial, a partir de ahora utilizaremos la notación de vector con flecha (ej. <span class="math inline">\(\vec{U}, \vec{I}\)</span>) para referirnos al fasor completo (número complejo), distinguiéndolo así claramente de su módulo o valor escalar (ej. <span class="math inline">\(U, I\)</span>).</p>
+<ul>
+<li><strong>Forma polar:</strong> <span class="math inline">\(\vec{U} = U_{p} \angle \varphi\)</span>.</li>
+<li><strong>Forma compleja:</strong> <span class="math inline">\(\vec{U} = U_{p} \cos \varphi + j \cdot U_{p} \sin \varphi\)</span>. Donde <span class="math inline">\(j=\sqrt{-1}\)</span> es la <em>unidad imaginaria</em>, que en Electrotecnia se denomina <strong><span class="math inline">\(j\)</span></strong> para no confundirla con la intensidad. Representa un <strong>giro de +90°</strong> en el diagrama fasorial.</li>
+</ul>
+<div style="width: 90%; margin: auto;">
+<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo: Representación de una corriente</p>
+<p>Representa gráficamente la siguiente señal correspondiente a una corriente:</p>
+<p><span class="math display">\[i(t)=3\cdot \operatorname{sen}(10\pi t-\frac{\pi}{3})\]</span></p>
+<p>Solución:</p>
+<p>Debemos representar un vector de módulo 3, con un desfase inicial <span class="math inline">\(\varphi=-\frac{\pi}{3} \, \text{rad}\)</span> o <span class="math inline">\(\varphi=-60º\)</span>. Este vector giraría a una velocidad <span class="math inline">\(\omega=10\pi \, \text{rad/s}\)</span>.</p>
+<p>La representación polar es la siguiente:</p>
+<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3\enclose{phasorangle}{-60º} \, \text{A}\]</span></p>
+<p>o, expresando el ángulo en radianes:</p>
+<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3\enclose{phasorangle}{-\pi /3} \, \text{A}\]</span></p>
+<p>La representación en forma de número complejo es:</p>
+<p><span class="math display">\[\vec{I}=I_{p}\cos \varphi + j \cdot I_{p} \operatorname{sen} \varphi=3·\cos(-60º)+j·3·\operatorname{sen}(-60º)=1,5-1,5\sqrt{3}j\, \text{A}\]</span></p>
+<p>Y, por último, la representación gráfica sería:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/fasor_final_blanco.png" style="width:70.0%"/></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="1-corriente-alterna.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="3-respuesta-de-componentes.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>
