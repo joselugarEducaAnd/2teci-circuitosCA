@@ -213,3 +213,8 @@ button.toggler:hover, button.toggler:focus,
 
 /* ---------- Accesibilidad / movimiento ---------- */
 @media (prefers-reduced-motion: reduce) { .exe-content * { transition: none !important; } }
+
+/* centrado de figuras (publicado) */
+.exe-content figure{text-align:center}
+.exe-content figure img{display:block;margin-left:auto;margin-right:auto}
+.exe-content .page-content > p > img{display:block;margin-left:auto;margin-right:auto}
