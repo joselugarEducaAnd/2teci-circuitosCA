@@ -218,3 +218,9 @@ button.toggler:hover, button.toggler:focus,
 .exe-content figure{text-align:center}
 .exe-content figure img{display:block;margin-left:auto;margin-right:auto}
 .exe-content .page-content > p > img{display:block;margin-left:auto;margin-right:auto}
+
+/* centrado de figuras v2 — override de Bootstrap .figure{display:inline-block} */
+.exe-content figure.figure,
+.exe-content figure { display: block !important; text-align: center; margin-left: auto; margin-right: auto; }
+.exe-content figure > p { text-align: center; margin-left: auto; margin-right: auto; }
+.exe-content figure img { display: inline-block; float: none; margin: 0 auto; }
