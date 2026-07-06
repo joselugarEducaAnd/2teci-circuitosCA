@@ -213,8 +213,3 @@ button.toggler:hover, button.toggler:focus,
 
 /* ---------- Accesibilidad / movimiento ---------- */
 @media (prefers-reduced-motion: reduce) { .exe-content * { transition: none !important; } }
-
-
-/* qmd-a-elpx: escala img + math */
-.exe-content img{max-width:100%;height:auto}
-.exe-content mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden}
