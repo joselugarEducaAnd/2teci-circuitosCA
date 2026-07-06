@@ -2,11 +2,11 @@
 <html lang="es" id="exe-page">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2  Representación de señales sinusoidales.</title>
+<title>2  Representación de señales sinusoidales. – Unidad 6: Circuitos de Corriente Alterna</title>
 <link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
-<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<meta name="description" content="Unidad 6 · Circuitos de Corriente Alterna">
 <script>document.querySelector("html").classList.add("js");</script>
 <script src="../libs/jquery/jquery.min.js"> </script>
 <script src="../libs/common_i18n.js"> </script>
@@ -19,29 +19,28 @@
 <script src="../theme/style.js"> </script>
 <link rel="stylesheet" href="../theme/style.css">
 <link rel="stylesheet" href="../theme/zzz-majuelo.css">
-<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
-     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
-     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). Config (delimitadores
+     + extensiones incl. enclose) via libs/common.js. Sin motor remoto heredado. -->
 <script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
 <div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
 <li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
-<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
-<li class="active"><a href="../html/2-representacion-de-senales.html" class="active no-ch">2 · Representación de señales</a></li>
-<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
-<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
-<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
-<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
-<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
-<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
-</ul></nav><main id="page-2-representacion-de-senales" class="page">
+<li class=""><a href="../html/corriente-alterna.html" class=" no-ch">Corriente alterna</a></li>
+<li class="active"><a href="../html/representacion-de-senales-sinusoidales.html" class="active no-ch">Representación de señales sinusoidales.</a></li>
+<li class=""><a href="../html/respuesta-de-los-componentes-basicos-a-la-corriente-alterna.html" class=" no-ch">Respuesta de los componentes básicos a la Corriente Alterna</a></li>
+<li class=""><a href="../html/impedancia.html" class=" no-ch">Impedancia</a></li>
+<li class=""><a href="../html/circuitos-rlc.html" class=" no-ch">Circuitos RLC</a></li>
+<li class=""><a href="../html/potencia-en-corriente-alterna.html" class=" no-ch">Potencia en Corriente Alterna</a></li>
+<li class=""><a href="../html/appendix-a-numeros-complejos-en-ca.html" class=" no-ch">Appendix A — Números Complejos en CA</a></li>
+<li class=""><a href="../html/appendix-b-problemas-de-corriente-alterna-ponencia-2025.html" class=" no-ch">Appendix B — Problemas de Corriente Alterna (Ponencia 2025)</a></li>
+</ul></nav><main id="page-representacion-de-senales-sinusoidales" class="page">
 <header class="main-header">
 <div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
-<div class="page-header"><h1 class="page-title">2 · Representación de señales</h1></div>
+<div class="page-header"><h1 class="page-title">Representación de señales sinusoidales.</h1></div>
 </header>
-<div id="page-content-page-2-representacion-de-senales" class="page-content">
+<div id="page-content-page-representacion-de-senales-sinusoidales" class="page-content">
 <article class="box no-header"><div class="box-content">
 <div class="idevice_node text" data-idevice-type="text"><p>Una señal sinusoidal genérica es aquella que sigue una variación dada por alguna de las siguientes expresiones:</p>
 <p><span class="math display">\[f(t) = A_p \cdot \sin(\omega \cdot t + \varphi)\]</span> <span class="math display">\[f(t) = A_p \cdot \cos(\omega \cdot t + \delta)\]</span></p>
@@ -53,7 +52,7 @@
 </figure>
 </div>
 <div style="width:75%; margin:auto;">
-<div class="marco marco-nota"><p class="marco-titulo">TipImportante</p>
+<div class="marco marco-nota"><p class="marco-titulo">Importante</p>
 <p>La representación del coseno sería la misma onda desfasada <span class="math inline">\(\pi/2\)</span> radianes (90º) respecto a la anterior. Para simplificar, en este tema siempre utilizaremos la ley de variación basada en la función <strong>seno</strong>.</p>
 </div>
 </div>
@@ -69,7 +68,7 @@
 </ul>
 <p>Se llama <strong>ciclo</strong> al conjunto de valores que toma la función en <strong>un periodo</strong>. La representación en el tiempo es la utilizada cuando se estudian señales con un osciloscopio.</p>
 <div style="width: 90%; margin: auto;">
-<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo de análisis de onda</p>
+<div class="marco marco-formula"><p class="marco-titulo">Ejemplo de análisis de onda</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejemploSinusoidal.png" style="width:50.0%"/></p>
@@ -83,7 +82,7 @@
 <li><strong>Fase inicial, <span class="math inline">\(\varphi\)</span>:</strong> La fase inicial está señalada en la figura; es necesario expresarla en radianes, no en tiempo. Para relacionar ambos sabemos que el periodo <span class="math inline">\(T\)</span> se corresponde con un ángulo de <span class="math inline">\(2\pi\)</span> radianes; según esto se puede establecer que: <span class="math display">\[\varphi = \frac{2\pi \cdot t_{0}}{T} = \frac{2\pi \cdot 2,5}{20} = \frac{\pi}{4} \text{ rad}\]</span></li>
 </ul>
 <p>La expresión que define la señal del ejemplo será, por lo tanto:</p>
-<p><span class="math display">\[f(t)=5\cdot\operatorname{sen}\left(100\pi t+\frac{\pi}{4}\right)\]</span></p>
+<p><span class="math display">\[f(t)=5\cdot{\operatorname{sen}}\left(100\pi t+\frac{\pi}{4}\right)\]</span></p>
 </div>
 </div>
 </section>
@@ -123,9 +122,9 @@
 <div style="padding-left: 1.5em; margin-top: 5px;">
 <p>Aunque el valor medio de la intensidad sea cero, eso no significa que no haya movimiento de electrones ni consumo de energía en una resistencia R. Los electrones están constantemente realizando un movimiento de vibración cambiando de sentido en cada semiperiodo. Este movimiento hace que, por efecto Joule, consuman energía en la resistencia, independientemente del sentido del movimiento.</p>
 <p>La potencia consumida será</p>
-<p><span class="math display">\[P(t) = R\,I^2 = R\,I_0^2\operatorname{sen}^2(\omega t)\]</span></p>
+<p><span class="math display">\[P(t) = R\,I^2 = R\,I_0^2{\operatorname{sen}}^2(\omega t)\]</span></p>
 <p>Y la energía consumida en un periodo, por tanto, será</p>
-<p><span class="math display">\[E = \int_{0}^{T}P(t)dt= \int_{0}^{T} R\,I_0^2\operatorname{sen}^2(\omega t) dt=R\,I_0^2\frac{T}{2}\]</span></p>
+<p><span class="math display">\[E = \int_{0}^{T}P(t)dt= \int_{0}^{T} R\,I_0^2{\operatorname{sen}}^2(\omega t) dt=R\,I_0^2\frac{T}{2}\]</span></p>
 <p>Si comparamos este resultado con una corriente continua que consumiera la misma energía (es decir, si estudiamos el problema “como si la corriente fuera continua”, circulando una intensidad Ie):</p>
 <p><span class="math display">\[E = R\,I_e^2T\]</span></p>
 <p>Vemos que la intensidad de corriente continua necesaria para consumir la misma energía que la corriente alterna es:</p>
@@ -152,17 +151,17 @@
 <li><strong>Forma compleja:</strong> <span class="math inline">\(\vec{U} = U_{p} \cos \varphi + j \cdot U_{p} \sin \varphi\)</span>. Donde <span class="math inline">\(j=\sqrt{-1}\)</span> es la <em>unidad imaginaria</em>, que en Electrotecnia se denomina <strong><span class="math inline">\(j\)</span></strong> para no confundirla con la intensidad. Representa un <strong>giro de +90°</strong> en el diagrama fasorial.</li>
 </ul>
 <div style="width: 90%; margin: auto;">
-<div class="marco marco-formula"><p class="marco-titulo">ImportanteEjemplo: Representación de una corriente</p>
+<div class="marco marco-formula"><p class="marco-titulo">Ejemplo: Representación de una corriente</p>
 <p>Representa gráficamente la siguiente señal correspondiente a una corriente:</p>
-<p><span class="math display">\[i(t)=3\cdot \operatorname{sen}(10\pi t-\frac{\pi}{3})\]</span></p>
+<p><span class="math display">\[i(t)=3\cdot {\operatorname{sen}}(10\pi t-\frac{\pi}{3})\]</span></p>
 <p>Solución:</p>
 <p>Debemos representar un vector de módulo 3, con un desfase inicial <span class="math inline">\(\varphi=-\frac{\pi}{3} \, \text{rad}\)</span> o <span class="math inline">\(\varphi=-60º\)</span>. Este vector giraría a una velocidad <span class="math inline">\(\omega=10\pi \, \text{rad/s}\)</span>.</p>
 <p>La representación polar es la siguiente:</p>
-<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3\enclose{phasorangle}{-60º} \, \text{A}\]</span></p>
+<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3{\enclose{phasorangle}{-60º}} \, \text{A}\]</span></p>
 <p>o, expresando el ángulo en radianes:</p>
-<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3\enclose{phasorangle}{-\pi /3} \, \text{A}\]</span></p>
+<p><span class="math display">\[\vec{I}=I_{p}\angle \varphi=3{\enclose{phasorangle}{-\pi /3}} \, \text{A}\]</span></p>
 <p>La representación en forma de número complejo es:</p>
-<p><span class="math display">\[\vec{I}=I_{p}\cos \varphi + j \cdot I_{p} \operatorname{sen} \varphi=3·\cos(-60º)+j·3·\operatorname{sen}(-60º)=1,5-1,5\sqrt{3}j\, \text{A}\]</span></p>
+<p><span class="math display">\[\vec{I}=I_{p}\cos \varphi + j \cdot I_{p} {\operatorname{sen}} \varphi=3·\cos(-60º)+j·3·{\operatorname{sen}}(-60º)=1,5-1,5\sqrt{3}j\, \text{A}\]</span></p>
 <p>Y, por último, la representación gráfica sería:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -175,7 +174,7 @@
 </section></div>
 </div></article>
 </div></main>
-<div class="nav-buttons"><a href="1-corriente-alterna.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="3-respuesta-de-componentes.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<div class="nav-buttons"><a href="corriente-alterna.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="respuesta-de-los-componentes-basicos-a-la-corriente-alterna.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
 <footer id="siteFooter"><div id="siteFooterContent">
 <div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>

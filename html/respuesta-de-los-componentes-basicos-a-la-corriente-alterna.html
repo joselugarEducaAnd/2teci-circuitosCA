@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3  Respuesta de los componentes básicos a la Corriente Alterna – Unidad 6: Circuitos de Corriente Alterna</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Unidad 6 · Circuitos de Corriente Alterna">
+<script>document.querySelector("html").classList.add("js");</script>
+<script src="../libs/jquery/jquery.min.js"> </script>
+<script src="../libs/common_i18n.js"> </script>
+<script src="../libs/common.js"> </script>
+<script src="../libs/exe_export.js"> </script>
+<script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script>
+<link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script>
+<link rel="stylesheet" href="../theme/style.css">
+<link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). Config (delimitadores
+     + extensiones incl. enclose) via libs/common.js. Sin motor remoto heredado. -->
+<script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
+<li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
+<li class=""><a href="../html/corriente-alterna.html" class=" no-ch">Corriente alterna</a></li>
+<li class=""><a href="../html/representacion-de-senales-sinusoidales.html" class=" no-ch">Representación de señales sinusoidales.</a></li>
+<li class="active"><a href="../html/respuesta-de-los-componentes-basicos-a-la-corriente-alterna.html" class="active no-ch">Respuesta de los componentes básicos a la Corriente Alterna</a></li>
+<li class=""><a href="../html/impedancia.html" class=" no-ch">Impedancia</a></li>
+<li class=""><a href="../html/circuitos-rlc.html" class=" no-ch">Circuitos RLC</a></li>
+<li class=""><a href="../html/potencia-en-corriente-alterna.html" class=" no-ch">Potencia en Corriente Alterna</a></li>
+<li class=""><a href="../html/appendix-a-numeros-complejos-en-ca.html" class=" no-ch">Appendix A — Números Complejos en CA</a></li>
+<li class=""><a href="../html/appendix-b-problemas-de-corriente-alterna-ponencia-2025.html" class=" no-ch">Appendix B — Problemas de Corriente Alterna (Ponencia 2025)</a></li>
+</ul></nav><main id="page-respuesta-de-los-componentes-basicos-a-la-corriente-alterna" class="page">
+<header class="main-header">
+<div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">Respuesta de los componentes básicos a la Corriente Alterna</h1></div>
+</header>
+<div id="page-content-page-respuesta-de-los-componentes-basicos-a-la-corriente-alterna" class="page-content">
+<article class="box no-header"><div class="box-content">
+<div class="idevice_node text" data-idevice-type="text"><section class="level2" data-number="3.1" id="respuesta-de-una-resistencia">
+<h2 class="" data-number="3.1"><span class="header-section-number">3.1</span> Respuesta de una resistencia</h2>
+<p>Si a una resistencia de valor R ohmios (Ω) se la somete a una tensión sinusoidal de <strong>valor eficaz U</strong> y <strong>pulsación ω</strong>, la tensión instantánea aplicada a la resistencia es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot {\operatorname{sen}}(\omega t + \varphi)\]</span></p>
+<p>Según la ley de Ohm, tenemos que <span class="math inline">\(i(t) = u(t)/R\)</span>, y por tanto, la intensidad instantánea que circula por la resistencia es: <span class="math display">\[i(t) = \frac{\sqrt{2}U}{R} \cdot {\operatorname{sen}}(\omega  t + \varphi)\]</span> Analizando las expresiones de la tensión y la intensidad, podemos concluir que:</p>
+<ul>
+<li>La intensidad eficaz es <span class="math inline">\(I=\frac{U}{R}\)</span>, igual que en corriente continua.</li>
+<li>El desfase entre la tensión y la intensidad es nulo. Es decir, están en fase (<span class="math inline">\(\varphi_{I}=\varphi\)</span>)</li>
+</ul>
+<p>La representación gráfica de la tensión y la intensidad en una resistencia eléctrica será, por tanto:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelResistivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.2" id="respuesta-de-una-bobina">
+<h2 class="" data-number="3.2"><span class="header-section-number">3.2</span> Respuesta de una bobina</h2>
+<p>La característica básica de una bobina es su <strong>inductancia</strong>, que se denota mediante la letra <strong>L</strong> y se mide en <strong>Henrios (H)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>Si a una bobina de valor <strong>L henrios (H)</strong> se la somete a una intensidad sinusoidal de <strong>valor eficaz U</strong> y <strong>pulsación ω</strong>, la intensidad instantánea que circula por la bobina es:</p>
+<p><span class="math display">\[
+i(t) = (\sqrt{2}I) \cdot {\operatorname{sen}}(\omega t + \varphi)
+\]</span></p>
+<p>La ley que rige para una bobina es la siguiente:</p>
+<p><span class="math display">\[u(t) = L \cdot \frac{di(t)}{dt}\]</span></p>
+<p>Por lo tanto, la tensión instantánea en la bobina la obtenemos derivando la intensidad y resulta ser:</p>
+<p><span class="math display">\[u(t) = L \frac{di(t)}{dt} = L \cdot (\sqrt{2}I) \cdot \omega \cdot {\operatorname{sen}}(\omega  t + \varphi + \frac{\pi}{2})\]</span></p>
+<div class="marco marco-teoria"><p class="marco-titulo">Importante</p>
+<p>En realidad, la derivada del seno es el coseno, pero el coseno de un ángulo es igual al seno de su complementario (<span class="math inline">\(\cos(\alpha) = {\operatorname{sen}}(\alpha + \frac{\pi}{2})\)</span>). Por lo tanto, podemos poner la expresión en forma de seno, para poder comparar los fasores de la tensión y la intensidad.</p>
+</div>
+<p>Por consiguiente, obtenemos una tensión con la misma pulsación que la intensidad y con las características siguientes:</p>
+<ul>
+<li><p>Un valor de pico <span class="math inline">\(U_p=\omega \cdot L \cdot \sqrt{2} I\)</span>. Por lo tanto, <strong>la tensión eficaz es</strong> <span class="math inline">\(U=\omega \cdot L \cdot I\)</span><strong>.</strong></p></li>
+<li><p>La tensión se encuentra adelantada 90° ($\pi/2 $ ) con respecto a la intensidad; la <strong>fase inicial de la tensión es</strong> <span class="math inline">\(\varphi_U = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></p></li>
+</ul>
+<p>Al producto <span class="math inline">\(\omega \cdot L\)</span> se le llama <strong>reactancia inductiva</strong> y se representa por <span class="math inline">\(X_L\)</span>, es decir:</p>
+<div class="marco marco-formula">
+<p><span class="math display">\[
+X_L=\omega \cdot L
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia inductiva en el SI es el ohmio (</strong><span class="math inline">\(\omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en una bobina es la mostrada en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelInductivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.3" id="respuesta-de-un-condensador">
+<h2 class="" data-number="3.3"><span class="header-section-number">3.3</span> Respuesta de un condensador</h2>
+<p>La característica básica de un condensador es su <strong>capacitancia</strong> o capacidad, que se denota mediante la letra <strong>C</strong> y se mide en <strong>Faradios (F)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>Si a un condensador de valor <strong>C faradios (F)</strong> se le somete a una tensión sinusoidal de valor eficaz U y pulsación co, la tensión instantánea aplicada al condensador es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot {\operatorname{sen}}(\omega t + \varphi)\]</span></p>
+<p>Aplicando la ley que rige un condensador, <span class="math inline">\(i(t) = C \cdot du(t) / dt\)</span>, la intensidad instantánea que circula por el condensador es: <span class="math display">\[
+i(t) = C \cdot \frac{du(t)}{dt} = C \cdot \omega \cdot ( \sqrt{2}U) \cdot {\operatorname{sen}}(\omega  t + \varphi + \frac{\pi}{2})
+\]</span></p>
+<p>Obtenemos una intensidad con la misma pulsación que la tensión aplicada y con las características siguientes:</p>
+<ul>
+<li>Un valor de pico <span class="math inline">\(I_p=\omega \cdot C \cdot \sqrt{2} U\)</span>. Por lo tanto, <strong>la intensidad eficaz es</strong> <span class="math inline">\(I=\omega \cdot C \cdot U\)</span><strong>.</strong></li>
+<li>La intensidad se encuentra adelantada 90° (<span class="math inline">\(\pi/2\)</span>) con respecto a la tensión; la <strong>fase inicial de la intensidad es</strong> <span class="math inline">\(\varphi_I = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></li>
+</ul>
+<p>Al cociente <span class="math inline">\(1/\omega \cdot C\)</span> se le llama <strong>reactancia capacitiva</strong> y se representa por <span class="math inline">\(X_C\)</span>, es decir:</p>
+<div class="marco marco-formula">
+<p><span class="math display">\[
+X_C=\frac{1}{\omega \cdot C}
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia capacitiva en el SI es el ohmio (</strong><span class="math inline">\(\omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en un condensador es la mostrada en la figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/FresnelCapacitivo.gif" style="width:90.0%"/></p>
+</figure>
+</div>
+</section>
+<section class="level2" data-number="3.4" id="cuadro-resumen-con-las-respuestas-r-l-y-c">
+<h2 class="" data-number="3.4"><span class="header-section-number">3.4</span> Cuadro resumen con las respuestas R, L y C</h2>
+<div class="tabla-estilo-libro">
+<table class="caption-top table tabla-datos">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">Representación gráfica</th>
+<th style="text-align: center;">Relación Tensión/Intensidad</th>
+<th style="text-align: center;">Desfase rad (º)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Resistencia (<span class="math inline">\(R\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_R.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Bobina (<span class="math inline">\(L\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_L.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_L = \omega \cdot L\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\pi/2 \ (+90^\circ)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Condensador (<span class="math inline">\(C\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_C.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_C = \frac{1}{\omega \cdot C}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\pi/2 \ (-90^\circ)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" data-number="3.5" id="combinación-de-cargas-de-diferente-naturaleza">
+<h2 class="" data-number="3.5"><span class="header-section-number">3.5</span> Combinación de cargas de diferente naturaleza</h2>
+<p>Por lo general, en un circuito tendremos cargas que ofrecerán diferentes resistencias eléctricas. Además, algunas presentarán también carácter inductivo o capacitivo. Dependiendo de la combinación de elementos que tengamos en cada circuito, el desfase entre la intensidad y la tensión podrá tomar diferentes valores, no solo 0º, -90º o +90º. En este simulador puedes ver cómo cambiarían los fasores de la tensión y la intensidad dependiendo de cómo variemos las componentes R, L o C de un circuito:</p>
+<div class="marco marco-nota"><p class="marco-titulo">Simulación interactiva</p><p>Controla el desfase con el deslizador.</p><p style="text-align:center"><img alt="Animación de fasores" src="../content/resources/FresnelGenerico.gif" style="max-width:100%;height:auto"/></p><p>Esta simulación es <strong>interactiva</strong> y no se muestra en esta versión del material. Su versión interactiva se añadirá como actividad en eXeLearning.</p></div>
+</section></div>
+</div></article>
+</div></main>
+<div class="nav-buttons"><a href="representacion-de-senales-sinusoidales.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="impedancia.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<footer id="siteFooter"><div id="siteFooterContent">
+<div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
+</div></footer>
+</div>
+</body></html>

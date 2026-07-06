@@ -2,11 +2,11 @@
 <html lang="es" id="exe-page">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>6  Potencia en Corriente Alterna</title>
+<title>6  Potencia en Corriente Alterna – Unidad 6: Circuitos de Corriente Alterna</title>
 <link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
-<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<meta name="description" content="Unidad 6 · Circuitos de Corriente Alterna">
 <script>document.querySelector("html").classList.add("js");</script>
 <script src="../libs/jquery/jquery.min.js"> </script>
 <script src="../libs/common_i18n.js"> </script>
@@ -19,29 +19,28 @@
 <script src="../theme/style.js"> </script>
 <link rel="stylesheet" href="../theme/style.css">
 <link rel="stylesheet" href="../theme/zzz-majuelo.css">
-<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
-     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
-     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). Config (delimitadores
+     + extensiones incl. enclose) via libs/common.js. Sin motor remoto heredado. -->
 <script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
 <div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
 <li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
-<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
-<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
-<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
-<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
-<li class=""><a href="../html/5-circuitos-rlc.html" class=" no-ch">5 · Circuitos RLC</a></li>
-<li class="active"><a href="../html/6-potencia-en-ca.html" class="active no-ch">6 · Potencia en CA</a></li>
-<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
-<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
-</ul></nav><main id="page-6-potencia-en-ca" class="page">
+<li class=""><a href="../html/corriente-alterna.html" class=" no-ch">Corriente alterna</a></li>
+<li class=""><a href="../html/representacion-de-senales-sinusoidales.html" class=" no-ch">Representación de señales sinusoidales.</a></li>
+<li class=""><a href="../html/respuesta-de-los-componentes-basicos-a-la-corriente-alterna.html" class=" no-ch">Respuesta de los componentes básicos a la Corriente Alterna</a></li>
+<li class=""><a href="../html/impedancia.html" class=" no-ch">Impedancia</a></li>
+<li class=""><a href="../html/circuitos-rlc.html" class=" no-ch">Circuitos RLC</a></li>
+<li class="active"><a href="../html/potencia-en-corriente-alterna.html" class="active no-ch">Potencia en Corriente Alterna</a></li>
+<li class=""><a href="../html/appendix-a-numeros-complejos-en-ca.html" class=" no-ch">Appendix A — Números Complejos en CA</a></li>
+<li class=""><a href="../html/appendix-b-problemas-de-corriente-alterna-ponencia-2025.html" class=" no-ch">Appendix B — Problemas de Corriente Alterna (Ponencia 2025)</a></li>
+</ul></nav><main id="page-potencia-en-corriente-alterna" class="page">
 <header class="main-header">
 <div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
-<div class="page-header"><h1 class="page-title">6 · Potencia en CA</h1></div>
+<div class="page-header"><h1 class="page-title">Potencia en Corriente Alterna</h1></div>
 </header>
-<div id="page-content-page-6-potencia-en-ca" class="page-content">
+<div id="page-content-page-potencia-en-corriente-alterna" class="page-content">
 <article class="box no-header"><div class="box-content">
 <div class="idevice_node text" data-idevice-type="text"><p>En corriente continua, la potencia era simple: <span class="math inline">\(P = V \cdot I\)</span>. Sin embargo, en corriente alterna, el desfase entre tensión e intensidad hace que aparezcan <strong>tres formas de entender la energía</strong>.</p>
 <section class="level2" data-number="6.1" id="conceptos-fundamentales">
@@ -66,9 +65,9 @@
 <ul>
 <li><strong>Símbolo:</strong> <span class="math inline">\(Q\)</span></li>
 <li><strong>Unidad:</strong> Voltamperio reactivo (<strong>var</strong>)</li>
-<li><strong>Fórmula:</strong> <span class="math inline">\(Q = U \cdot I \cdot \operatorname{sen} \varphi\)</span></li>
+<li><strong>Fórmula:</strong> <span class="math inline">\(Q = U \cdot I \cdot {\operatorname{sen}} \varphi\)</span></li>
 </ul>
-<div class="marco marco-formula"><p class="marco-titulo">Warning⚠️ Ojo con las unidades: ¿var o VAr?</p>
+<div class="marco marco-formula"><p class="marco-titulo">⚠️ Ojo con las unidades: ¿var o VAr?</p>
 <p>Existe una discrepancia habitual entre la norma técnica y la costumbre académica:</p>
 <ol type="1">
 <li><strong>La Norma (Lo correcto):</strong> La Comisión Electrotécnica Internacional (IEC) establece que el símbolo único y oficial es <strong>var</strong> (en minúsculas). Así lo usaremos en estos apuntes.</li>
@@ -149,7 +148,7 @@ Table 6.1: Resumen de potencias por componente.
 </div>
 </figure>
 </div>
-<div class="marco marco-formula"><p class="marco-titulo">WarningConvenio de Signos para Q</p>
+<div class="marco marco-formula"><p class="marco-titulo">Convenio de Signos para Q</p>
 <ul>
 <li><strong><span class="math inline">\(Q &gt; 0\)</span> (Inductiva):</strong> Decimos que el circuito <strong>absorbe</strong> potencia reactiva. El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>arriba</strong>.</li>
 <li><strong><span class="math inline">\(Q &lt; 0\)</span> (Capacitiva):</strong> Decimos que el circuito <strong>cede</strong> potencia reactiva (o absorbe negativa). El vector <span class="math inline">\(Q\)</span> apunta hacia <strong>abajo</strong>.</li>
@@ -249,14 +248,14 @@ I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
 </div>
 </div>
 <hr/>
-<div class="marco marco-formula"><p class="marco-titulo">Importante💡 Ejemplo Resuelto: Motor Monofásico</p>
+<div class="marco marco-formula"><p class="marco-titulo">💡 Ejemplo Resuelto: Motor Monofásico</p>
 <p>Un motor eléctrico (carga inductiva) se conecta a una red de <span class="math inline">\(230\ \text{V}\)</span>. Consume una intensidad de <span class="math inline">\(5\ \text{A}\)</span> con un factor de potencia de <span class="math inline">\(\mathbf{0,8}\)</span> (inductivo). Calcula <span class="math inline">\(P, Q, S\)</span> y dibuja el triángulo.</p>
 <p><strong>Solución:</strong></p>
 <ol type="1">
 <li><p><strong>Potencia Aparente (<span class="math inline">\(S\)</span>):</strong> Es lo primero que podemos calcular con <span class="math inline">\(U\)</span> e <span class="math inline">\(I\)</span>. <span class="math display">\[S = U \cdot I = 230 \cdot 5 = \mathbf{1150\ \text{VA}}\]</span></p></li>
 <li><p><strong>Ángulo (<span class="math inline">\(\varphi\)</span>):</strong> <span class="math display">\[\cos \varphi = 0,8 \Rightarrow \varphi = \arccos(0,8) = 36,87^\circ\]</span> Como es inductivo, <span class="math inline">\(\varphi &gt; 0\)</span>.</p></li>
 <li><p><strong>Potencia Activa (<span class="math inline">\(P\)</span>):</strong> <span class="math display">\[P = S \cdot \cos \varphi = 1150 \cdot 0,8 = \mathbf{920\ \text{W}}\]</span></p></li>
-<li><p><strong>Potencia Reactiva (<span class="math inline">\(Q\)</span>):</strong> Calculamos el seno: <span class="math inline">\(\operatorname{sen}(36,87^\circ) = 0,6\)</span>. <span class="math display">\[Q = S \cdot \operatorname{sen} \varphi = 1150 \cdot 0,6 = \mathbf{690\ \text{var}}\]</span></p></li>
+<li><p><strong>Potencia Reactiva (<span class="math inline">\(Q\)</span>):</strong> Calculamos el seno: <span class="math inline">\({\operatorname{sen}}(36,87^\circ) = 0,6\)</span>. <span class="math display">\[Q = S \cdot {\operatorname{sen}} \varphi = 1150 \cdot 0,6 = \mathbf{690\ \text{var}}\]</span></p></li>
 </ol>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -279,7 +278,7 @@ I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
 </section>
 <section class="level2" data-number="6.4" id="ejercicios-propuestos">
 <h2 class="" data-number="6.4"><span class="header-section-number">6.4</span> Ejercicios Propuestos</h2>
-<div class="marco marco-formula"><p class="marco-titulo">Importante📝 Practica tú mismo</p>
+<div class="marco marco-formula"><p class="marco-titulo">📝 Practica tú mismo</p>
 <p><strong>1.</strong> Una estufa de resistencia pura <span class="math inline">\(R=50\ \Omega\)</span> se conecta a <span class="math inline">\(230\ \text{V}\)</span>.<br/>
        <strong>a)</strong> Calcula su potencia activa, reactiva y aparente.<br/>
        <strong>b)</strong> ¿Cuánto vale su factor de potencia?</p>
@@ -306,7 +305,7 @@ I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
 <p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia4.png" width="400"/></p>
 </figure>
 </div>
-<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(\vec{I}_{\text{Rama1}} = 5 \sqrt{2} \enclose{phasorangle}{4}5^\circ\ \text{A}\)</span>; <span class="math inline">\(\quad \vec{I}_{\text{Rama2}} = 5 \enclose{phasorangle}{9}0^\circ\ \text{A}\)</span>;<span class="math inline">\(\vec{I}_{\text{Rama3}} = 5 \sqrt{2} \enclose{phasorangle}{-}45^\circ\ \text{A}\)</span>; <strong>b)</strong> <span class="math inline">\(\vec{Z}_{eq} = 4 + 2\mathrm{j}\ \Omega\)</span> (<span class="math inline">\(2 \sqrt{5} \enclose{phasorangle}{2}6,56^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(P_T = 500\ \text{W}\)</span>; <span class="math inline">\(\quad Q_T = 250\ \text{var}\)</span> (Inductiva).</p>
+<p><strong>Soluciones:</strong> <strong>a)</strong> <span class="math inline">\(\vec{I}_{\text{Rama1}} = 5 \sqrt{2} {\enclose{phasorangle}{4}}5^\circ\ \text{A}\)</span>; <span class="math inline">\(\quad \vec{I}_{\text{Rama2}} = 5 {\enclose{phasorangle}{9}}0^\circ\ \text{A}\)</span>;<span class="math inline">\(\vec{I}_{\text{Rama3}} = 5 \sqrt{2} {\enclose{phasorangle}{-}}45^\circ\ \text{A}\)</span>; <strong>b)</strong> <span class="math inline">\(\vec{Z}_{eq} = 4 + 2\mathrm{j}\ \Omega\)</span> (<span class="math inline">\(2 \sqrt{5} {\enclose{phasorangle}{2}}6,56^\circ\ \Omega\)</span>). <strong>c)</strong> <span class="math inline">\(P_T = 500\ \text{W}\)</span>; <span class="math inline">\(\quad Q_T = 250\ \text{var}\)</span> (Inductiva).</p>
 <hr/>
 <p><strong>5.</strong> En el circuito de la figura se muestra un circuito de corriente alterna en el que las indicaciones de los aparatos de medida, supuestos ideales, son las siguientes:</p>
 <ul>
@@ -320,7 +319,7 @@ I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
 <p><img class="img-fluid quarto-figure quarto-figure-center figure-img" src="../content/resources/ejercicio_potencia5.png" style="width:60.0%"/></p>
 </figure>
 </div>
-<p><strong>Soluciones:</strong> <strong>Impedancia:</strong> <span class="math inline">\(\vec{Z} = 3 + \mathrm{j}4\ \Omega\)</span> (<span class="math inline">\(5 \enclose{phasorangle}{5}3,13^\circ\ \Omega\)</span>). <strong>Componentes:</strong> <span class="math inline">\(R = 3\ \Omega\)</span>; <span class="math inline">\(\quad X = 4\ \Omega\)</span>. <strong>Tensión fuente:</strong> <span class="math inline">\(\vec{U}_s = 80 + 100\mathrm{j}\ \text{V}\)</span> (<span class="math inline">\(128 \enclose{phasorangle}{5}1,31^\circ\ \text{V}\)</span>).</p>
+<p><strong>Soluciones:</strong> <strong>Impedancia:</strong> <span class="math inline">\(\vec{Z} = 3 + \mathrm{j}4\ \Omega\)</span> (<span class="math inline">\(5 {\enclose{phasorangle}{5}}3,13^\circ\ \Omega\)</span>). <strong>Componentes:</strong> <span class="math inline">\(R = 3\ \Omega\)</span>; <span class="math inline">\(\quad X = 4\ \Omega\)</span>. <strong>Tensión fuente:</strong> <span class="math inline">\(\vec{U}_s = 80 + 100\mathrm{j}\ \text{V}\)</span> (<span class="math inline">\(128 {\enclose{phasorangle}{5}}1,31^\circ\ \text{V}\)</span>).</p>
 <hr/>
 <p><strong>6.</strong> El circuito de la figura se alimenta con una fuente de tensión de valor eficaz <span class="math inline">\(220\text{V}/50\text{Hz}\)</span>. Se pide:<br/>
     <strong>a)</strong> Calcular el valor de la lectura del amperímetro A.<br/>
@@ -357,7 +356,7 @@ I = \frac{S}{U} = \frac{P}{U \cdot \cos \varphi}
 </section></div>
 </div></article>
 </div></main>
-<div class="nav-buttons"><a href="5-circuitos-rlc.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="anexo-a-numeros-complejos.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<div class="nav-buttons"><a href="circuitos-rlc.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="appendix-a-numeros-complejos-en-ca.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
 <footer id="siteFooter"><div id="siteFooterContent">
 <div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>

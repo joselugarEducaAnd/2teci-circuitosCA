@@ -2,11 +2,11 @@
 <html lang="es" id="exe-page">
 <head>
 <meta charset="utf-8">
-<meta name="generator" content="eXeLearning v4 (qmd_a_elpx piloto)">
+<meta name="generator" content="eXeLearning v4 (qmd-a-elpx)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>5  Circuitos RLC</title>
+<title>5  Circuitos RLC – Unidad 6: Circuitos de Corriente Alterna</title>
 <link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
-<meta name="description" content="Circuitos de corriente alterna. Tecnología e Ingeniería II - 2.º Bachillerato.">
+<meta name="description" content="Unidad 6 · Circuitos de Corriente Alterna">
 <script>document.querySelector("html").classList.add("js");</script>
 <script src="../libs/jquery/jquery.min.js"> </script>
 <script src="../libs/common_i18n.js"> </script>
@@ -19,29 +19,28 @@
 <script src="../theme/style.js"> </script>
 <link rel="stylesheet" href="../theme/style.css">
 <link rel="stylesheet" href="../theme/zzz-majuelo.css">
-<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). La config de
-     delimitadores y extensiones (incl. enclose) la aporta libs/common.js.
-     Se omite deliberadamente el motor remoto heredado que dejaba cajas vacias. -->
+<!-- MathJax: unicamente el motor local de eXe 4 (v3, SVG). Config (delimitadores
+     + extensiones incl. enclose) via libs/common.js. Sin motor remoto heredado. -->
 <script src="../libs/exe_math/tex-mml-svg.js" id="MathJax-script"> </script>
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
 <div class="exe-content exe-export pre-js siteNav-hidden"><nav id="siteNav"><ul>
 <li class=""><a href="../index.html" class=" main-node no-ch">Bienvenida</a></li>
-<li class=""><a href="../html/1-corriente-alterna.html" class=" no-ch">1 · Corriente alterna</a></li>
-<li class=""><a href="../html/2-representacion-de-senales.html" class=" no-ch">2 · Representación de señales</a></li>
-<li class=""><a href="../html/3-respuesta-de-componentes.html" class=" no-ch">3 · Respuesta de componentes</a></li>
-<li class=""><a href="../html/4-impedancia.html" class=" no-ch">4 · Impedancia</a></li>
-<li class="active"><a href="../html/5-circuitos-rlc.html" class="active no-ch">5 · Circuitos RLC</a></li>
-<li class=""><a href="../html/6-potencia-en-ca.html" class=" no-ch">6 · Potencia en CA</a></li>
-<li class=""><a href="../html/anexo-a-numeros-complejos.html" class=" no-ch">Anexo A · Números complejos</a></li>
-<li class=""><a href="../html/apendice-b-problemas-pau.html" class=" no-ch">Apéndice B · Problemas PAU</a></li>
-</ul></nav><main id="page-5-circuitos-rlc" class="page">
+<li class=""><a href="../html/corriente-alterna.html" class=" no-ch">Corriente alterna</a></li>
+<li class=""><a href="../html/representacion-de-senales-sinusoidales.html" class=" no-ch">Representación de señales sinusoidales.</a></li>
+<li class=""><a href="../html/respuesta-de-los-componentes-basicos-a-la-corriente-alterna.html" class=" no-ch">Respuesta de los componentes básicos a la Corriente Alterna</a></li>
+<li class=""><a href="../html/impedancia.html" class=" no-ch">Impedancia</a></li>
+<li class="active"><a href="../html/circuitos-rlc.html" class="active no-ch">Circuitos RLC</a></li>
+<li class=""><a href="../html/potencia-en-corriente-alterna.html" class=" no-ch">Potencia en Corriente Alterna</a></li>
+<li class=""><a href="../html/appendix-a-numeros-complejos-en-ca.html" class=" no-ch">Appendix A — Números Complejos en CA</a></li>
+<li class=""><a href="../html/appendix-b-problemas-de-corriente-alterna-ponencia-2025.html" class=" no-ch">Appendix B — Problemas de Corriente Alterna (Ponencia 2025)</a></li>
+</ul></nav><main id="page-circuitos-rlc" class="page">
 <header class="main-header">
 <div class="package-header"><p class="package-title">Unidad 6 · Circuitos de Corriente Alterna</p></div>
-<div class="page-header"><h1 class="page-title">5 · Circuitos RLC</h1></div>
+<div class="page-header"><h1 class="page-title">Circuitos RLC</h1></div>
 </header>
-<div id="page-content-page-5-circuitos-rlc" class="page-content">
+<div id="page-content-page-circuitos-rlc" class="page-content">
 <article class="box no-header"><div class="box-content">
 <div class="idevice_node text" data-idevice-type="text"><section class="level2" data-number="5.1" id="circuito-rlc-serie">
 <h2 class="" data-number="5.1"><span class="header-section-number">5.1</span> Circuito RLC serie</h2>
@@ -106,7 +105,7 @@
 <figcaption>Triángulo de Impedancias</figcaption>
 </figure>
 </div>
-<div class="marco marco-formula"><p class="marco-titulo">Importante💡 Ejercicio Resuelto: Análisis RLC Serie</p>
+<div class="marco marco-formula"><p class="marco-titulo">💡 Ejercicio Resuelto: Análisis RLC Serie</p>
 <p><strong>Enunciado:</strong> En un circuito RLC serie con <span class="math inline">\(R=20\ \Omega\)</span>, <span class="math inline">\(L=100/\pi\ \text{mH}\)</span> y <span class="math inline">\(C=1/2\pi\ \text{mF}\)</span>, funcionando a una frecuencia de <span class="math inline">\(50\ \text{Hz}\)</span>, calcula:<br/>
    <strong>a)</strong> La impedancia total (módulo y argumento).<br/>
    <strong>b)</strong> La intensidad que circula si la tensión es de <span class="math inline">\(230\ \text{V}\)</span>.<br/>
@@ -128,7 +127,7 @@ X_C &amp;= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><strong>Resultado Impedancia:</strong> <span class="math display">\[\vec{Z} = 22,36 \enclose{phasorangle}{-26,56^\circ}\ \Omega\]</span></p>
+<p><strong>Resultado Impedancia:</strong> <span class="math display">\[\vec{Z} = 22,36 {\enclose{phasorangle}{-26,56^\circ}}\ \Omega\]</span></p>
 <p>Como <span class="math inline">\(\varphi &lt; 0\)</span>, confirmamos que la tensión está <strong>retrasada</strong> respecto a la intensidad (comportamiento capacitivo).</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -143,9 +142,9 @@ X_C &amp;= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi
 </div>
 <p><strong>3. Cálculo de la Intensidad (<span class="math inline">\(\vec{I}\)</span>):</strong> Aplicamos la Ley de Ohm generalizada. Tomamos la tensión como referencia de fase (<span class="math inline">\(0^\circ\)</span>):</p>
 <p><span class="math display">\[
-\vec{I} = \frac{\vec{U}}{\vec{Z}} = \frac{230 \enclose{phasorangle}{0^\circ}}{22,36 \enclose{phasorangle}{-26,56^\circ}} = 10,29 \enclose{phasorangle}{0^\circ - (-26,56^\circ)}\ \text{A}
+\vec{I} = \frac{\vec{U}}{\vec{Z}} = \frac{230 {\enclose{phasorangle}{0^\circ}}}{22,36 {\enclose{phasorangle}{-26,56^\circ}}} = 10,29 {\enclose{phasorangle}{0^\circ - (-26,56^\circ)}}\ \text{A}
 \]</span></p>
-<p><span class="math display">\[\boxed{\vec{I} = 10,29 \enclose{phasorangle}{26,56^\circ}\ \text{A}}\]</span></p>
+<p><span class="math display">\[\boxed{\vec{I} = 10,29 {\enclose{phasorangle}{26,56^\circ}}\ \text{A}}\]</span></p>
 <hr/>
 <p><strong>4. Diagrama Fasorial U-I (Apartado c):</strong> Representamos los fasores resultantes.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
@@ -209,7 +208,7 @@ X_C &amp;= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi
 &amp;= \left[ \frac{1}{R} + \mathrm{j} \cdot \left(\frac{1}{X_C} - \frac{1}{X_L}\right) \right] \cdot \vec{U}
 \end{aligned}
 \]</span></p>
-<div class="marco marco-formula"><p class="marco-titulo">Warning📘 Diccionario: Admitancia, Conductancia y Susceptancia</p>
+<div class="marco marco-formula"><p class="marco-titulo">📘 Diccionario: Admitancia, Conductancia y Susceptancia</p>
 <p>En circuitos paralelo, es más cómodo trabajar con la facilidad que ofrecen los elementos al paso de la corriente (inverso de la oposición). Todas se miden en <strong>Siemens (S)</strong>.</p>
 <ol type="1">
 <li><p><strong>Admitancia (<span class="math inline">\(\vec{Y}\)</span>):</strong> Es la inversa de la Impedancia. Representa la facilidad total al paso de la corriente alterna. <span class="math display">\[\vec{Y} = \frac{1}{\vec{Z}}\]</span></p></li>
@@ -256,7 +255,7 @@ X_C &amp;= \frac{1}{\omega \cdot C} = \frac{1}{2\pi \cdot 50 \cdot \frac{1}{2\pi
 <figcaption>Triángulo de Admitancias</figcaption>
 </figure>
 </div>
-<div class="marco marco-formula"><p class="marco-titulo">Importante💡 Ejercicio Resuelto: Análisis RLC Paralelo</p>
+<div class="marco marco-formula"><p class="marco-titulo">💡 Ejercicio Resuelto: Análisis RLC Paralelo</p>
 <p><strong>Enunciado:</strong> En un circuito RLC paralelo con <span class="math inline">\(R=20\ \Omega\)</span>, <span class="math inline">\(L=100/\pi\ \text{mH}\)</span> y <span class="math inline">\(C=1/2\pi\ \text{mF}\)</span>, funcionando a <span class="math inline">\(f=50\ \text{Hz}\)</span> y conectado a <span class="math inline">\(U=230\ \text{V}\)</span>, calcula:<br/>
     <strong>a)</strong> Admitancia e Impedancia equivalente.<br/>
     <strong>b)</strong> Intensidad por cada elemento.<br/>
@@ -288,7 +287,7 @@ X_C &amp;= 20\ \Omega \Rightarrow B_C = \frac{1}{X_C} = 0,05\ \text{S}
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><strong>Resultado:</strong> <span class="math display">\[\vec{I}_T = 16,26 \enclose{phasorangle}{-45^\circ}\ \text{A}\]</span> El circuito es <strong>Inductivo</strong> (la corriente total retrasa <span class="math inline">\(45^\circ\)</span>).</p>
+<p><strong>Resultado:</strong> <span class="math display">\[\vec{I}_T = 16,26 {\enclose{phasorangle}{-45^\circ}}\ \text{A}\]</span> El circuito es <strong>Inductivo</strong> (la corriente total retrasa <span class="math inline">\(45^\circ\)</span>).</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -341,7 +340,7 @@ X_L = X_C
 \end{aligned}
 \]</span></p>
 <p>Como <span class="math inline">\(\omega = 2 \pi f\)</span>, despejamos la frecuencia:</p>
-<div class="marco marco-formula"><p class="marco-titulo">Warning🚩 Fórmula de Thomson (Frecuencia de Resonancia)</p>
+<div class="marco marco-formula"><p class="marco-titulo">🚩 Fórmula de Thomson (Frecuencia de Resonancia)</p>
 <p><span class="math display">\[
 f_0 = \frac{1}{2 \cdot \pi \cdot \sqrt{L \cdot C}}
 \]</span></p>
@@ -414,11 +413,11 @@ Table 5.1: Comparativa de efectos de la resonancia.
 </div>
 </figure>
 </div>
-<div class="marco marco-nota"><p class="marco-titulo">Tip⚠️ Precaución en el Laboratorio</p>
+<div class="marco marco-nota"><p class="marco-titulo">⚠️ Precaución en el Laboratorio</p>
 <p>En resonancia serie, aunque la fuente sea de solo 10V, ¡la tensión en la bobina o el condensador podría alcanzar cientos de voltios! (<span class="math inline">\(U_L = Q \cdot U_{\text{fuente}}\)</span>). Hay que tener cuidado manipulando los circuitos cerca de <span class="math inline">\(f_0\)</span>.</p>
 </div>
 <hr/>
-<div class="marco marco-formula"><p class="marco-titulo">Importante📝 Ejercicios de Repaso</p>
+<div class="marco marco-formula"><p class="marco-titulo">📝 Ejercicios de Repaso</p>
 <p>Resuelve los siguientes circuitos considerando una frecuencia de red de <strong>50 Hz</strong> (<span class="math inline">\(\omega = 100\pi \ \text{rad/s}\)</span>).</p>
 <section class="level3 unnumbered" id="circuitos-serie">
 <h3 class="unnumbered">Circuitos Serie</h3>
@@ -427,7 +426,7 @@ Disponemos de una resistencia <span class="math inline">\(R=8 \ \Omega\)</span>,
    <strong>a)</strong> Calcula la reactancia inductiva (<span class="math inline">\(X_L\)</span>) y capacitiva (<span class="math inline">\(X_C\)</span>).<br/>
    <strong>b)</strong> Determina la impedancia total en forma binómica y polar.<br/>
    <strong>c)</strong> Calcula la intensidad que circula por el circuito.<br/>
-   <em>Soluciones:</em> <span class="math inline">\(X_L=4 \ \Omega, X_C=10 \ \Omega\)</span>; <span class="math inline">\(\vec{Z}=8-\mathrm{j}6 = 10 \enclose{phasorangle}{-36,87^\circ} \ \Omega\)</span>; <span class="math inline">\(I=20 \ \text{A}\)</span>.</p>
+   <em>Soluciones:</em> <span class="math inline">\(X_L=4 \ \Omega, X_C=10 \ \Omega\)</span>; <span class="math inline">\(\vec{Z}=8-\mathrm{j}6 = 10 {\enclose{phasorangle}{-36,87^\circ}} \ \Omega\)</span>; <span class="math inline">\(I=20 \ \text{A}\)</span>.</p>
 <p><strong>2. La Bobina Real</strong><br/>
 Una bobina real tiene una resistencia interna de <span class="math inline">\(30 \ \Omega\)</span> y una inductancia de <span class="math inline">\(127,3 \ \text{mH}\)</span> (<span class="math inline">\(L \approx 0,4/\pi \ \text{H}\)</span>). Se conecta en serie con un condensador de <span class="math inline">\(C=50 \ \mu\text{F}\)</span>. El conjunto se alimenta a <span class="math inline">\(230 \ \text{V}\)</span>.<br/>
    <strong>a)</strong> Calcula la impedancia compleja de la bobina (<span class="math inline">\(\vec{Z}_{\text{bobina}}\)</span>) y la del condensador (<span class="math inline">\(\vec{Z}_C\)</span>).<br/>
@@ -442,20 +441,20 @@ Una bobina real tiene una resistencia interna de <span class="math inline">\(30 
 Se conectan en paralelo una resistencia <span class="math inline">\(R=20 \ \Omega\)</span>, una bobina <span class="math inline">\(L=100/\pi \ \text{mH}\)</span> y un condensador <span class="math inline">\(C=500/\pi \ \mu\text{F}\)</span> a una fuente de <span class="math inline">\(100 \ \text{V}\)</span>.<br/>
    <strong>a)</strong> Calcula la corriente que circula por cada rama (<span class="math inline">\(\vec{I}_R, \vec{I}_L, \vec{I}_C\)</span>).<br/>
    <strong>b)</strong> Calcula la corriente total mediante suma vectorial. Dibuja el diagrama fasorial.<br/>
-   <em>Soluciones:</em> <span class="math inline">\(I_R=5 \ \text{A} \enclose{phasorangle}{0^\circ}\)</span>; <span class="math inline">\(I_L=10 \ \text{A} \enclose{phasorangle}{-90^\circ}\)</span>; <span class="math inline">\(I_C=5 \ \text{A} \enclose{phasorangle}{90^\circ}\)</span>; <span class="math inline">\(I_{total}=7,07 \ \text{A} \enclose{phasorangle}{-45^\circ}\)</span>.</p>
+   <em>Soluciones:</em> <span class="math inline">\(I_R=5 \ \text{A} {\enclose{phasorangle}{0^\circ}}\)</span>; <span class="math inline">\(I_L=10 \ \text{A} {\enclose{phasorangle}{-90^\circ}}\)</span>; <span class="math inline">\(I_C=5 \ \text{A} {\enclose{phasorangle}{90^\circ}}\)</span>; <span class="math inline">\(I_{total}=7,07 \ \text{A} {\enclose{phasorangle}{-45^\circ}}\)</span>.</p>
 <p><strong>4. Cálculo por Admitancias</strong><br/>
 Un circuito paralelo está formado por una conductancia <span class="math inline">\(G=0,03 \ \text{S}\)</span>, una susceptancia inductiva <span class="math inline">\(B_L=0,04 \ \text{S}\)</span> y un condensador cuya reactancia es <span class="math inline">\(X_C=20 \ \Omega\)</span>. La tensión aplicada es de <span class="math inline">\(200 \ \text{V}\)</span>.<br/>
    <strong>a)</strong> Determina la susceptancia del condensador (<span class="math inline">\(B_C\)</span>) en Siemens.<br/>
    <strong>b)</strong> Calcula la admitancia total <span class="math inline">\(\vec{Y}\)</span> en forma binómica y polar.<br/>
    <strong>c)</strong> Determina la intensidad total y la impedancia equivalente del conjunto.<br/>
-   <em>Soluciones:</em> <span class="math inline">\(B_C=0,05 \ \text{S}\)</span>; <span class="math inline">\(\vec{Y}=0,03+\mathrm{j}0,01 \ \text{S} = 0,0316 \enclose{phasorangle}{18,43^\circ} \ \text{S}\)</span>; <span class="math inline">\(I=6,32 \ \text{A}\)</span>; <span class="math inline">\(\vec{Z}_{eq}=31,62 \enclose{phasorangle}{-18,43^\circ} \ \Omega\)</span>.</p>
+   <em>Soluciones:</em> <span class="math inline">\(B_C=0,05 \ \text{S}\)</span>; <span class="math inline">\(\vec{Y}=0,03+\mathrm{j}0,01 \ \text{S} = 0,0316 {\enclose{phasorangle}{18,43^\circ}} \ \text{S}\)</span>; <span class="math inline">\(I=6,32 \ \text{A}\)</span>; <span class="math inline">\(\vec{Z}_{eq}=31,62 {\enclose{phasorangle}{-18,43^\circ}} \ \Omega\)</span>.</p>
 </section>
 </div>
 </section>
 </section></div>
 </div></article>
 </div></main>
-<div class="nav-buttons"><a href="4-impedancia.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="6-potencia-en-ca.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
+<div class="nav-buttons"><a href="impedancia.html" class="nav-button nav-button-left"><span>Anterior</span></a><a href="potencia-en-corriente-alterna.html" class="nav-button nav-button-right"><span>Siguiente</span></a></div>
 <footer id="siteFooter"><div id="siteFooterContent">
 <div id="packageLicense" class="cc cc-by-sa"><p><span class="license-label">Licencia: </span>
 <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p></div>
