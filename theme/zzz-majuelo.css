@@ -224,3 +224,8 @@ button.toggler:hover, button.toggler:focus,
 .exe-content figure { display: block !important; text-align: center; margin-left: auto; margin-right: auto; }
 .exe-content figure > p { text-align: center; margin-left: auto; margin-right: auto; }
 .exe-content figure img { display: inline-block; float: none; margin: 0 auto; }
+
+/* marcos centrados en la columna (ancho de lectura, centrado) */
+.exe-content .marco,.exe-content .bloque,
+.exe-content [class*="marco-"]:not([class*="titulo"]),
+.exe-content [class*="bloque-"]:not([class*="titulo"]){margin-left:auto !important;margin-right:auto !important}
