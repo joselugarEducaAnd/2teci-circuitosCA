@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de fasores U–I</title>
+<style>
+  :root{ --majuelo:#453f93; --ind:#e07b00; --cap:#1f9d55; --res:#004a99; --tinta:#222; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        color:var(--tinta); background:#fff; }
+  .wrap{ max-width:640px; margin:0 auto; padding:14px 16px 20px; }
+  h1{ font-size:1.05rem; margin:.2em 0 .1em; color:var(--majuelo); }
+  p.sub{ margin:.1em 0 .8em; font-size:.86rem; color:#555; }
+  .estado{ font-weight:700; font-size:1rem; margin:.4em 0 .4em; min-height:1.3em; }
+  canvas{ width:100%; max-width:420px; height:auto; display:block; margin:0 auto;
+          background:#fafafb; border:1px solid #e6e6ee; border-radius:10px; }
+  .controles{ margin:14px auto 0; max-width:420px; }
+  .fila{ display:flex; align-items:center; gap:10px; }
+  label{ font-size:.9rem; }
+  input[type=range]{ flex:1; accent-color:var(--majuelo); }
+  .val{ font-variant-numeric:tabular-nums; font-weight:700; min-width:4.2em; text-align:right; }
+  .leyenda{ display:flex; gap:16px; justify-content:center; margin-top:10px; font-size:.85rem; }
+  .leyenda span{ display:inline-flex; align-items:center; gap:6px; }
+  .sw{ width:14px; height:4px; border-radius:2px; display:inline-block; }
+  button.reset{ margin-top:10px; font-size:.82rem; padding:5px 10px; border:1px solid #ccd;
+                background:#f3f3fa; border-radius:7px; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Simulador de fasores: tensión e intensidad</h1>
+  <p class="sub">Mueve el deslizador para cambiar el desfase de la intensidad respecto a la
+  tensión y observa cómo giran los fasores.</p>
+  <div id="estado" class="estado">&nbsp;</div>
+  <canvas id="c" width="420" height="420" aria-label="Diagrama de fasores giratorios"></canvas>
+  <div class="controles">
+    <div class="fila">
+      <label for="ang">Desfase de I (φ):</label>
+      <input id="ang" type="range" min="-90" max="90" step="1" value="-45">
+      <span id="val" class="val">−45°</span>
+    </div>
+    <div class="leyenda">
+      <span><i class="sw" style="background:#453f93"></i> U (tensión)</span>
+      <span><i class="sw" id="swI" style="background:#e07b00"></i> I (intensidad)</span>
+    </div>
+    <button class="reset" id="pause" type="button">⏸ Pausar giro</button>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('c'), ctx=cv.getContext('2d');
+  var ang=document.getElementById('ang'), val=document.getElementById('val');
+  var estado=document.getElementById('estado'), swI=document.getElementById('swI');
+  var pauseBtn=document.getElementById('pause');
+  var W=cv.width, H=cv.height, cx=W/2, cy=H/2, R=Math.min(W,H)*0.38;
+  var COL={ U:'#453f93', ind:'#e07b00', cap:'#1f9d55', res:'#004a99' };
+  var speed=1.1, running=true, t0=performance.now(), pausedWt=0;
+
+  function estadoDe(deg){
+    if(deg<0) return {txt:'⚡ INDUCTIVO — la intensidad se retrasa respecto a la tensión', col:COL.ind};
+    if(deg>0) return {txt:'🔋 CAPACITIVO — la intensidad se adelanta respecto a la tensión', col:COL.cap};
+    return {txt:'💡 RESISTIVO — tensión e intensidad están en fase', col:COL.res};
+  }
+  function fmt(d){ return (d>0?'+':d<0?'−':'')+Math.abs(d)+'°'; }
+
+  function arrow(a, len, color, label){
+    var x=cx+len*Math.cos(a), y=cy-len*Math.sin(a);
+    ctx.strokeStyle=color; ctx.fillStyle=color; ctx.lineWidth=3;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y); ctx.stroke();
+    var h=13, w=6, ux=Math.cos(a), uy=-Math.sin(a), px=-uy, py=ux;
+    ctx.beginPath(); ctx.moveTo(x,y);
+    ctx.lineTo(x-h*ux+w*px, y-h*uy+w*py);
+    ctx.lineTo(x-h*ux-w*px, y-h*uy-w*py);
+    ctx.closePath(); ctx.fill();
+    ctx.font='bold 15px system-ui,sans-serif';
+    ctx.fillText(label, x+8*ux+(ux>=0?2:-16), y+8*uy-6);
+  }
+
+  function draw(now){
+    var wt = running ? (now - t0)/1000*speed : pausedWt;
+    var deg=+ang.value, phi=deg*Math.PI/180, st=estadoDe(deg);
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='#e6e6ee'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,2*Math.PI); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx-R-14,cy); ctx.lineTo(cx+R+14,cy);
+    ctx.moveTo(cx,cy-R-14); ctx.lineTo(cx,cy+R+14); ctx.stroke();
+    if(deg!==0){
+      ctx.strokeStyle=st.col; ctx.globalAlpha=.35; ctx.lineWidth=8;
+      ctx.beginPath(); ctx.arc(cx,cy,R*0.5, -(wt+phi), -wt, phi<0); ctx.stroke();
+      ctx.globalAlpha=1;
+    }
+    arrow(wt, R, COL.U, 'U');
+    arrow(wt+phi, R*0.92, st.col, 'I');
+    swI.style.background=st.col;
+    estado.style.color=st.col; estado.textContent=st.txt;
+    val.textContent=fmt(deg);
+    requestAnimationFrame(draw);
+  }
+
+  pauseBtn.addEventListener('click', function(){
+    if(running){ pausedWt=(performance.now()-t0)/1000*speed; running=false; pauseBtn.textContent='▶ Reanudar giro'; }
+    else { t0=performance.now()-pausedWt/speed*1000; running=true; pauseBtn.textContent='⏸ Pausar giro'; }
+  });
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
