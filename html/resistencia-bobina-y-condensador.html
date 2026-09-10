@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-20260707010353PAGE03">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resistencia, bobina y condensador | Circuitos de Corriente Alterna</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Circuitos de Corriente Alterna">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260707010353QMDELPX","packageTitle":"Circuitos de Corriente Alterna","language":"es"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../libs/exe_effects/exe_effects.js"> </script>
+<link rel="stylesheet" href="../libs/exe_effects/exe_effects.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css"><link rel="stylesheet" href="../theme/zzz-majuelo.css">
+<script src="../libs/exe_math/tex-mml-svg.js"> </script>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#20260707010353PAGE03" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node no-ch">Bienvenida</a>
+</li>
+<li> <a href="../html/corriente-alterna.html" class="no-ch">Corriente alterna</a>
+</li>
+<li> <a href="../html/valor-eficaz-fase-y-fasores.html" class="no-ch">Valor eficaz, fase y fasores</a>
+</li>
+<li class="active"> <a href="../html/resistencia-bobina-y-condensador.html" class="active no-ch">Resistencia, bobina y condensador</a>
+</li>
+<li> <a href="../html/impedancia-y-fresnel.html" class="no-ch">Impedancia y Fresnel</a>
+</li>
+<li> <a href="../html/circuitos-rlc.html" class="no-ch">Circuitos RLC</a>
+</li>
+<li> <a href="../html/potencia-en-corriente-alterna.html" class="no-ch">Potencia en corriente alterna</a>
+</li>
+<li> <a href="../html/para-ampliar-numeros-complejos.html" class="no-ch">Para ampliar: números complejos</a>
+</li>
+<li> <a href="../html/problemas-de-corriente-alterna.html" class="no-ch">Problemas de corriente alterna</a>
+</li>
+</ul>
+</nav><main id="20260707010353PAGE03" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">Circuitos de Corriente Alterna</p></div>
+<div class="page-header"><h1 class="page-title">Resistencia, bobina y condensador</h1></div>
+</header><div id="page-content-20260707010353PAGE03" class="page-content">
+<article id="20260707010353BLK003" class="box">
+<header class="box-head no-icon">
+<h1 class="box-title">Respuesta R, L y C</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="20260707010353IDEV003" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;20260707010353IDEV003&quot;}">
+<div class="exe-fx exe-tabs">
+<h2>R</h2>
+<section class="level2" data-number="3.1" id="respuesta-de-una-resistencia">
+<h3 class="" data-number="3.1">Respuesta de una resistencia</h3>
+<p>Si a una resistencia de valor R ohmios (Ω) se la somete a una tensión sinusoidal de <strong>valor eficaz U</strong> y <strong>pulsación ω</strong>, la tensión instantánea aplicada a la resistencia es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot {\operatorname{sen}}(\omega t + \varphi)\]</span></p>
+<p>Según la ley de Ohm, tenemos que <span class="math inline">\(i(t) = u(t)/R\)</span>, y por tanto, la intensidad instantánea que circula por la resistencia es: <span class="math display">\[i(t) = \frac{\sqrt{2}U}{R} \cdot {\operatorname{sen}}(\omega  t + \varphi)\]</span> Analizando las expresiones de la tensión y la intensidad, podemos concluir que:</p>
+<ul>
+<li>La intensidad eficaz es <span class="math inline">\(I=\frac{U}{R}\)</span>, igual que en corriente continua.</li>
+<li>El desfase entre la tensión y la intensidad es nulo. Es decir, están en fase (<span class="math inline">\(\varphi_{I}=\varphi\)</span>)</li>
+</ul>
+<p>La representación gráfica de la tensión y la intensidad en una resistencia eléctrica será, por tanto:</p>
+<div class="marco marco-teoria"><p class="marco-titulo">Banco de fasores: la resistencia</p>
+<style>.sda05-banco{width:100%;max-width:100%;border:1px solid #e6e6ee;border-radius:10px}.sda05-banco-comp{height:1900px}.sda05-banco-rlc{height:3340px}</style>
+<script>(function(){function ajusta(){var fs=document.querySelectorAll("iframe.sda05-banco");for(var i=0;i<fs.length;i++){var f=fs[i];if(!f.getBoundingClientRect().width)continue;try{var d=f.contentDocument,a=d&&d.querySelector('.app');if(!a)continue;var h=Math.ceil(a.getBoundingClientRect().height+12);if(h>200&&Math.abs(h-f.clientHeight)>4)f.style.height=h+"px";}catch(e){}}}document.addEventListener("click",function(){setTimeout(ajusta,120);setTimeout(ajusta,600);},true);window.addEventListener("load",function(){ajusta();setTimeout(ajusta,400);});setInterval(ajusta,1000);})();</script>
+<iframe class="sda05-banco sda05-banco-comp" name="comp=r" src="../content/resources/banco_fasores.html" title="Banco de fasores: respuesta de una resistencia en corriente alterna" width="100%" loading="lazy"></iframe>
+<p><a href="#" onclick="var f=this.closest('.marco').querySelector('iframe'); window.open(f.src + '#' + f.name,'_blank','noopener'); return false;" rel="noopener">Abrir el banco en una pestaña nueva</a></p>
+</div>
+</section>
+<h2>L</h2>
+<section class="level2" data-number="3.2" id="respuesta-de-una-bobina">
+<h3 class="" data-number="3.2">Respuesta de una bobina</h3>
+<p>La característica básica de una bobina es su <strong>inductancia</strong>, que se denota mediante la letra <strong>L</strong> y se mide en <strong>Henrios (H)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>En una bobina ideal, U = Xₗ·I. La tensión adelanta 90° a la intensidad.</p>
+<details class="ampliacion"><summary><strong>Para ampliar: deducción mediante cálculo</strong></summary>
+<p>Si a una bobina de valor <strong>L henrios (H)</strong> se la somete a una intensidad sinusoidal de <strong>valor eficaz I</strong> y <strong>pulsación ω</strong>, la intensidad instantánea que circula por la bobina es:</p>
+<p><span class="math display">\[
+i(t) = (\sqrt{2}I) \cdot {\operatorname{sen}}(\omega t + \varphi)
+\]</span></p>
+<p>La ley que rige para una bobina es la siguiente:</p>
+<p><span class="math display">\[u(t) = L \cdot \frac{di(t)}{dt}\]</span></p>
+<p>Por lo tanto, la tensión instantánea en la bobina la obtenemos derivando la intensidad y resulta ser:</p>
+<p><span class="math display">\[u(t) = L \frac{di(t)}{dt} = L \cdot (\sqrt{2}I) \cdot \omega \cdot {\operatorname{sen}}(\omega  t + \varphi + \frac{\pi}{2})\]</span></p>
+<div class="marco marco-teoria"><p class="marco-titulo">Importante</p>
+<p>En realidad, la derivada del seno es el coseno, pero el coseno de un ángulo es igual al seno del ángulo aumentado en π/2 (<span class="math inline">\(\cos(\alpha) = {\operatorname{sen}}(\alpha + \frac{\pi}{2})\)</span>). Por lo tanto, podemos poner la expresión en forma de seno, para poder comparar los fasores de la tensión y la intensidad.</p>
+</div>
+<p>Por consiguiente, obtenemos una tensión con la misma pulsación que la intensidad y con las características siguientes:</p>
+<ul>
+<li><p>Un valor de pico <span class="math inline">\(U_p=\omega \cdot L \cdot \sqrt{2} I\)</span>. Por lo tanto, <strong>la tensión eficaz es</strong> <span class="math inline">\(U=\omega \cdot L \cdot I\)</span><strong>.</strong></p></li>
+<li><p>La tensión se encuentra adelantada 90° (\(\pi/2\)) con respecto a la intensidad; la <strong>fase inicial de la tensión es</strong> <span class="math inline">\(\varphi_U = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></p></li>
+</ul>
+
+</details>
+<p>Al producto <span class="math inline">\(\omega \cdot L\)</span> se le llama <strong>reactancia inductiva</strong> y se representa por <span class="math inline">\(X_L\)</span>, es decir:</p>
+<div class="marco-formula">
+<p><span class="math display">\[
+X_L=\omega \cdot L
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia inductiva en el SI es el ohmio (</strong><span class="math inline">\(\Omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en una bobina la puedes explorar aquí:</p>
+<div class="marco marco-teoria"><p class="marco-titulo">Banco de fasores: la bobina</p>
+<iframe class="sda05-banco sda05-banco-comp" name="comp=l" src="../content/resources/banco_fasores.html" title="Banco de fasores: respuesta de una bobina en corriente alterna" width="100%" loading="lazy"></iframe>
+<p><a href="#" onclick="var f=this.closest('.marco').querySelector('iframe'); window.open(f.src + '#' + f.name,'_blank','noopener'); return false;" rel="noopener">Abrir el banco en una pestaña nueva</a></p>
+</div>
+</section>
+<h2>C</h2>
+<section class="level2" data-number="3.3" id="respuesta-de-un-condensador">
+<h3 class="" data-number="3.3">Respuesta de un condensador</h3>
+<p>La característica básica de un condensador es su <strong>capacitancia</strong> o capacidad, que se denota mediante la letra <strong>C</strong> y se mide en <strong>Faradios (F)</strong>. En corriente alterna, sin embargo, no basta con este valor sino que su respuesta será diferente para distintas frecuencias de funcionamiento.</p>
+<p>En un condensador ideal, I = U/X꜀. La intensidad adelanta 90° a la tensión.</p>
+<details class="ampliacion"><summary><strong>Para ampliar: deducción mediante cálculo</strong></summary>
+<p>Si a un condensador de valor <strong>C faradios (F)</strong> se le somete a una tensión sinusoidal de valor eficaz U y pulsación ω, la tensión instantánea aplicada al condensador es: <span class="math display">\[u(t) = (\sqrt{2} U) \cdot {\operatorname{sen}}(\omega t + \varphi)\]</span></p>
+<p>Aplicando la ley que rige un condensador, <span class="math inline">\(i(t) = C \cdot du(t) / dt\)</span>, la intensidad instantánea que circula por el condensador es: <span class="math display">\[
+i(t) = C \cdot \frac{du(t)}{dt} = C \cdot \omega \cdot ( \sqrt{2}U) \cdot {\operatorname{sen}}(\omega  t + \varphi + \frac{\pi}{2})
+\]</span></p>
+<p>Obtenemos una intensidad con la misma pulsación que la tensión aplicada y con las características siguientes:</p>
+<ul>
+<li>Un valor de pico <span class="math inline">\(I_p=\omega \cdot C \cdot \sqrt{2} U\)</span>. Por lo tanto, <strong>la intensidad eficaz es</strong> <span class="math inline">\(I=\omega \cdot C \cdot U\)</span><strong>.</strong></li>
+<li>La intensidad se encuentra adelantada 90° (<span class="math inline">\(\pi/2\)</span>) con respecto a la tensión; la <strong>fase inicial de la intensidad es</strong> <span class="math inline">\(\varphi_I = \varphi + \frac{\pi}{2}\)</span><strong>.</strong></li>
+</ul>
+
+</details>
+<p>Al cociente <span class="math inline">\(1/(\omega \cdot C)\)</span> se le llama <strong>reactancia capacitiva</strong> y se representa por <span class="math inline">\(X_C\)</span>, es decir:</p>
+<div class="marco-formula">
+<p><span class="math display">\[
+X_C=\frac{1}{\omega \cdot C}
+\]</span></p>
+</div>
+<p><strong>La unidad de la reactancia capacitiva en el SI es el ohmio (</strong><span class="math inline">\(\Omega\)</span><strong>).</strong></p>
+<p>La representación gráfica de los fasores y ondas de tensión e intensidad en un condensador la puedes explorar aquí:</p>
+<div class="marco marco-teoria"><p class="marco-titulo">Banco de fasores: el condensador</p>
+<iframe class="sda05-banco sda05-banco-comp" name="comp=c" src="../content/resources/banco_fasores.html" title="Banco de fasores: respuesta de un condensador en corriente alterna" width="100%" loading="lazy"></iframe>
+<p><a href="#" onclick="var f=this.closest('.marco').querySelector('iframe'); window.open(f.src + '#' + f.name,'_blank','noopener'); return false;" rel="noopener">Abrir el banco en una pestaña nueva</a></p>
+</div>
+</section>
+</div>
+<section class="level2" data-number="3.4" id="cuadro-resumen-con-las-respuestas-r-l-y-c">
+<h2 class="" data-number="3.4">Cuadro resumen con las respuestas R, L y C</h2>
+<div class="tabla-estilo-libro">
+<div class="tabla-desplazable" tabindex="0" role="region" aria-label="Tabla: desplaza horizontalmente si es necesario"><table class="caption-top table tabla-datos">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">Representación gráfica</th>
+<th style="text-align: center;">Relación Tensión/Intensidad</th>
+<th style="text-align: center;">Desfase rad (º)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Resistencia (<span class="math inline">\(R\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_R.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0^\circ\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Bobina (<span class="math inline">\(L\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_L.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_L = \omega \cdot L\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\pi/2 \ (+90^\circ)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Condensador (<span class="math inline">\(C\)</span>)</strong></td>
+<td style="text-align: center;"><img class="img-fluid" src="../content/resources/icono_fasor_C.png" width="100"/></td>
+<td style="text-align: center;"><span class="math inline">\(X_C = \frac{1}{\omega \cdot C}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\pi/2 \ (-90^\circ)\)</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<details class="ampliacion"><summary>Por si quieres aprender más: combinar cargas y observar el desfase</summary>
+<section class="level2" data-number="3.5" id="combinación-de-cargas-de-diferente-naturaleza">
+<h2 class="" data-number="3.5">Combinación de cargas de diferente naturaleza</h2>
+<p>Por lo general, en un circuito tendremos cargas que ofrecerán diferentes resistencias eléctricas. Además, algunas presentarán también carácter inductivo o capacitivo. Dependiendo de la combinación de elementos que tengamos en cada circuito, el desfase entre la intensidad y la tensión podrá tomar diferentes valores, no solo 0º, -90º o +90º. En este simulador puedes ver cómo cambiarían los fasores de la tensión y la intensidad dependiendo de cómo variemos las componentes R, L o C de un circuito:</p>
+<div class="marco marco-nota"><p class="marco-titulo">Banco de fasores RLC</p><p>Combina R, L y C, en serie o en paralelo, y observa cómo cambian los fasores, las ondas y el desfase.</p>
+<iframe class="sda05-banco sda05-banco-rlc" name="modo=rlc" src="../content/resources/banco_fasores.html" title="Banco de fasores RLC: serie y paralelo" width="100%" loading="lazy"></iframe>
+<p><a href="#" onclick="var f=this.closest('.marco').querySelector('iframe'); window.open(f.src + '#' + f.name,'_blank','noopener'); return false;" rel="noopener">Abrir el banco en una pestaña nueva</a></p>
+</div>
+</section>
+</details><div class="bloque bloque-actividad" id="reactancias-practica"><p class="bloque-titulo">Ahora inténtalo: reactancias y desfase</p><p>A 50 Hz, calcula Xₗ para L = 100/π mH y X꜀ para C = 500/π μF. Si se aplica 100 V eficaces a cada componente por separado, calcula cada corriente e indica si adelanta o retrasa a la tensión. Convierte primero mH y μF a H y F.</p><details><summary>Comprobar</summary>
+<p>Xₗ = 10 Ω; X꜀ = 20 Ω. En la bobina: I = 10 A y retrasa 90°. En el condensador: I = 5 A y adelanta 90°. Xₗ y X꜀ son módulos positivos; el signo de la componente vertical depende del elemento.</p>
+</details></div>
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/valor-eficaz-fase-y-fasores.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/impedancia-y-fresnel.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter" class="siteFooter-empty"><div id="siteFooterContent"></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

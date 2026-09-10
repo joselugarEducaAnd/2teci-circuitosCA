@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corrector del factor de potencia</title>
+<style>
+:root{--purple:#453f93;--ink:#172033;--muted:#586174;--line:#cbd5e1;--soft:#f7f7fc;--orange:#db6600;--red:#b42318;--green:#087f5b}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--ink);font-family:"DejaVu Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+.app{max-width:1050px;margin:0 auto;padding:1rem}
+h1{margin:.2rem 0 .35rem;color:var(--purple);font-size:clamp(1.35rem,3vw,1.9rem)}
+.lead{margin:.2rem 0 1rem;color:var(--muted)}
+form{border:1px solid var(--line);border-radius:.8rem;padding:1rem;background:var(--soft)}
+.inputs{display:grid;grid-template-columns:repeat(5,minmax(125px,1fr));gap:.75rem}
+label{display:flex;flex-direction:column;gap:.25rem;font-weight:700;font-size:.92rem}
+input{width:100%;padding:.58rem;border:1px solid #8491a5;border-radius:.35rem;background:#fff;color:var(--ink);font:inherit}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.actions{display:flex;align-items:center;gap:.75rem;margin-top:.8rem;flex-wrap:wrap}
+button{border:0;border-radius:.4rem;padding:.58rem .85rem;background:var(--purple);color:white;font:inherit;font-weight:700;cursor:pointer}
+button.secondary{background:#fff;color:var(--purple);border:1px solid var(--purple)}
+#error{color:var(--red);font-weight:700;min-height:1.4em}
+.generator-note{margin:.2rem 0 .8rem;padding:.7rem .8rem;border-left:5px solid var(--purple);background:#f1f0fb}
+.dataset{margin:.8rem 0 0;padding:.75rem .85rem;border:1px solid #8bc9b6;border-radius:.55rem;background:#effaf6}
+.dataset strong,.dataset span{display:block}.dataset span{margin:.25rem 0;font-variant-numeric:tabular-nums}.dataset p{margin:.35rem 0 0}
+.results{display:grid;grid-template-columns:repeat(4,minmax(135px,1fr));gap:.65rem;margin:1rem 0}
+.card{border-left:5px solid var(--purple);border-radius:.4rem;background:#fff;box-shadow:0 1px 5px #0002;padding:.65rem}
+.card span{display:block;color:var(--muted);font-size:.8rem}.card strong{font-size:1.08rem}
+.wide{grid-column:span 2}
+.formula{background:#fff8f0;border:1px solid #f2c49d;border-radius:.55rem;padding:.75rem;margin:.9rem 0}
+.formula code{font-family:"DejaVu Sans Mono",ui-monospace,monospace;white-space:normal}
+.triangles{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.triangle{border:1px solid var(--line);border-radius:.65rem;background:white;padding:.55rem}
+.triangle h2{font-size:1rem;margin:.2rem;color:var(--purple)}
+svg{display:block;width:100%;height:auto;min-height:220px}
+.note{margin:.75rem 0 0;color:var(--muted);font-size:.88rem}
+@media(max-width:820px){.inputs{grid-template-columns:repeat(2,minmax(130px,1fr))}.results{grid-template-columns:repeat(2,minmax(135px,1fr))}}
+@media(max-width:620px){.app{padding:.65rem}.inputs,.triangles,.results{grid-template-columns:1fr}.wide{grid-column:auto}svg{min-height:205px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<h1>Corrector del factor de potencia</h1>
+<p class="lead">Introduce los datos eficaces de una carga monofásica inductiva. El condensador se conecta en paralelo.</p>
+<p id="generator-help" class="generator-note"><strong>Para tu miniinforme:</strong> pulsa «Generar mis datos» y anota el conjunto obtenido en la tabla vacía de tu plantilla antes de calcular.</p>
+<form id="controls" novalidate aria-describedby="generator-help">
+<div class="inputs">
+<label for="p">Potencia activa P (kW)<input id="p" name="p" type="number" min="0.1" max="100" step="0.1" value="5" inputmode="decimal"></label>
+<label for="cos1">cos φ inicial<input id="cos1" name="cos1" type="number" min="0.1" max="0.999" step="0.01" value="0.70" inputmode="decimal"></label>
+<label for="cos2">cos φ objetivo<input id="cos2" name="cos2" type="number" min="0.1" max="1" step="0.01" value="0.95" inputmode="decimal"></label>
+<label for="u">Tensión eficaz U (V)<input id="u" name="u" type="number" min="50" max="1000" step="1" value="230" inputmode="decimal"></label>
+<label for="f">Frecuencia f (Hz)<input id="f" name="f" type="number" min="1" max="400" step="1" value="50" inputmode="decimal"></label>
+</div>
+<div class="actions"><button type="button" id="generate-data">Generar mis datos</button><button type="button" class="secondary" id="reset-example">Restablecer ejemplo</button><div id="error" role="alert" aria-live="assertive"></div></div>
+<div id="dataset" class="dataset" role="status" aria-live="polite" tabindex="-1" hidden>
+<strong>Tu conjunto de datos</strong>
+<span id="dataset-values"></span>
+<p>Escribe estos cinco datos en tu copia del miniinforme. Si vuelves a generar, utiliza el último conjunto mostrado.</p>
+</div>
+</form>
+<section id="output" aria-live="polite" aria-atomic="true">
+<div class="results">
+<div class="card"><span>φ inicial</span><strong id="phi1">—</strong></div>
+<div class="card"><span>φ objetivo</span><strong id="phi2">—</strong></div>
+<div class="card"><span>Q inicial</span><strong id="q1">—</strong></div>
+<div class="card"><span>Q objetivo</span><strong id="q2">—</strong></div>
+<div class="card wide"><span>Q<sub>C</sub> necesaria (capacitiva)</span><strong id="qc">—</strong></div>
+<div class="card wide"><span>Capacidad C</span><strong id="c">—</strong></div>
+<div class="card"><span>Intensidad antes</span><strong id="i1">—</strong></div>
+<div class="card"><span>Intensidad después</span><strong id="i2">—</strong></div>
+</div>
+<p><strong>Contraste de cálculo</strong></p><div class="formula"><code id="formula">—</code></div>
+<div class="triangles">
+<div class="triangle"><h2>Antes de compensar</h2><svg id="tri1" viewBox="0 0 360 260" role="img" aria-labelledby="t1title t1desc"></svg></div>
+<div class="triangle"><h2>Después de compensar</h2><svg id="tri2" viewBox="0 0 360 260" role="img" aria-labelledby="t2title t2desc"></svg></div>
+</div>
+<p class="note">Los dos triángulos usan la misma escala. Q positiva indica carácter inductivo; Q<sub>C</sub> es negativa porque la aporta el condensador.</p>
+</section>
+</main>
+<script>
+"use strict";
+function calculateValues({pKw,cos1,cos2,u,f}){
+  const values=[pKw,cos1,cos2,u,f];
+  if(!values.every(Number.isFinite)) throw new Error("Completa todos los datos con valores numéricos.");
+  if(pKw<=0||u<=0||f<=0) throw new Error("P, U y f deben ser mayores que cero.");
+  if(cos1<=0||cos1>=1||cos2<=0||cos2>1) throw new Error("Los factores de potencia deben estar entre 0 y 1.");
+  if(cos2<cos1) throw new Error("El cos φ objetivo debe ser igual o mayor que el inicial.");
+  const pW=pKw*1000;
+  const phi1=Math.acos(cos1),phi2=Math.acos(cos2);
+  const q1=pW*Math.tan(phi1),q2=pW*Math.tan(phi2);
+  const qcSigned=q2-q1;
+  const cF=Math.abs(qcSigned)/(2*Math.PI*f*u*u);
+  const s1=pW/cos1,s2=pW/cos2;
+  const i1=s1/u,i2=s2/u;
+  return {pKw,pW,cos1,cos2,u,f,phi1,phi2,q1,q2,qcSigned,cF,s1,s2,i1,i2};
+}
+function es(value,digits=2){return value.toLocaleString("es-ES",{minimumFractionDigits:digits,maximumFractionDigits:digits})}
+function set(id,text){document.getElementById(id).textContent=text}
+function triangle(svgId,data,finalState){
+  const svg=document.getElementById(svgId);
+  const p=data.pW/1000,q=(finalState?data.q2:data.q1)/1000,s=(finalState?data.s2:data.s1)/1000;
+  const max=Math.max(data.pW/1000,data.q1/1000);
+  const scale=135/max,ox=40,oy=170,x=ox+p*scale,y=oy-q*scale;
+  const color=finalState?"#087f5b":"#b42318";
+  const titleId=finalState?"t2title":"t1title",descId=finalState?"t2desc":"t1desc";
+  const qc=data.qcSigned/1000;
+  const arrow=finalState?'<line x1="'+(x+16)+'" y1="'+(oy-data.q1/1000*scale)+'" x2="'+(x+16)+'" y2="'+y+'" stroke="#453f93" stroke-width="2" marker-end="url(#arr-'+svgId+')"/><text x="20" y="235" font-size="12" fill="#453f93">Qc '+es(qc,2)+' kvar</text>':"";
+  svg.setAttribute("aria-label",(finalState?"Después":"Antes")+" de compensar: P "+es(p,2)+" kW, Q "+es(q,2)+" kvar, S "+es(s,2)+" kVA");
+  svg.innerHTML='<title id="'+titleId+'">'+(finalState?"Triángulo después de compensar":"Triángulo antes de compensar")+'</title><desc id="'+descId+'">P horizontal, Q inductiva vertical y S como hipotenusa.</desc><defs><marker id="arr-'+svgId+'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#453f93"/></marker></defs><line x1="'+ox+'" y1="'+oy+'" x2="292" y2="'+oy+'" stroke="#64748b"/><line x1="'+ox+'" y1="'+oy+'" x2="'+ox+'" y2="18" stroke="#64748b"/><polygon points="'+ox+','+oy+' '+x+','+oy+' '+x+','+y+'" fill="'+color+'18" stroke="'+color+'" stroke-width="3"/><line x1="'+ox+'" y1="'+oy+'" x2="'+x+'" y2="'+y+'" stroke="'+color+'" stroke-width="3"/><text x="'+((ox+x)/2-28)+'" y="'+(oy+18)+'" font-size="12">P '+es(p,2)+' kW</text><text x="'+(x+28)+'" y="'+((oy+y)/2)+'" font-size="12">Q '+es(q,2)+' kvar</text><text x="'+((ox+x)/2-22)+'" y="'+((oy+y)/2-7)+'" font-size="12" fill="'+color+'">S '+es(s,2)+' kVA</text>'+arrow;
+}
+function update(){
+  const error=document.getElementById("error");
+  try{
+    const data=calculateValues({pKw:Number(document.getElementById("p").value),cos1:Number(document.getElementById("cos1").value),cos2:Number(document.getElementById("cos2").value),u:Number(document.getElementById("u").value),f:Number(document.getElementById("f").value)});
+    error.textContent="";
+    const deg=180/Math.PI;
+    set("phi1",es(data.phi1*deg,2)+"°");set("phi2",es(data.phi2*deg,2)+"°");
+    set("q1",es(data.q1/1000,2)+" kvar");set("q2",es(data.q2/1000,2)+" kvar");
+    set("qc",es(data.qcSigned/1000,2)+" kvar");set("c",es(data.cF*1e6,2)+" μF");
+    set("i1",es(data.i1,2)+" A");set("i2",es(data.i2,2)+" A");
+    set("formula","Qc = Q₂ − Q₁ = "+es(data.q2/1000,2)+" − "+es(data.q1/1000,2)+" = "+es(data.qcSigned/1000,2)+" kvar;  C = |Qc|/(2πfU²) = "+es(data.cF*1e6,2)+" μF");
+    triangle("tri1",data,false);triangle("tri2",data,true);
+    document.getElementById("output").hidden=false;
+  }catch(err){error.textContent=err.message;document.getElementById("output").hidden=true}
+}
+document.getElementById("controls").addEventListener("input",update);
+function randomInt(min,max){
+  const range=max-min+1;
+  if(window.crypto&&window.crypto.getRandomValues){
+    const limit=Math.floor(0x100000000/range)*range;
+    const value=new Uint32Array(1);
+    do{window.crypto.getRandomValues(value)}while(value[0]>=limit);
+    return min+(value[0]%range);
+  }
+  return min+Math.floor(Math.random()*range);
+}
+function setInput(id,value){document.getElementById(id).value=value}
+function generateData(){
+  const pKw=randomInt(18,80)/10;
+  const cos1=randomInt(60,86)/100;
+  const cos2=randomInt(90,98)/100;
+  const voltages=[220,230,240];
+  const u=voltages[randomInt(0,voltages.length-1)];
+  const f=50;
+  setInput("p",pKw.toFixed(1));setInput("cos1",cos1.toFixed(2));setInput("cos2",cos2.toFixed(2));setInput("u",u);setInput("f",f);
+  update();
+  set("dataset-values","P = "+es(pKw,1)+" kW · cos φ inicial = "+es(cos1,2)+" inductivo · cos φ objetivo = "+es(cos2,2)+" · U = "+u+" V eficaces · f = "+f+" Hz");
+  const dataset=document.getElementById("dataset");dataset.hidden=false;dataset.focus();fitLocalFrame();
+}
+function resetExample(){document.getElementById("controls").reset();document.getElementById("dataset").hidden=true;update();document.getElementById("p").focus();fitLocalFrame()}
+document.getElementById("generate-data").addEventListener("click",generateData);
+const resetButton=document.getElementById("reset-example");
+resetButton.addEventListener("click",resetExample);
+window.SDA05FDP={calculateValues,generateData};
+// Ajuste local al ancho real del recurso, tambien dentro del editor.
+function fitLocalFrame(){
+  try{const frame=window.frameElement;if(frame)frame.style.height=Math.ceil(document.querySelector("main").getBoundingClientRect().height+8)+"px"}catch(e){/* La apertura independiente no necesita ajuste. */}
+}
+if(typeof ResizeObserver!=="undefined")new ResizeObserver(fitLocalFrame).observe(document.querySelector("main"));
+window.addEventListener("load",fitLocalFrame);
+
+update();
+</script>
+</body>
+</html>
